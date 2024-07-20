@@ -1,6 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('./fonts/Thunder/Thunder-MediumLC.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'AvenueX';
+  src: url('./fonts/AvenueX/AvenueX-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./fonts/HelveticaNeue/HelveticaNeueBlack.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/Geist/Geist-Black.woff') format('woff');
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,6 +38,7 @@
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
