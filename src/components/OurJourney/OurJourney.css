@@ -1,0 +1,96 @@
+h2, .font-avenue {
+	/* Might fix font-weight inconsistancy */
+	text-rendering: geometricPrecision;
+}
+
+.our-journey {
+	min-height: 80vh;
+}
+
+.our-journey > .card-container {
+	overflow-x: hidden;
+}
+.our-journey .card-wrap {
+	display: flex;
+	flex-direction: row;
+}
+
+.jrny-card {
+	min-width: 720px;
+}
+
+.jrny-card .card-title {
+	font-size: 28px;
+	line-height: 32px;
+}
+
+.jrny-card .text-description {
+	text-transform: uppercase;
+	line-height: 23.8px;
+}
+
+.vertical-bar {
+	min-width: 65px;
+	height: 100%;
+}
+
+.vertical-bar-rule {
+	height: 100%;
+	width: 1px;
+	background-color: black;
+	margin: auto;
+}
+
+.title .bg-text {
+	width: 300px;
+	padding: 18px 40px;
+	font-size: 49px;
+	letter-spacing: 1.5px;
+	margin-left: calc(8% + 40px);
+	text-align: center;
+	vertical-align: middle;
+}
+
+@media (max-width: 810px) {
+	
+	.our-journey > .card-container {
+		overflow-x: scroll;
+	}
+
+	.jrny-card {
+		flex-direction: column;
+		width: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.our-journey .vertical-bar {
+		display: none;
+	}
+
+	.our-journey > .card-container {
+		flex-direction: column;
+		gap: 30px;
+		width: 100%;
+	}
+
+	.jrny-card {
+		flex-direction: column;
+		min-width: unset;
+	}
+	.jrny-card > div {
+		flex-direction: column;
+	}
+
+	.jrny-card > div > div {
+		width: 100%;
+	}
+	.jrny-card .content-text, .jrny-card .card-header-texts {
+		padding: 0;
+		margin: 15px 0;
+	}
+
+	.title .bg-text {
+		margin: auto;
+	}
+}
