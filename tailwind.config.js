@@ -19,6 +19,15 @@ module.exports = {
         Helvetica: ['Helvetica', 'sans'],
         Geist: ['Geist', 'sans'],
       },
+			backgroundColor: {
+				tedRed: '#EB0028'
+			},
+			borderRadius: {
+				15: "15px"
+			},
+			textColor: {
+				tedRed: '#EB0028'
+			},
     },
   },
   plugins: [],
