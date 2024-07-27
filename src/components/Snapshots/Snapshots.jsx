@@ -47,7 +47,7 @@ const Snapshots = () => {
             >
               {images.map((image, index) => (
                 <div key={index} className='w-full md:w-1/2 h-1/2'>
-                  <Image src={image} alt='snapshot' className='w-auto min-h-[250px] min-w-[250px] object-cover' />
+                  <Image src={image} alt='snapshot' className='w-auto min-h-[250px] min-w-[250px] object-cover rounded-2xl' />
                 </div>
               ))}
             </div>

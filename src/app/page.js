@@ -3,15 +3,12 @@ import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/Navbar/Navbar";
 import OurJourney from "@/components/OurJourney/OurJourney";
 import Snapshots from "@/components/Snapshots/Snapshots";
-import Filler from "@/components/utils/filler";
-
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Filler />
       <Snapshots />
 			<OurJourney/>
 			<hr className='w-full top-1/2 bg-black -z-10 h-px border-0 mb-10' />
