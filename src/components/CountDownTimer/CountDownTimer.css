@@ -5,18 +5,6 @@
   font-style: normal;
 }
 
-/* Container */
-.container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  position: relative;
-  gap: 38px;
-  row-gap: 10px;
-  padding: 40px 8%;
-}
-
 /* Frame 38 */
 .frame {
   width: 100%;
@@ -70,17 +58,13 @@
 }
 
 @media (max-width: 768px) {
-
-  .container {
-    flex-direction: column;
-  }
   .frame{
     width: 100%;
     height: auto;
     /* flex-direction: column; */
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .frame-39, .frame-40, .frame-41, .frame-42 {
