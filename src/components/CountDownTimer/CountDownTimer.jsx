@@ -5,7 +5,7 @@ import './CountDownTimer.css';
 import HurryUp from '../HurryUp/HurryUp.jsx';
 
 const CountDownTimer = () => {
-  const targetDate = new Date('2024-08-17T00:00:00');
+  const targetDate = new Date('2024-09-28T00:00:00');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -48,26 +48,24 @@ const CountDownTimer = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="frame">
-        <div className="frame-39">
-          <div className="text-wrapper">{timeLeft.days.toString().padStart(2, '0')}</div>
-          <div className="label">DAYS</div>
-        </div>
-        <div className="frame-40">
-          <div className="text-wrapper">{timeLeft.hours.toString().padStart(2, '0')}</div>
-          <div className="label">HOURS</div>
-        </div>
-        <div className="frame-41">
-          <div className="text-wrapper">{timeLeft.minutes.toString().padStart(2, '0')}</div>
-          <div className="label">MINUTES</div>
-        </div>
-        <div className="frame-42">
-          <div className="text-wrapper">{timeLeft.seconds.toString().padStart(2, '0')}</div>
-          <div className="label">SECONDS</div>
-        </div>
-        <HurryUp />
+    <div className="frame">
+      <div className="frame-39">
+        <div className="text-wrapper">{timeLeft.days.toString().padStart(2, '0')}</div>
+        <div className="label">DAYS</div>
       </div>
+      <div className="frame-40">
+        <div className="text-wrapper">{timeLeft.hours.toString().padStart(2, '0')}</div>
+        <div className="label">HOURS</div>
+      </div>
+      <div className="frame-41">
+        <div className="text-wrapper">{timeLeft.minutes.toString().padStart(2, '0')}</div>
+        <div className="label">MINUTES</div>
+      </div>
+      <div className="frame-42">
+        <div className="text-wrapper">{timeLeft.seconds.toString().padStart(2, '0')}</div>
+        <div className="label">SECONDS</div>
+      </div>
+      <HurryUp />
     </div>
   );
 };

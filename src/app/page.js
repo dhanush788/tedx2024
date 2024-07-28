@@ -5,6 +5,7 @@ import CountDownTimer from "@/components/CountDownTimer/CountDownTimer";
 import HurryUp from "@/components/HurryUp/HurryUp";
 import OurJourney from "@/components/OurJourney/OurJourney";
 import Snapshots from "@/components/Snapshots/Snapshots";
+import About from "@/components/About/About";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CountDownTimer /> 
-      
+      <About />
       <Snapshots />
 			<OurJourney/>
 			<hr className='w-full top-1/2 bg-black -z-10 h-px border-0 mb-10' />

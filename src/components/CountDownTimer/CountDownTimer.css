@@ -19,13 +19,16 @@
 
 /* Frame 38 */
 .frame {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 38px;
   position: relative;
   width: auto;
   height: auto;
+  padding: 10px 8%;
 }
 
 
