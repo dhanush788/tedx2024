@@ -16,7 +16,8 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
         thunder: ['Thunder', 'sans'],
         avenue: ['AvenueX', 'sans'],
-        Helvetica: ['Helvetica', 'sans'],
+        Helvetica: ['HelveticaBold', 'sans'],
+        HelveticaLight: ['HelveticaLight', 'sans'],
         Geist: ['Geist', 'sans'],
       },
 			backgroundColor: {

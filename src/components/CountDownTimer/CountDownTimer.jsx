@@ -48,20 +48,20 @@ const CountDownTimer = () => {
   }, []);
 
   return (
-    <div className="frame">
-      <div className="frame-39">
+    <div className="frame grid-cols-4 md:grid-cols-6 p-custom gap-3 my-5">
+      <div className="frame-39 col-span-1 !py-1">
         <div className="text-wrapper">{timeLeft.days.toString().padStart(2, '0')}</div>
         <div className="label">DAYS</div>
       </div>
-      <div className="frame-40">
+      <div className="frame-40 col-span-1 !py-1">
         <div className="text-wrapper">{timeLeft.hours.toString().padStart(2, '0')}</div>
         <div className="label">HOURS</div>
       </div>
-      <div className="frame-41">
+      <div className="frame-41 col-span-1 !py-1">
         <div className="text-wrapper">{timeLeft.minutes.toString().padStart(2, '0')}</div>
         <div className="label">MINUTES</div>
       </div>
-      <div className="frame-42">
+      <div className="frame-42 col-span-1 !py-1">
         <div className="text-wrapper">{timeLeft.seconds.toString().padStart(2, '0')}</div>
         <div className="label">SECONDS</div>
       </div>

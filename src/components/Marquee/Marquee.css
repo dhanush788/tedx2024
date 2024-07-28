@@ -1,29 +1,38 @@
 .marquee {
   position: relative;
-	min-height: 55px;
-	overflow: hidden;
+  min-height: 55px;
+  overflow: hidden;
 }
+
 .marquee-img {
   position: absolute;
   left: 0;
   top: 25%;
-  overflow:hidden; 
+  overflow: hidden;
   white-space: nowrap;
   animation: bannermove 20s linear infinite;
-	display: flex;
-	flex-direction: row;
-	
+  display: flex;
+  flex-direction: row;
+
 }
 
 .marquee-img img {
-	max-width: unset;
+  max-width: unset;
 }
 
 @keyframes bannermove {
   0% {
-      transform: translate(0, 0);
+    transform: translate(0, 0);
   }
+
   100% {
-      transform: translate(-67.12%, 0); /* measured fraction*/
+    transform: translate(-67.12%, 0);
+    /* measured fraction*/
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee {
+    min-height: 30px;
   }
 }

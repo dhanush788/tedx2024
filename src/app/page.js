@@ -6,18 +6,19 @@ import HurryUp from "@/components/HurryUp/HurryUp";
 import OurJourney from "@/components/OurJourney/OurJourney";
 import Snapshots from "@/components/Snapshots/Snapshots";
 import About from "@/components/About/About";
+import Filler from "@/components/utils/filler";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <CountDownTimer /> 
+      <CountDownTimer />
       <About />
       <Snapshots />
-			<OurJourney/>
-			<hr className='w-full top-1/2 bg-black -z-10 h-px border-0 mb-10' />
-			<Footer />
+      <OurJourney />
+      <Footer />
+      <Filler />
     </main>
   );
 }

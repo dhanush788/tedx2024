@@ -61,19 +61,17 @@
   .frame{
     width: 100%;
     height: auto;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
+    display: grid;
     gap: 20px;
-    justify-content: space-around;
   }
 
   .frame-39, .frame-40, .frame-41, .frame-42 {
-    width: 100px;
-    height: 101px;
+    width: 100%;
+    height: auto;
   }
 
   .frame-39 .text-wrapper, .frame-40 .text-wrapper, .frame-41 .text-wrapper, .frame-42 .text-wrapper {
-    font-size: 50px;
+    font-size: 30px;
     line-height: 60px;
   }
 
