@@ -10,7 +10,7 @@ import Filler from "@/components/utils/filler";
 
 export default function Home() {
   return (
-    <main className="bg-[url('../assets/img/background.png')] bg-opacity-0 bg-contain bg-repeat-y">
+    <main className="bg-opacity-0 bg-contain bg-repeat-y">
       <Navbar />
       <Hero />
       <CountDownTimer />

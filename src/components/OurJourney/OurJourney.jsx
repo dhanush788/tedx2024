@@ -82,7 +82,7 @@ const Vr = ({ excludeBar = false }) => {
 
 const Card = () => {
 	return (
-		<div className="jrny-card rounded-15 border border-black">
+		<div className="jrny-card rounded-15 border border-black bg-white">
 			<div className="flex p-4">
 				<div className="w-5/12 flex flex-col relative">
 					<Image

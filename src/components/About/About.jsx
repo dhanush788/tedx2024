@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div className='p-custom md:!py-2'>
+    <div className='p-custom md:!py-2 bg-white'>
       <div className='box-border flex flex-col md:flex-row border border-black rounded-[15px] px-3 py-5 md:px-8 md:py-10 gap-3 md:gap-5'>
         <div className='flex flex-col md:items-center justify-center !float-left	'>
           <p className='text-5xl md:text-[130px] font-semibold font-thunder !leading-none'>ABOUT</p>
