@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Avenue X';
+  src: url('../../app/fonts/AvenueX/Avenue\ X.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  gap: 38px;
+  row-gap: 10px;
+  padding: 40px 8%;
+}
+
+/* Frame 38 */
+.frame {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 38px;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+
+
+/* Frame 39 */
+.frame-39, .frame-40, .frame-41, .frame-42 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 24px;
+  width: 180px;
+  height: 181px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+
+.frame-39 .text-wrapper, .frame-40 .text-wrapper, .frame-41 .text-wrapper, .frame-42 .text-wrapper {
+  font-family: 'Avenue X', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 107px;
+  line-height: 128px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.frame-39 .label, .frame-40 .label, .frame-41 .label, .frame-42 .label {
+  font-family: 'Avenue X', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+  .frame{
+    width: 100%;
+    height: auto;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .frame-39, .frame-40, .frame-41, .frame-42 {
+    width: 100px;
+    height: 101px;
+  }
+
+  .frame-39 .text-wrapper, .frame-40 .text-wrapper, .frame-41 .text-wrapper, .frame-42 .text-wrapper {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .frame-39 .label, .frame-40 .label, .frame-41 .label, .frame-42 .label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
