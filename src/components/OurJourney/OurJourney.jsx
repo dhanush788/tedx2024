@@ -15,30 +15,33 @@ const OurJourney = () => {
 	useEffect(() => {
 		let sections = gsap.utils.toArray('.card-wrap');
 		let mm = gsap.matchMedia();
-		
+		const isMobile = window.matchMedia("(max-width: 768px)").matches;
+		const length = sections[0].offsetWidth;
+		const percent = length / 10;
+		console.log(percent)
 		mm.add("(min-width: 100px)", () => {
-	
-		  const scrollTriggerInstance = gsap.to(sections, {
-			xPercent: -100 * (sections.length - 1),
-			ease: 'none',
-			scrollTrigger: {
-			  trigger: '.our-journey',
-			  pin: true,
-			  scrub: 1,
-			  snap: 1 / (sections.length - 1),
-			  end: () => '+=' + document.querySelector('.card-container').offsetWidth,
-			}
-		  });
-	
-		  return () => {
-			scrollTriggerInstance.kill();
-		  };
+
+			const scrollTriggerInstance = gsap.to(sections, {
+				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : -100 * (sections.length - 1),
+				ease: 'none',
+				scrollTrigger: {
+					trigger: '.our-journey',
+					pin: true,
+					scrub: 1,
+					snap: 1 / (sections.length - 1),
+					end: () => '+=' + document.querySelector('.card-container').offsetWidth,
+				}
+			});
+
+			return () => {
+				scrollTriggerInstance.kill();
+			};
 		});
-	
+
 		return () => {
-		  mm.revert();
+			mm.revert();
 		};
-	  }, []);
+	}, []);
 	return (
 		<div className='mb-5 our-journey'>
 			<div className="pt-8 pb-8 title">
@@ -49,7 +52,7 @@ const OurJourney = () => {
 					<hr className='absolute w-full top-1/2 bg-black -z-10 h-px border-0' />
 				</div>
 			</div>
-			<div className="p-custom flex flex-nowrap card-container !overflow-hidden">
+			<div className="p-custom !py-[1px] flex flex-nowrap card-container !overflow-hidden">
 				<div className="card-wrap">
 					<Card />
 					<Vr />
