@@ -69,22 +69,20 @@ const Statusbar = () => {
     }, []);
 
     return (
-        <div ref={ref} className='py-7 md:py-20 w-full'>
-            <div className='px-2 md:px-[20vw] grid grid-cols-2 md:grid-cols-4 md:flex-row w-full h-full items-center   py-10 md:py-16 gap-4 md:gap-0'>
-                {
-                    data.map((item, i) => {
-                        const count = useCountUp(parseInt(item.heading), 2.5, startCounting); // 2.5 seconds duration
-
-                        return (
-                            <div key={i} className='text-center flex flex-col gap-2 items-center'>
-                                <p className='font-semibold md:text-5xl text-2xl leading-snug max-w-lg text-left inter'>
-                                    {count}+
-                                </p>
-                                <p className='md:text-xl text-base font-normal'>{item.sub}</p>
-                            </div>
-                        );
-                    })
-                }        
+        <div ref={ref} className=' w-full p-custom'>
+            <div className=' grid grid-cols-4 md:flex-row w-full h-full items-center font-Geist'>
+                {data.map((item, i) => {
+                    const count = useCountUp(parseInt(item.heading), 2.5, startCounting);
+                    return (
+                        <div key={i} className='text-center flex flex-col gap-2 items-center border-r-2 last:border-r-0 border-black py-3 h-full'>
+                            <p className='font-extrabold md:text-7xl text-2xl leading-snug max-w-lg text-left inter'>
+                                {count}+
+                            </p>
+                            <p className='md:text-2xl text-[8px] font-normal'>{item.sub}</p>
+                        </div>
+                    );
+                })
+                }
             </div>
         </div>
     );
