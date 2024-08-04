@@ -27,7 +27,7 @@ const Footer = () => {
 								<p className='font-Helvetica text-sm'>Organizer TEDxCUSAT 2024</p>
 								<p className='font-Helvetica text-sm'>phone number</p>
 							</div>
-							<div className='flex flex-col gap-2 col-span-1'>
+							<div className='flex flex-col gap-2 col-span-1 '>
 								<p className='font-Helvetica text-sm'>AKSHAY</p>
 								<p className='font-Helvetica text-sm'>Organizer TEDxCUSAT 2024</p>
 								<p className='font-Helvetica text-sm'>phone number</p>
@@ -68,7 +68,7 @@ const Footer = () => {
 			</div>
 			<hr className='w-full top-1/2 bg-black -z-10 h-px border-0' />
 			<div className='flex justify-center items-center py-5'>
-				<p className='text-base font-HelveticaLight font-bold'>© <span className='text-[#EB0028] font-Helvetica'>TED<sup>x</sup></span>CUSAT  2024</p>
+				<p className='text-lg md:text-2xl font-HelveticaLight font-bold'>© <span className='text-[#EB0028] font-Helvetica'>TED<sup>x</sup></span>CUSAT  2024</p>
 			</div>
 		</footer>
 	);
