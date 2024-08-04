@@ -7,6 +7,7 @@ import OurJourney from "@/components/OurJourney/OurJourney";
 import Snapshots from "@/components/Snapshots/Snapshots";
 import About from "@/components/About/About";
 import Filler from "@/components/utils/filler";
+import Statusbar from "@/components/Statusbar/Statusbar";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <CountDownTimer />
       <About />
+      <Statusbar />
       <Snapshots />
       <OurJourney />
       <Footer />
