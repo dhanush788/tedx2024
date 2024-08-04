@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <div className='h-auto'>
-      <div className="marq-ticket border border-black p-2 md:rounded-15 relative min-w-max md:mx-[8%]">
+      <div className="marq-ticket border border-black py-2 md:rounded-15 relative min-w-max md:mx-[8%]">
         <Marquee />
         <button className='absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
       </div>
