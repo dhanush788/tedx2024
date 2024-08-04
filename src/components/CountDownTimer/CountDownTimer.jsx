@@ -48,7 +48,7 @@ const CountDownTimer = () => {
   }, []);
 
   return (
-    <div className="frame grid-cols-4 md:grid-cols-6 p-custom gap-3 my-5">
+    <div className="frame grid-cols-4 md:grid-cols-6 p-custom gap-3 my-5 md:my-10">
       <div className="frame-39 col-span-1 !py-1">
         <div className="text-wrapper">{timeLeft.days.toString().padStart(2, '0')}</div>
         <div className="label">DAYS</div>

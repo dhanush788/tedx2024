@@ -9,7 +9,7 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className="flex flex-col gap-5 py-5 ">
-				<div className="md:mx-[8%] marq-ticket border border-black py-2 md:rounded-15 relative min-w-max">
+				<div className="md:mx-[8%] marq-ticket border border-black py-2 md:rounded-15 relative min-w-max bg-white">
 					<Marquee />
 					<button className='absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
 				</div>

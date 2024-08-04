@@ -36,7 +36,7 @@ const Snapshots = () => {
   }, []);
 
   return (
-    <div className='h-[70vh] flex flex-col-reverse md:flex-row justify-center items-center gap-4 md:gap-0 mt-16 mb-5'>
+    <div className='h-[70vh] flex flex-col-reverse md:flex-row justify-center items-center gap-4 md:gap-0 my-5 md:my-10'>
       <div className='w-full md:w-9/10 md:h-full overflow-hidden flex justify-center items-center '>
         <div className='flex flex-col rotate-45 gap-4'>
           {Array(7).fill().map((_, rowIndex) => (

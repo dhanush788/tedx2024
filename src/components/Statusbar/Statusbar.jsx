@@ -69,12 +69,12 @@ const Statusbar = () => {
     }, []);
 
     return (
-        <div ref={ref} className=' w-full p-custom'>
+        <div ref={ref} className=' w-full p-custom my-5 md:my-10'>
             <div className=' grid grid-cols-4 md:flex-row w-full h-full items-center font-Geist'>
                 {data.map((item, i) => {
                     const count = useCountUp(parseInt(item.heading), 2.5, startCounting);
                     return (
-                        <div key={i} className='text-center flex flex-col gap-2 items-center border-r-2 last:border-r-0 border-black py-3 h-full'>
+                        <div key={i} className='text-center flex flex-col gap-2 items-center border-r last:border-r-0 border-black py-3 h-full'>
                             <p className='font-extrabold md:text-7xl text-2xl leading-snug max-w-lg text-left inter'>
                                 {count}+
                             </p>
