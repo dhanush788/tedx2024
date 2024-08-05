@@ -19,17 +19,21 @@ const OurJourney = () => {
 		const length = sections[0].offsetWidth;
 		const percent = length / 10;
 		console.log(percent)
+		const windowWidth = window.innerWidth;
+		const effectiveWidth = windowWidth * 0.87;
+		const width = (effectiveWidth * 100 ) / length;
 		mm.add("(min-width: 100px)", () => {
 
 			const scrollTriggerInstance = gsap.to(sections, {
-				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : -100 * (sections.length - 1),
+				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : ((-100 * (sections.length ))+ width),
 				ease: 'none',
 				scrollTrigger: {
 					trigger: '.our-journey',
 					pin: true,
 					scrub: 1,
 					snap: 1 / (sections.length - 1),
-					end: () => '+=' + document.querySelector('.card-container').offsetWidth,
+					start: 'top top',
+					end: () => '+=' + (sections.length - 1) * length,
 				}
 			});
 

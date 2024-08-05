@@ -35,4 +35,8 @@
   .marquee {
     min-height: 30px;
   }
+
+  .marquee-img{
+    top: 10%;
+  }
 }

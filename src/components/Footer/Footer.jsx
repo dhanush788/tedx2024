@@ -11,7 +11,7 @@ const Footer = () => {
 			<div className="flex flex-col gap-5 py-5 ">
 				<div className="md:mx-[8%] marq-ticket border border-black py-2 md:rounded-15 relative min-w-max bg-white">
 					<Marquee />
-					<button className='absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
+					<button className='hidden md:block absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
 				</div>
 				<div className='flex flex-col md:flex-row gap-3 md:gap-10 p-custom md:items-end'>
 					<div className='rounded-15 overflow-hidden flex-1 md:order-1 order-2'>

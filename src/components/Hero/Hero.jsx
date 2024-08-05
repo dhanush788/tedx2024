@@ -9,7 +9,7 @@ const Hero = () => {
     <div className='h-auto'>
       <div className="marq-ticket border border-black py-2 md:rounded-15 relative min-w-max md:mx-[8%] bg-white">
         <Marquee />
-        <button className='absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
+        <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
       </div>
       <div className='relative mt-10 px-[8%]'>
         <div className='absolute top-0 flex border-black border bg-white  py-3 md:py-6 px-3 md:px-9 rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50'>UPCOMING EVENT</div>
@@ -18,7 +18,7 @@ const Hero = () => {
             <defs>
               <clipPath id="svgTextPath">
                 <path className='hidden md:flex' d="M18.7684 101C9.13009 101 0 109.192 0 118.83V1000C0 1000 0 1000 0 1000H2000C2000 1000 2000 1000 2000 1000V0C1196 0 1189.28 0 1181 0H359C350.716 0 344 6.71573 344 15V71C344 85.1421 344 92.2132 339.607 96.6066C335.213 101 328.142 101 314 101H19C18.9226 101 18.8454 101 18.7684 101Z" />
-                <path className='flex md:hidden' d="M10.7817 60.5904C4.83777 60.5904 0 65.4282 0 71.3721V553.628C0 559.572 4.83778 564.41 10.7817 564.41H358.781C364.724 564.41 369.562 559.572 369.562 553.628V11.3721C369.562 5.42818 364.724 0.590377 358.781 0.590377H178.465C172.522 0.590377 167.684 5.42818 167.684 11.3721V28.8091C167.684 43.6782 167.684 51.1098 163.258 55.5355C158.833 59.9612 151.401 59.9612 136.531 59.9612H10.7817Z" />
+                <path className='flex md:hidden' d="M11.1288 63C4.98251 63 0 67.9825 0 74.1288V1174.87C0 1181.02 4.98254 1186 11.1288 1186H716.871C723.017 1186 728 1181.02 728 1174.87V11.1288C728 4.98252 723.017 0 716.871 0H183.129C176.983 0 172 4.98252 172 11.1288V31.0858C172 46.1303 172 53.6525 167.326 58.3263C162.653 63 155.13 63 140.086 63H11.1288Z" />
               </clipPath>
             </defs>
           </svg>
