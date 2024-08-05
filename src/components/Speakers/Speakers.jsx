@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react'
 import arrow from '../../assets/img/arrow.svg'
 import arrow2 from '../../assets/img/arrow2.svg'
-import speakerImage from '../../assets/img/snapshot2.png'
+import speakerImage from '../../assets/img/Snapshot2.png'
 
 import Image from 'next/image'
 
@@ -60,7 +60,7 @@ const Cards = ({ item, i }) => {
                 <div className='overflow-hidden w-full '>
                     <Image src={item.img} alt="" id='image' className='h-full object-cover ease-in-out min-w-[210px] md:min-w-[300px] rounded-15' />
                 </div>
-                <div className={`absolute rounded-15 bottom-0 left-0 w-full p-custom flex flex-col duration-300 ease bg-white ${hover ? ' min-h-full ' : 'min-h-[75px] md:min-h-[100px]'}`}>
+                <div className={`absolute rounded-15 bottom-0 left-0 w-full p-custom flex flex-col transition-all duration-300 ease bg-white ${hover ? ' min-h-full ' : 'min-h-[75px] md:min-h-[100px]'}`}>
                     <p className={`font-Geist font-bold text-xl md:text-2xl ${hover ? 'pt-4 md:pt-6' : 'pt-2 md:pt-4'}`}>{item.heading}</p>
                     <p className='font-Geist text-base md:text-lg text-[#EB0028]'>{item.subHeading}</p>
                     <p className={`font-Helvetica text-xs md:text-base ${hover ? '' : 'hidden'}`}>{item.description}</p>
