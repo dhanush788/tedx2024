@@ -54,6 +54,10 @@ body {
   background-size: 50px 50px;
 }
 
+.text-stroke {
+  -webkit-text-stroke: 0.5px white;
+  color: transparent;
+}
 
 @media (max-width: 768px) {
   body {

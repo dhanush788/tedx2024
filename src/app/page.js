@@ -8,6 +8,7 @@ import Snapshots from "@/components/Snapshots/Snapshots";
 import About from "@/components/About/About";
 import Filler from "@/components/utils/filler";
 import Statusbar from "@/components/Statusbar/Statusbar";
+import Speakers from "@/components/Speakers/Speakers";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Statusbar />
       <Snapshots />
+      <Speakers />
       <OurJourney />
       <Footer />
     </main>
