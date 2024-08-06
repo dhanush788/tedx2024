@@ -87,11 +87,13 @@
     .rectangle-23 {
         width: 210px;
         height: 101px;
+        border-radius: 6px;
     }
 
     .rectangle-24 {
         width: 175px;
         height: 58px;
+        border-radius: 6px;
     }
 
     .line-7 {

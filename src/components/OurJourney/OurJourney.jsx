@@ -50,7 +50,7 @@ const OurJourney = () => {
 		<div className='mb-5 our-journey'>
 			<div className="pt-8 pb-8 title">
 				<div className="hr relative">
-					<div className="bg-tedRed border border-black rounded-15 bg-text flex items-center md:justify-center">
+					<div className="bg-tedRed border border-black rounded-[6px] md:rounded-15 bg-text flex items-center md:justify-center">
 						<h2 className='text-black font-thunder text-xl md:text-5xl uppercase font-bold !leading-none'><span>Our </span><span className="text-white">Journey</span></h2>
 					</div>
 					<hr className='absolute w-full top-1/2 bg-black -z-10 h-px border-0' />
@@ -89,13 +89,13 @@ const Vr = ({ excludeBar = false }) => {
 
 const Card = () => {
 	return (
-		<div className="jrny-card rounded-15 border border-black bg-white">
+		<div className="jrny-card rounded-[6px] md:rounded-15 border border-black bg-white">
 			<div className="flex p-4">
 				<div className="w-5/12 flex flex-col relative">
 					<Image
 						src={cardImg}
 						alt="Speaker at event"
-						className='rounded-15 md:h-[40vh] object-cover'
+						className='rounded-[6px] md:rounded-15 md:h-[40vh] object-cover'
 					/>
 					<div className="ml-2 mt-2.5 md:mt-5 flex flex-col justify-between flex-1 card-header-texts">
 						<h2 className="font-bold m-0 font-Inter card-title">CENTURIES, BUT ALSO THE LEAP INTO ELECTRONIC</h2>
@@ -106,7 +106,7 @@ const Card = () => {
 					<p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-6 md:line-clamp-none">
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book.  It has survived not only  five Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to.
 					</p>
-					<div className='md:hidden flex bg-[#EB0028] py-3 px-6 rounded-[15px] text-white font-avenue md:text-3xl mr-auto'>KNOW MORE</div>
+					{/* <div className='md:hidden flex bg-[#EB0028] py-3 px-6 rounded-[6px] md:rounded-[15px] text-white font-avenue md:text-3xl mr-auto'>KNOW MORE</div> */}
 				</div>
 			</div>
 		</div>

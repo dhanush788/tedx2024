@@ -69,6 +69,7 @@
   .frame-39, .frame-40, .frame-41, .frame-42 {
     width: 100%;
     height: auto;
+    border-radius: 6px;
   }
 
   .frame-39 .text-wrapper, .frame-40 .text-wrapper, .frame-41 .text-wrapper, .frame-42 .text-wrapper {
