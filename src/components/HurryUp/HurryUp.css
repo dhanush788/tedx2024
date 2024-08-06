@@ -22,7 +22,6 @@
     left: 0px;    background: #FFFFFF;
     border: 3px solid #000000;
     border-radius: 15px;
-    opacity: 0px;
     display: flex;
     flex-direction: column;
 }

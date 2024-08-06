@@ -7,48 +7,43 @@ import speakerImage from '../../assets/img/Snapshot2.png'
 import Image from 'next/image'
 
 
-const data = [{
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
+const data = [
+    {
+        heading: "Shariq shamsudeen",
+        subHeading: "Entrepreneur",
+        description: "Founder and CEO of Fundfolio, an organization aiming to build India’s largest Community of Financially Independent Individuals.",
+        img: speakerImage
+    },
+    {
+        heading: "Suresh Pillai",
+        subHeading: "",
+        description: "Social media sensation and celebrity chef known popularly as chef pillai is culinery director of Raviz kollam and contestant of MasterChef UK 2017.",
+        img: speakerImage
+    },
+    {
+        heading: "Shaun Romy",
+        subHeading: "",
+        description: "",
+        img: speakerImage
+    }
     , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
+        heading: "Major Ravi",
+        subHeading: "",
+        description: "",
+        img: speakerImage
+    },
+    {
+        heading: "Divya S Iyer",
+        subHeading: "IAS OFFICER",
+        description: "Dr. Divya S. Iyer, a distinguished figure embodying excellence in diverse realms. She currently holds key roles as the Managing Director of Vizhinjam International Seaport Ltd and Project Director of Kerala Solid Waste Management Project. ",
+        img: speakerImage
+    }
     , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
-    , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
-    , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
-    , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
-    , {
-    heading: "PadmaLakshmi",
-    subHeading: "LAWYER",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a ",
-    img: speakerImage
-}
+        heading: "Steffy Sunny",
+        subHeading: "CONTENT CREATOR",
+        description: "Steffy Sunny, internet content creator, has gone from creating relatable Mallu mom reels to collaborating with the Dulquer Salman, we are honored to present none other than the beloved Mercy Aunty and Malayali's favorite content creator",
+        img: speakerImage
+    }, 
 ]
 
 
@@ -63,7 +58,7 @@ const Cards = ({ item, i }) => {
                 <div className={`absolute rounded-15 bottom-0 left-0 w-full p-custom flex flex-col transition-all duration-300 ease bg-white ${hover ? ' min-h-full ' : 'min-h-[75px] md:min-h-[100px]'}`}>
                     <p className={`font-Geist font-bold text-xl md:text-2xl ${hover ? 'pt-4 md:pt-6' : 'pt-2 md:pt-4'}`}>{item.heading}</p>
                     <p className='font-Geist text-base md:text-lg text-[#EB0028]'>{item.subHeading}</p>
-                    <p className={`font-Helvetica text-xs md:text-base ${hover ? '' : 'hidden'}`}>{item.description}</p>
+                    <p className={`font-Helvetica text-xs md:text-base transition-all duration-300 ${hover ? '' : 'hidden'}`}>{item.description}</p>
                 </div>
                 <div className='min-h-[75px] md:min-h-[100px]'></div>
             </div>
