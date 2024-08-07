@@ -109,7 +109,7 @@ const Speakers = () => {
                     <Image src={arrow2} alt='slide' className='w-full md:w-12 h-auto cursor-pointer' onClick={scrollRight} />
                 </div>
             </div>
-            <div ref={scrollRef} className='scroll-container flex flex-row overflow-scroll md:overflow-hidden w-full h-full  pl-[4%] md:pl-0 gap-3 md:gap-6'>
+            <div ref={scrollRef} className='scrollerHidden flex flex-row overflow-scroll md:overflow-hidden w-full h-full mt-5 md:mt-10 px-[4%] md:px-0 gap-3 md:gap-6'>
                 {data.map((item, i) => (
                     <Cards item={item} key={i} />
                 ))

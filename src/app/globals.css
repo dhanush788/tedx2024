@@ -68,3 +68,8 @@ body {
   }
   
 }
+
+.scrollerHidden::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+  width: 0;
+}
