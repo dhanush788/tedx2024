@@ -41,7 +41,7 @@ const Navbar = () => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
     }, {
-      top: 0,
+      top: isMobile ? '3vh' : '20vh',
       yPercent: 0,
       scale: 1,
       textShadow: '0 0 2px rgba(0,0,0,0)',
