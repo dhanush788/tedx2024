@@ -48,7 +48,7 @@ const OurJourney = () => {
 	}, []);
 	return (
 		<div className='mb-5 our-journey'>
-			<div className="pt-8 pb-8 title">
+			<div className="pt-10 pb-8 title">
 				<div className="hr relative">
 					<div className="bg-tedRed border border-black rounded-[6px] md:rounded-15 bg-text flex items-center md:justify-center">
 						<h2 className='text-black font-thunder text-xl md:text-5xl uppercase font-bold !leading-none'><span>Our </span><span className="text-white">Journey</span></h2>

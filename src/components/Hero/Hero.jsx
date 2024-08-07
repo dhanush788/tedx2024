@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
 import Marquee from '../Marquee/Marquee';
 import Image from 'next/image';
@@ -11,6 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const textRefs = useRef([]);
+  const [isEvent, setIsEvent] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsEvent(!isEvent);
+    }, 500);
+  });
 
   useEffect(() => {
     textRefs.current.forEach((textRef, index) => {
@@ -47,10 +53,10 @@ const Hero = () => {
     <div className='h-auto'>
       <div className="marq-ticket border border-black py-2 md:rounded-15 relative min-w-max md:mx-[8%] bg-white">
         <Marquee />
-        <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-md md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button>
+        {/* <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-md md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button> */}
       </div>
-      <div className='relative mt-10 px-[4%] md:px-[8%]'>
-        <div className='absolute top-0 flex border-black border bg-white  py-3 md:py-6 px-3 md:px-9 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50'>UPCOMING EVENT</div>
+      <div className='relative mt-4 px-[4%] md:px-[8%]'>
+        <div className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-3 md:px-9' : 'bg-tedRed text-white px-3 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</div>
         <div className='w-full overflow-hidden flex-1 h-[70vh] rounded-15 relative'>
           <svg width="0" height="0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <defs>

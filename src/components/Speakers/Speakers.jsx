@@ -101,7 +101,7 @@ const Speakers = () => {
     }
 
     return (
-        <div className='w-full flex flex-col inter md:px-[8%]'>
+        <div className='w-full flex flex-col inter md:px-[8%] md:pb-5'>
             <div className='flex flex-row justify-between px-[4%] md:px-0'>
                 <p className='font-thunder font-bold md:text-6xl text-4xl leading-snug max-w-md text-left'>OUR <span className='text-[#EB0028]'>PREVIOUS</span> SPEAKERS</p>
                 <div className='md:flex flex-row hidden gap-3'>
