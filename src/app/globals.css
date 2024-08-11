@@ -73,3 +73,7 @@ body {
   display: none; /* For Chrome, Safari, and Opera */
   width: 0;
 }
+
+.no-scroll {
+  overflow: hidden;
+}

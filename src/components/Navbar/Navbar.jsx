@@ -41,7 +41,7 @@ const Navbar = () => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
     }, {
-      top: isMobile ? '3vh' : '20vh',
+      top: isMobile ? '3vh' : '10px',
       yPercent: 0,
       scale: 1,
       textShadow: '0 0 2px rgba(0,0,0,0)',
@@ -69,6 +69,8 @@ const Navbar = () => {
 
   useEffect(() => {
     if (expanded) {
+      document.body.classList.add('no-scroll');
+
       const rightCard = document.querySelector('.right-card');
       const leftCards = document.querySelectorAll('.left-card .section-card');
 
@@ -84,6 +86,7 @@ const Navbar = () => {
         });
       }
     } else {
+      document.body.classList.remove('no-scroll');
       const rightCard = document.querySelector('.right-card');
       const leftCards = document.querySelectorAll('.left-card .section-card');
 
