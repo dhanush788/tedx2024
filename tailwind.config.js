@@ -30,6 +30,9 @@ module.exports = {
 				tedRed: '#EB0028'
 			},
     },
+    backgroundImage: {
+      "pattern" : "url('/pattern.png')",
+    }
   },
   plugins: [],
 };

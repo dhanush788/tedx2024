@@ -61,10 +61,12 @@ const Navbar = () => {
     // Toggle the header box-shadow
     logoTl.fromTo('header', {
       boxShadow: '0px 0px 10px rgba(0,0,0,0)',
+      backgroundColor: 'rgba(255,255,255,0)',
     }, {
       boxShadow: '0px 0px 10px rgba(0,0,0,0.15)',
       duration: 0.2,
-    }, 0.8);
+      backgroundColor: 'rgba(255,255,255,1)',
+    }, 0.5);
   }, []);
 
   useEffect(() => {
