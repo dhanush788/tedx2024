@@ -48,12 +48,23 @@ export default function Home() {
     });
   }, []);
 
+  const handleScrollToHero = (event) => {
+    event.preventDefault();
+    const heroSection = document.getElementById("hero");
+    if (heroSection) {
+      window.scrollTo({
+        top: heroSection.offsetTop - 150,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <main ref={scrollRef} className="bg-opacity-0 bg-contain bg-repeat-y">
       <Navbar />
       <section>
-        <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center">
-          <a href="#hero" className="absolute bottom-0 mb-10">
+      <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center">
+          <a onClick={handleScrollToHero} className="absolute bottom-0 mb-10">
             <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16" />
           </a>
         </div>
@@ -61,18 +72,18 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-      <section>
+      <section id="about">
         <CountDownTimer />
         <About />
       </section>
-      <section>
+      <section id="snapshot">
         <Statusbar />
         <Snapshots />
       </section>
-      <section>
+      <section id="speakers">
         <Speakers />
       </section>
-      <section>
+      <section id="journey">
         <OurJourney />
       </section>
       <Footer />

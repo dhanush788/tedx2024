@@ -127,10 +127,10 @@ const Navbar = () => {
       {expanded && (
         <div className="menu-panel">
           <div className="left-card">
-            <a href="/events" className="section-card">EVENTS</a>
-            <a href="/workshop" className="section-card">WORKSHOP</a>
-            <a href="/contact" className="section-card">CONTACT</a>
-            <a href="https://www.google.com/maps/d/u/0/edit?mid=1NEV2b72eeJaskro_FazhplLTLhJgKHU&usp=sharing" className="section-card">EVENT MAP</a>
+            <a href="#events" className="section-card" onClick={toggleMenu}>EVENTS</a>
+            <a href="#workshop" className="section-card" onClick={toggleMenu}>WORKSHOP</a>
+            <a href="#contact" className="section-card" onClick={toggleMenu}>CONTACT</a>
+            <a href="https://www.google.com/maps/d/u/0/edit?mid=1NEV2b72eeJaskro_FazhplLTLhJgKHU&usp=sharing" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
           </div>
           <div className="right-card">
             <div className="text-container">

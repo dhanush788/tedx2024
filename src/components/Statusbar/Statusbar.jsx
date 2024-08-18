@@ -70,7 +70,7 @@ const Statusbar = () => {
 
     return (
         <div ref={ref} className=' w-full px-[4%] md:px-[8%] my-5 md:my-10'>
-            <div className=' grid grid-cols-4 md:flex-row w-full h-full items-center font-Geist'>
+            <div className='hidden md:grid grid-cols-4 md:flex-row w-full h-full items-center font-Geist'>
                 {data.map((item, i) => {
                     const count = useCountUp(parseInt(item.heading), 2.5, startCounting);
                     return (
