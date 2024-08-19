@@ -34,7 +34,7 @@ const Hero = () => {
               end: 'top 0%',
               scrub: true,
             },
-            ease: 'power2.in',
+            ease: 'power4.out',
           }
         );
       }
