@@ -70,7 +70,7 @@ export default function Home() {
         <section>
           <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center">
             <a onClick={handleScrollToHero} className="absolute bottom-0 mb-10">
-              <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16" />
+            <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16 opacity-0 animate-fadeIn" />
             </a>
           </div>
         </section>

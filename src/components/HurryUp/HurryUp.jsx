@@ -11,7 +11,7 @@ const HurryUp = () => {
     }, 500);
   });
   return (
-    <div className="frame-53 !hidden md:!flex">
+    <div className="frame-53 !hidden xl:!flex">
       <div className="rectangle-23">
         <div className="line-7 transition translate-x-1"></div>
         <div className="rectangle-24">

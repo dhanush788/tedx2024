@@ -25,10 +25,12 @@ header {
 /* Logo */
 .logo {
     position: absolute;
-    width: 400px;
-    height: 100px;
+    /* width: 400px;
+    height: 100px; */
+    height: 15vh;
+    width: 45vh;
     left: 50%;
-    top: 63px;
+    top: 3vh;
     transform: translate(-50%, -50%);
     background: url('/logo-black.svg');
     background-size: contain;

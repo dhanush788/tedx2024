@@ -22,7 +22,7 @@ const OurJourney = () => {
 		const windowWidth = window.innerWidth;
 		const effectiveWidth = windowWidth * 0.87;
 		const width = (effectiveWidth * 100 ) / length;
-		mm.add("(min-width: 100px)", () => {
+		mm.add("(min-width: 768px)", () => {
 
 			const scrollTriggerInstance = gsap.to(sections, {
 				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : ((-100 * (sections.length ))+ width),

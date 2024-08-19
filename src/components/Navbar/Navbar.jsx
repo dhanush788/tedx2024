@@ -12,15 +12,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
-    gsap.fromTo('.logo', {
+    const tl = gsap.timeline();
+
+    tl.fromTo('.logo', {
+      top: '50vh',
       opacity: 0,
       yPercent: 50,
     }, {
+      top: '50vh',
       yPercent: -50,
       opacity: 1,
       duration: 1,
       ease: 'power3.out',
+    }).to('.logo', {
+      top: '45vh',
+      duration: 1,
+      ease: 'power3.out',
     });
+
 
     // Scroll-based animation for the logo and other elements
     let logoTl = gsap.timeline({
@@ -33,7 +42,7 @@ const Navbar = () => {
     });
 
     logoTl.fromTo('.logo', {
-      top: '50vh',
+      top: '45vh',
       yPercent: -50,
       transformOrigin: 'center center',
       scale: isMobile ? 1.5 : 2,
@@ -41,7 +50,7 @@ const Navbar = () => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
     }, {
-      top: isMobile ? '3vh' : '10px',
+      top: isMobile ? '3vh' : '1.5vh',
       yPercent: 0,
       scale: 1,
       textShadow: '0 0 2px rgba(0,0,0,0)',
@@ -108,11 +117,25 @@ const Navbar = () => {
     setExpanded(!expanded);
   };
 
+  const currentDate = new Date();
+
+  const formatDate = (date) => {
+    const options = {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    };
+    return date.toLocaleString('en-US', options).replace(',', '');
+  };
+
   return (
     <>
       <header>
         <div className="logo"></div>
-        <div className="date-time">07-06-2024 06:55 PM</div>
+        <div className="date-time">{formatDate(currentDate)}</div>
         <button className="menu" onClick={toggleMenu} aria-expanded={expanded ? 'true' : 'false'}>
           {expanded ? (
             <svg className="close-icon" viewBox="0 0 24 24" aria-hidden="true">
