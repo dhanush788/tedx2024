@@ -79,7 +79,7 @@ h2,
 
 	.jrny-card {
 		flex-direction: column;
-		min-width: 70vw;
+		min-width: 80vw;
 	}
 
 	.jrny-card>div {

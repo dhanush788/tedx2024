@@ -56,7 +56,7 @@ const OurJourney = () => {
 					<hr className='absolute w-full top-1/2 bg-black -z-10 h-px border-0' />
 				</div>
 			</div>
-			<div className="p-custom !py-[1px] flex flex-nowrap card-container !overflow-hidden">
+			<div className="p-custom !py-[1px] flex flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
 				<div className="card-wrap">
 					<Card />
 					<Vr />
@@ -103,7 +103,7 @@ const Card = () => {
 					</div>
 				</div>
 				<div className="content-text w-7/12 pl-4 pr-2 flex flex-col gap-3">
-					<p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-6 md:line-clamp-none">
+					<p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-none md:line-clamp-none !leading-tight md:!leading-relaxed">
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book.  It has survived not only  five Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to.
 					</p>
 					{/* <div className='md:hidden flex bg-[#EB0028] py-3 px-6 rounded-[6px] md:rounded-[15px] text-white font-avenue md:text-3xl mr-auto'>KNOW MORE</div> */}
