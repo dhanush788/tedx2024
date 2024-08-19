@@ -2,7 +2,7 @@ import './Footer.css'
 import Marquee from '../Marquee/Marquee';
 import '../../components/utils/resizable.css'
 import Image from 'next/image';
-import insagram from '../../assets/img/instagram.png';
+import insagram from '../../assets/img/Instagram.png';
 import gmail from '../../assets/img/Gmail.png';
 import youtube from '../../assets/img/YouTube.png';
 
