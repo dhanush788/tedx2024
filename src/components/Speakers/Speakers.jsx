@@ -3,6 +3,12 @@ import React, { useRef, useState } from 'react'
 import arrow from '../../assets/img/arrow.svg'
 import arrow2 from '../../assets/img/arrow2.svg'
 import speakerImage from '../../assets/img/Snapshot2.png'
+import romy from '../../assets/img/speakers/Romy.jpg'
+import pillai from '../../assets/img/speakers/Pillai.jpg'
+import Ravi from '../../assets/img/speakers/Ravi.jpg'
+import divya from '../../assets/img/speakers/Divya.jpg'
+import steffy from '../../assets/img/speakers/Steffy.jpg'
+import shariq from '../../assets/img/speakers/Sharique.jpg'
 
 import Image from 'next/image'
 
@@ -12,37 +18,37 @@ const data = [
         heading: "Shariq shamsudeen",
         subHeading: "Entrepreneur",
         description: "Founder and CEO of Fundfolio, an organization aiming to build India’s largest Community of Financially Independent Individuals.",
-        img: speakerImage
+        img: shariq
     },
     {
         heading: "Suresh Pillai",
         subHeading: "",
         description: "Social media sensation and celebrity chef known popularly as chef pillai is culinery director of Raviz kollam and contestant of MasterChef UK 2017.",
-        img: speakerImage
+        img: pillai
     },
     {
         heading: "Shaun Romy",
         subHeading: "",
         description: "",
-        img: speakerImage
+        img: romy
     }
     , {
         heading: "Major Ravi",
         subHeading: "",
         description: "",
-        img: speakerImage
+        img: Ravi
     },
     {
         heading: "Divya S Iyer",
         subHeading: "IAS OFFICER",
         description: "Dr. Divya S. Iyer, a distinguished figure embodying excellence in diverse realms. She currently holds key roles as the Managing Director of Vizhinjam International Seaport Ltd and Project Director of Kerala Solid Waste Management Project. ",
-        img: speakerImage
+        img: divya
     }
     , {
         heading: "Steffy Sunny",
         subHeading: "CONTENT CREATOR",
         description: "Steffy Sunny, internet content creator, has gone from creating relatable Mallu mom reels to collaborating with the Dulquer Salman, we are honored to present none other than the beloved Mercy Aunty and Malayali's favorite content creator",
-        img: speakerImage
+        img: steffy
     }, 
 ]
 
