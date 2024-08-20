@@ -56,7 +56,7 @@ const Hero = () => {
         {/* <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-md md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button> */}
       </div>
       <div className='relative mt-4 px-[4%] md:px-[8%]'>
-        <div className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 cursor-pointer `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</div>
+        <a href='/ticket' className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 cursor-pointer `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</a>
         <div className='w-full overflow-hidden flex-1 h-[70vh] rounded-15 relative'>
           <svg width="0" height="0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <defs>
@@ -85,11 +85,11 @@ const Hero = () => {
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block'>28 <br/> SEP<br/> 2024</p>
-          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-right text-stroke'>STOP EXISTING<br/> AND START LIVING</p>
-          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-right text-stroke'>STOP EXISTING<br/> AND START LIVING</p>
-          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-right text-stroke'>STOP EXISTING<br/> AND START LIVING</p>
-          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-right text-stroke'>STOP EXISTING<br/> AND START LIVING</p>
-          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-right'>STOP EXISTING<br/> AND START LIVING</p>
+          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right'>Kaleidoscope<br/>Alchemy of Voices</p>
         </div>
       </div>
     </div>

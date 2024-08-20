@@ -143,6 +143,17 @@ const Navbar = () => {
     return date.toLocaleString('en-US', options).replace(',', '');
   };
 
+  const handleScroll = (destination) => {
+    const heroSection = document.getElementById(destination);
+    if (heroSection) {
+      window.scrollTo({
+        top: heroSection.offsetTop - 150,
+        behavior: "smooth",
+      });
+    }
+    toggleMenu();
+  };
+
   return (
     <>
       <header>
@@ -162,17 +173,17 @@ const Navbar = () => {
       {expanded && (
         <div className="menu-panel">
           <div className="left-card">
-            <a href="#events" className="section-card" onClick={toggleMenu}>EVENTS</a>
-            <a href="#workshop" className="section-card" onClick={toggleMenu}>WORKSHOP</a>
-            <a href="#contact" className="section-card" onClick={toggleMenu}>CONTACT</a>
-            <a href="https://www.google.com/maps/d/u/0/edit?mid=1NEV2b72eeJaskro_FazhplLTLhJgKHU&usp=sharing" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
+            <div className="section-card" onClick={() => handleScroll("about")}>ABOUT</div>
+            <div className="section-card" onClick={() => handleScroll("speakers")}>SPEAKERS</div>
+            <div className="section-card" onClick={() => handleScroll("contact")}>CONTACT</div>
+            <a href="https://www.google.com/maps?ll=10.043907,76.324908&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=14845740073459549562" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
           </div>
           <div className="right-card">
             <div className="text-container">
               <p className="subheading">Got An Idea?</p>
               <h2 className="main-heading">Let's turn your idea into reality</h2>
             </div>
-            <a href="/book" className="book-ticket">Book Ticket</a>
+            <a href="/ticket" className="book-ticket">Book Ticket</a>
           </div>
         </div>
       )}

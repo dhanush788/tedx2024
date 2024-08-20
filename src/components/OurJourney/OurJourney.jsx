@@ -13,7 +13,7 @@ import Marquee from '../Marquee/Marquee';
 const content = [
 	{
 		title: 'Establishment of TEDxCUSAT',
-		date: '2020',
+		date: '15-05-2020',
 		description: 'TEDxCUSAT was founded to provide a dynamic platform where the innovative and intellectual community of Cochin University of Science and Technology can share ideas that inspire change and foster meaningful conversations. Guided by the spirit of TED, the initiative aims to make groundbreaking ideas accessible and transform them into actions that make a real difference.',
 		img: cardImg
 	},
@@ -31,7 +31,7 @@ const content = [
 	},
 	{
 		title: 'Third Edition: "TRANSCENDENCE: Beyond All Bounds"',
-		date: '04-03-2022',
+		date: '05-04-2022',
 		description: '',
 		img: cardImg
 	},
@@ -113,7 +113,7 @@ const Card = ({ title, date, description ,img}) => {
 	return (
 		<div className="jrny-card rounded-[6px] md:rounded-15 border border-black bg-white">
 			<div className="flex p-4">
-				<div className="w-5/12 flex flex-col relative">
+				<div className="w-7/12 flex flex-col relative">
 					<Image
 						src={img}
 						alt="Speaker at event"

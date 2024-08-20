@@ -15,7 +15,7 @@ const Footer = () => {
 					{/* <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-lg md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button> */}
 				</div>
 				<div className='flex flex-col md:flex-row gap-3 md:gap-10 p-custom md:items-end'>
-					<div className='h-96 rounded-[6px] md:rounded-15 overflow-hidden flex-1 border-2 border-black bg-black text-white p-7 flex flex-col justify-between order-2 md:order-1 hover:scale-105 transform duration-75'>
+					<div className='h-96 rounded-[6px] md:rounded-15 overflow-hidden flex-1 border-2 border-black bg-black text-white p-7 flex flex-col justify-between order-2 md:order-1 hover:scale-105 transform duration-75' id='contact'>
 						<p className='text-4xl md:text-5xl font-thunder font-extrabold uppercase tracking-wide '>HAVE ANY QUESTIONS ?</p>
 						<p className='text-5xl md:text-6xl font-thunder font-bold tracking-wide'>CONTACT US</p>
 						<div>
@@ -35,10 +35,10 @@ const Footer = () => {
 							<a href='mailto:organizer@tedxcusat.in' target='_blank' rel='noreferrer'>
 								<Image src={gmail} alt='facebook' width={50} height={50} />
 							</a>
-							<a href='https://www.instagram.com/' target='_blank' rel='noreferrer'>
+							<a href='https://www.instagram.com/tedxcusat/' target='_blank' rel='noreferrer'>
 								<Image src={insagram} alt='instagram' width={50} height={50} />
 							</a>
-							<a href='https://www.instagram.com/' target='_blank' rel='noreferrer'>
+							<a href='https://www.youtube.com/@tedxcusat8428' target='_blank' rel='noreferrer'>
 								<Image src={youtube} alt='youtube' width={50} height={50} />
 							</a>
 						</div>
