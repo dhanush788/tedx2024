@@ -6,40 +6,35 @@ import './OurJourney.css'
 import '../../components/utils/resizable.css'
 import cardImg from "../../assets/img/jrny.jpg";
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
-import { useGSAP } from '@gsap/react';
-import Marquee from '../Marquee/Marquee';
+import img1 from '../../assets/img/journey/1.jpeg'
+import img2 from '../../assets/img/journey/2.jpeg'
+import img3 from '../../assets/img/journey/3.jpg'
+import img4 from '../../assets/img/journey/5.png'
 
 const content = [
 	{
-		title: 'Establishment of TEDxCUSAT',
-		date: '15-05-2020',
-		description: 'TEDxCUSAT was founded to provide a dynamic platform where the innovative and intellectual community of Cochin University of Science and Technology can share ideas that inspire change and foster meaningful conversations. Guided by the spirit of TED, the initiative aims to make groundbreaking ideas accessible and transform them into actions that make a real difference.',
-		img: cardImg
-	},
-	{
-		title: 'First Edition: "UN-QUINTESSENTIAL"',
+		title: '#1 UN-QUINTESSENTIAL',
 		date: '15-05-2020',
 		description: '',
-		img: cardImg
+		img: img4
 	},
 	{
-		title: 'Second Edition: "PAUSE. RESET. RESTART."',
+		title: '#2 PAUSE. RESET. RESTART.',
 		date: '05-04-2021',
 		description: '',
-		img: cardImg
+		img: img2
 	},
 	{
-		title: 'Third Edition: "TRANSCENDENCE: Beyond All Bounds"',
+		title: '#3 TRANSCENDENCE: Beyond All Bounds',
 		date: '05-04-2022',
 		description: '',
-		img: cardImg
+		img: img1
 	},
 	{
-		title: 'Fourth Edition: "DIVERGENCE: Reframing Radical"',
+		title: '#4 DIVERGENCE: Reframing Radical',
 		date: '19-11-2023',
 		description: '',
-		img: cardImg
+		img: img3
 	}
 ]
 const OurJourney = () => {
@@ -49,7 +44,6 @@ const OurJourney = () => {
 		const isMobile = window.matchMedia("(max-width: 768px)").matches;
 		const length = sections[0].offsetWidth;
 		const percent = length / 10;
-		console.log(percent)
 		const windowWidth = window.innerWidth;
 		const effectiveWidth = windowWidth * 0.87;
 		const width = (effectiveWidth * 100) / length;
@@ -117,7 +111,7 @@ const Card = ({ title, date, description ,img}) => {
 					<Image
 						src={img}
 						alt="Speaker at event"
-						className='rounded-[6px] md:rounded-15 md:h-[40vh] object-cover'
+						className='rounded-[6px] md:rounded-15 md:h-[40vh] object-cover filter-grey'
 					/>
 					<div className="ml-2 mt-2.5 md:mt-5 flex flex-col justify-between flex-1 card-header-texts">
 						<h2 className="font-bold m-0 font-Inter card-title">{title}</h2>
@@ -125,9 +119,9 @@ const Card = ({ title, date, description ,img}) => {
 					</div>
 				</div>
 				<div className="content-text w-7/12 pl-4 pr-2 flex flex-col gap-3">
-					<p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-none md:line-clamp-none !leading-tight md:!leading-relaxed">
+					{/* <p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-none md:line-clamp-none !leading-tight md:!leading-relaxed">
 						{description}
-					</p>
+					</p> */}
 					{/* <div className='md:hidden flex bg-[#EB0028] py-3 px-6 rounded-[6px] md:rounded-[15px] text-white font-avenue md:text-3xl mr-auto'>KNOW MORE</div> */}
 				</div>
 			</div>

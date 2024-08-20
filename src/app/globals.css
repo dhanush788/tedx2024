@@ -78,3 +78,15 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.filter-red {
+  filter: grayscale(100%) sepia(35%) brightness(76%) hue-rotate(320deg) saturate(941%) contrast(114%) invert(9%);
+}
+
+.filter-grey{
+  filter: grayscale(100%);
+}
+
+.filter-grey:hover {
+  filter: grayscale(0%);
+}

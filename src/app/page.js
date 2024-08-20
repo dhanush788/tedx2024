@@ -22,8 +22,19 @@ export default function Home() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const handleBeforeUnload = () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 0);
+    };
+  
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
+
 
   useEffect(() => {
     const sections = gsap.utils.toArray("section");
