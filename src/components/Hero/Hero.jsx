@@ -56,7 +56,7 @@ const Hero = () => {
         {/* <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-md md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button> */}
       </div>
       <div className='relative mt-4 px-[4%] md:px-[8%]'>
-        <div className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</div>
+        <div className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 cursor-pointer `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</div>
         <div className='w-full overflow-hidden flex-1 h-[70vh] rounded-15 relative'>
           <svg width="0" height="0" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
             <defs>

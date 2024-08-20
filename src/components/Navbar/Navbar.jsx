@@ -14,6 +14,7 @@ const Navbar = () => {
     const isMobile = window.innerWidth < 768;
     const tl = gsap.timeline();
 
+    document.body.style.overflow = 'hidden';
     tl.fromTo('.logo', {
       top: '50vh',
       opacity: 0,
@@ -28,6 +29,8 @@ const Navbar = () => {
       top: '45vh',
       duration: 1,
       ease: 'power3.out',
+    }).then(() => {
+      document.body.style.overflow = '';
     });
 
 
@@ -119,6 +122,13 @@ const Navbar = () => {
 
   const currentDate = new Date();
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      currentDate.setTime(Date.now());
+      document.querySelector('.date-time').textContent = formatDate(currentDate);
+    }, 60000);
+  }, []);
+
   const formatDate = (date) => {
     const options = {
       month: '2-digit',
@@ -134,7 +144,7 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <div className="logo"></div>
+        <div className="logo" id='logo'></div>
         <div className="date-time">{formatDate(currentDate)}</div>
         <button className="menu" onClick={toggleMenu} aria-expanded={expanded ? 'true' : 'false'}>
           {expanded ? (

@@ -32,7 +32,7 @@ header {
     left: 50%;
     top: 3vh;
     transform: translate(-50%, -50%);
-    background: url('/logo-black.svg');
+    background: url('/logo-black.png');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0;

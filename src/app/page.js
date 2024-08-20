@@ -33,8 +33,8 @@ export default function Home() {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
       return isMobile
-        ? heroTop - 100 
-        : heroTop - window.innerHeight * 0.2; 
+        ? heroTop - 100
+        : heroTop - window.innerHeight * 0.2;
     };
     
     gsap.to(sections, {
@@ -66,11 +66,11 @@ export default function Home() {
   return (
     <main className="bg-opacity-0 bg-contain bg-repeat-y">
       <div className="snapping" ref={scrollRef} >
-      <Navbar />
+        <Navbar />
         <section>
-          <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center">
+          <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center transition-all duration-1000">
             <a onClick={handleScrollToHero} className="absolute bottom-0 mb-10">
-            <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16 opacity-0 animate-fadeIn" />
+              <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16 opacity-0 animate-fadeIn cursor-pointer" />
             </a>
           </div>
         </section>
