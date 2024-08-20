@@ -23,7 +23,9 @@ export default function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
 
+  useEffect(() => {
     const sections = gsap.utils.toArray("section");
     const calculateEndValue = () => {
       const heroElement = document.getElementById("hero");

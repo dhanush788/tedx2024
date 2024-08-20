@@ -9,6 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  useEffect(() => {
+    const updateTimestamp = () => {
+      setCurrentDate(new Date());
+    };
+
+    updateTimestamp(); 
+    const interval = setInterval(updateTimestamp, 60000); 
+
+    return () => clearInterval(interval); 
+  }, []);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -32,7 +44,6 @@ const Navbar = () => {
     }).then(() => {
       document.body.style.overflow = '';
     });
-
 
     // Scroll-based animation for the logo and other elements
     let logoTl = gsap.timeline({
@@ -119,15 +130,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setExpanded(!expanded);
   };
-
-  const currentDate = new Date();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      currentDate.setTime(Date.now());
-      document.querySelector('.date-time').textContent = formatDate(currentDate);
-    }, 60000);
-  }, []);
 
   const formatDate = (date) => {
     const options = {
