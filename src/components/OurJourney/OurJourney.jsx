@@ -10,7 +10,38 @@ import { ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 import Marquee from '../Marquee/Marquee';
 
-
+const content = [
+	{
+		title: 'Establishment of TEDxCUSAT',
+		date: '2020',
+		description: 'TEDxCUSAT was founded to provide a dynamic platform where the innovative and intellectual community of Cochin University of Science and Technology can share ideas that inspire change and foster meaningful conversations. Guided by the spirit of TED, the initiative aims to make groundbreaking ideas accessible and transform them into actions that make a real difference.',
+		img: cardImg
+	},
+	{
+		title: 'First Edition: "UN-QUINTESSENTIAL"',
+		date: '15-05-2020',
+		description: '',
+		img: cardImg
+	},
+	{
+		title: 'Second Edition: "PAUSE. RESET. RESTART."',
+		date: '05-04-2021',
+		description: '',
+		img: cardImg
+	},
+	{
+		title: 'Third Edition: "TRANSCENDENCE: Beyond All Bounds"',
+		date: '04-03-2022',
+		description: '',
+		img: cardImg
+	},
+	{
+		title: 'Fourth Edition: "DIVERGENCE: Reframing Radical"',
+		date: '19-11-2023',
+		description: '',
+		img: cardImg
+	}
+]
 const OurJourney = () => {
 	useEffect(() => {
 		let sections = gsap.utils.toArray('.card-wrap');
@@ -21,11 +52,11 @@ const OurJourney = () => {
 		console.log(percent)
 		const windowWidth = window.innerWidth;
 		const effectiveWidth = windowWidth * 0.87;
-		const width = (effectiveWidth * 100 ) / length;
+		const width = (effectiveWidth * 100) / length;
 		mm.add("(min-width: 768px)", () => {
 
 			const scrollTriggerInstance = gsap.to(sections, {
-				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : ((-100 * (sections.length ))+ width),
+				xPercent: isMobile ? ((-100 * (sections.length - 1) - (percent))) : ((-100 * (sections.length)) + width),
 				ease: 'none',
 				scrollTrigger: {
 					trigger: '.our-journey',
@@ -57,22 +88,13 @@ const OurJourney = () => {
 				</div>
 			</div>
 			<div className="p-custom !py-[1px] flex flex-nowrap card-container !overflow-scroll md:!overflow-hidden">
-				<div className="card-wrap">
-					<Card />
-					<Vr />
-				</div>
-				<div className="card-wrap">
-					<Card />
-					<Vr />
-				</div>
-				<div className="card-wrap">
-					<Card />
-					<Vr />
-				</div>
-				<div className="card-wrap">
-					<Card />
-					<Vr excludeBar="true" />
-				</div>
+				{content.map((item, i) => (
+					<div className="card-wrap" key={i}>
+						<Card title={item.title} img={item.img} description={item.description} date={item.date}/>
+						<Vr excludeBar={content.length - 1 === i && 'true' }/>
+					</div>
+				))
+				}
 			</div>
 			<hr className='w-full top-1/2 bg-black -z-10 h-px border-0 mb-10 mt-14' />
 		</div>
@@ -87,24 +109,24 @@ const Vr = ({ excludeBar = false }) => {
 	);
 }
 
-const Card = () => {
+const Card = ({ title, date, description ,img}) => {
 	return (
 		<div className="jrny-card rounded-[6px] md:rounded-15 border border-black bg-white">
 			<div className="flex p-4">
 				<div className="w-5/12 flex flex-col relative">
 					<Image
-						src={cardImg}
+						src={img}
 						alt="Speaker at event"
 						className='rounded-[6px] md:rounded-15 md:h-[40vh] object-cover'
 					/>
 					<div className="ml-2 mt-2.5 md:mt-5 flex flex-col justify-between flex-1 card-header-texts">
-						<h2 className="font-bold m-0 font-Inter card-title">CENTURIES, BUT ALSO THE LEAP INTO ELECTRONIC</h2>
-						<p className="text-tedRed text-base !text-justify md:text-2xl font-avenue">15-05-2020</p>
+						<h2 className="font-bold m-0 font-Inter card-title">{title}</h2>
+						<p className="text-tedRed text-base !text-justify md:text-2xl font-avenue">{date}</p>
 					</div>
 				</div>
 				<div className="content-text w-7/12 pl-4 pr-2 flex flex-col gap-3">
 					<p className="text-sm md:text-base font-medium font-Inter text-description line-clamp-none md:line-clamp-none !leading-tight md:!leading-relaxed">
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book.  It has survived not only  five Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to.
+						{description}
 					</p>
 					{/* <div className='md:hidden flex bg-[#EB0028] py-3 px-6 rounded-[6px] md:rounded-[15px] text-white font-avenue md:text-3xl mr-auto'>KNOW MORE</div> */}
 				</div>

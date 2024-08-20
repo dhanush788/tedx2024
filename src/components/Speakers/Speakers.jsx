@@ -22,20 +22,20 @@ const data = [
     },
     {
         heading: "Suresh Pillai",
-        subHeading: "",
+        subHeading: "Chef",
         description: "Social media sensation and celebrity chef known popularly as chef pillai is culinery director of Raviz kollam and contestant of MasterChef UK 2017.",
         img: pillai
     },
     {
         heading: "Shaun Romy",
-        subHeading: "",
-        description: "",
+        subHeading: "Actress",
+        description: "Shaun Romy is an actress, professional fashion model, and social media celebrity, who has captured the hearts of malayalis everywhere. She made her film debut as a lead actress at the age of 19 in the Mollywood (Malayalam cinema) art film Blue Skies, Green Waters, Red Earth (2013). She has recently garnered much recognition from the audience for her role in the very popular film, Hridayam.",
         img: romy
     }
     , {
         heading: "Major Ravi",
         subHeading: "",
-        description: "",
+        description: "Major A. K. Raveendran SM, known widely as Major Ravi, is a man of many talents—an Indian Army veteran, a National Security Guard commando, an actor, and a celebrated film director. His career is marked by gallantry in service and creativity in the arts. Major Ravi has been honored with medals for his bravery and screenwriting accolades, blending his battlefield experiences with the stories he brings to the screen.",
         img: Ravi
     },
     {
@@ -47,7 +47,7 @@ const data = [
     , {
         heading: "Steffy Sunny",
         subHeading: "CONTENT CREATOR",
-        description: "Steffy Sunny, internet content creator, has gone from creating relatable Mallu mom reels to collaborating with the Dulquer Salman, we are honored to present none other than the beloved Mercy Aunty and Malayali's favorite content creator",
+        description: "Steffy Sunny is a content creator and social media influencer with a unique blend of talents.A Malayali nurtured in the vibrant atmosphere of Delhi, she developed into a linguistic virtuoso, proficient in English, Hindi, and Malayalam. Steffy is not just a content creator; she’s a storyteller who has harnessed the power of digital media to inspire, educate, and entertain. With a blend of charisma, intellect, and a keen eye for detail, she has reshaped the landscape of content creation, making a lasting impact on her audience.",
         img: steffy
     }, 
 ]
