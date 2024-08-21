@@ -1,22 +1,5 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
-import snapshot1 from '../../assets/img/Snapshot1.png'
-import snapshot2 from '../../assets/img/Snapshot2.png'
-import img1 from '../../assets/img/snapshot/1.jpg'
-import img2 from '../../assets/img/snapshot/2.jpg'
-import img3 from '../../assets/img/snapshot/3.jpg'
-import img4 from '../../assets/img/snapshot/4.jpg'
-import img5 from '../../assets/img/snapshot/5.jpg'
-import img6 from '../../assets/img/snapshot/6.jpg'
-import img7 from '../../assets/img/snapshot/7.jpg'
-import img8 from '../../assets/img/snapshot/8.jpg'
-import img9 from '../../assets/img/snapshot/9.jpg'
-import img10 from '../../assets/img/snapshot/10.jpg'
-import img11 from '../../assets/img/snapshot/11.jpg'
-import img12 from '../../assets/img/snapshot/12.jpg'
-import img13 from '../../assets/img/snapshot/13.jpg'
-import img14 from '../../assets/img/snapshot/14.jpg'
-import img15 from '../../assets/img/snapshot/15.jpg'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -28,13 +11,13 @@ const Snapshots = () => {
 
   const rowsRef = useRef([]);
 
-  const images1 = [snapshot2, img1, snapshot1, img1, snapshot2, snapshot2, img1, snapshot2, img1, snapshot2];
-  const images2 = [img8, img11, img3,  img12, img9, img10, img13, img14, img8, img8];
-  const images3 = [img14, img8, img10, img4, img9, img11, img13, img8, img3, img1,img12];
-  const images4 = [img11, img3, img12,  img8, img4, img14, img8, img10, img1, img9, img13];
-  const images5 = [ img11, img4, img14, img9,  img8, img13, img1, img8, img10, img8, img12];
-  const images6 = [img9, img12, img14, img3, img8, img10, img8, img5,  img4, img11, img13];
-  const images7 = [img10, img5, img13, img4, img14, img9, img3, img8,  img8, img11, img12];
+  const images1 = [ '/snapshot/1.jpg', '/snapshot/1.jpg',   '/snapshot/1.jpg',  '/snapshot/1.jpg'];
+  const images2 = ['/snapshot/8.jpg', '/snapshot/11.jpg', '/snapshot/3.jpg',  '/snapshot/12.jpg', '/snapshot/9.jpg', '/snapshot/10.jpg', '/snapshot/13.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/8.jpg'];
+  const images3 = ['/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/4.jpg', '/snapshot/9.jpg', '/snapshot/11.jpg', '/snapshot/13.jpg', '/snapshot/8.jpg', '/snapshot/3.jpg', '/snapshot/1.jpg','/snapshot/12.jpg'];
+  const images4 = ['/snapshot/11.jpg', '/snapshot/3.jpg', '/snapshot/12.jpg',  '/snapshot/8.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/1.jpg', '/snapshot/9.jpg', '/snapshot/13.jpg'];
+  const images5 = [ '/snapshot/11.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/9.jpg',  '/snapshot/8.jpg', '/snapshot/13.jpg', '/snapshot/1.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/8.jpg', '/snapshot/12.jpg'];
+  const images6 = ['/snapshot/9.jpg', '/snapshot/12.jpg', '/snapshot/14.jpg', '/snapshot/3.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/8.jpg', '/snapshot/5.jpg',  '/snapshot/4.jpg', '/snapshot/11.jpg', '/snapshot/13.jpg'];
+  const images7 = ['/snapshot/10.jpg', '/snapshot/5.jpg', '/snapshot/13.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/9.jpg', '/snapshot/3.jpg', '/snapshot/8.jpg',  '/snapshot/8.jpg', '/snapshot/11.jpg', '/snapshot/12.jpg'];
   
   
 
@@ -72,7 +55,9 @@ const Snapshots = () => {
             >
               {images.map((image, index) => (
                 <div key={index} className='w-full md:w-1/2 h-1/2'>
-                  <Image src={image} alt='snapshot' className={`w-auto h-[250px] min-w-[250px] object-cover rounded-2xl filter-grey`} />
+                  <Image src={image} alt='snapshot' className={`w-auto h-[250px] min-w-[250px] object-cover rounded-2xl filter-grey`} 
+                  width={500} height={500}
+                  />
                 </div>
               ))}
             </div>
