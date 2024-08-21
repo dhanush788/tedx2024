@@ -91,6 +91,7 @@ const Hero = () => {
             className='w-full h-full md:h-auto object-cover'
           >
             <source src="/video.mp4" type="video/mp4" />
+            <source src="/video.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
