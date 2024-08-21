@@ -11,7 +11,7 @@ const Snapshots = () => {
 
   const rowsRef = useRef([]);
 
-  const images1 = [ '/snapshot/1.jpg', '/snapshot/1.jpg',   '/snapshot/1.jpg',  '/snapshot/1.jpg'];
+  const images1 = [ '/snapshot/1.jpg', '/snapshot/1.jpg',   '/snapshot/1.jpg',  '/snapshot/1.jpg','/snapshot/1.jpg','/snapshot/1.jpg','/snapshot/1.jpg'];
   const images2 = ['/snapshot/8.jpg', '/snapshot/11.jpg', '/snapshot/3.jpg',  '/snapshot/12.jpg', '/snapshot/9.jpg', '/snapshot/10.jpg', '/snapshot/13.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/8.jpg'];
   const images3 = ['/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/4.jpg', '/snapshot/9.jpg', '/snapshot/11.jpg', '/snapshot/13.jpg', '/snapshot/8.jpg', '/snapshot/3.jpg', '/snapshot/1.jpg','/snapshot/12.jpg'];
   const images4 = ['/snapshot/11.jpg', '/snapshot/3.jpg', '/snapshot/12.jpg',  '/snapshot/8.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/1.jpg', '/snapshot/9.jpg', '/snapshot/13.jpg'];
