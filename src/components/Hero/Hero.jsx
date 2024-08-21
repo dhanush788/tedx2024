@@ -49,6 +49,19 @@ const Hero = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const videoElement = document.getElementById("background-video");
+
+    if (isSafari) {
+      videoElement.style.clipPath = "none";
+      videoElement.style.mask = "url(#svgTextPath)";
+    } else {
+      videoElement.style.mask = "none";
+      videoElement.style.clipPath = "url(#svgTextPath)";
+    }
+  }, []);
+
   return (
     <div className='h-auto'>
       <div className="marq-ticket border border-black py-2 md:rounded-15 relative min-w-max md:mx-[8%] mt-10 bg-white">
@@ -71,9 +84,9 @@ const Hero = () => {
             loop
             autoPlay
             muted
+            playsInline
             style={{
               position: "relative",
-              clipPath: "url(#svgTextPath)",
             }}
             className='w-full h-full md:h-auto object-cover'
           >
