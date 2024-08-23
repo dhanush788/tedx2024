@@ -22,10 +22,10 @@ const data = [
         img: shariq
     },
     {
-        heading: "Shaun Romy",
-        subHeading: "Actress",
-        description: "Shaun Romy is an actress, professional fashion model, and social media celebrity who has won the hearts of Malayalis. She debuted as a lead actress at 19 in the Malayalam film Blue Skies, Green Waters, Red Earth (2013) and recently gained acclaim for her role in the hit film Hridayam.",
-        img: romy
+        heading: "Suresh Pillai",
+        subHeading: "Chef",
+        description: "Chef Pillai, a social media sensation and celebrity chef, is the Culinary Director at Raviz Kollam and gained fame as a contestant on MasterChef UK 2017. He is celebrated for his innovative cooking techniques.",
+        img: pillai
     },
     {
         heading: "Divya S Iyer",
@@ -34,10 +34,10 @@ const data = [
         img: divya
     },
     {
-        heading: "Suresh Pillai",
-        subHeading: "Chef",
-        description: "Chef Pillai, a social media sensation and celebrity chef, is the Culinary Director at Raviz Kollam and gained fame as a contestant on MasterChef UK 2017. He is celebrated for his innovative cooking techniques.",
-        img: pillai
+        heading: "Shaun Romy",
+        subHeading: "Actress",
+        description: "Shaun Romy is an actress, professional fashion model, and social media celebrity who has won the hearts of Malayalis. She debuted as a lead actress at 19 in the Malayalam film Blue Skies, Green Waters, Red Earth (2013) and recently gained acclaim for her role in the hit film Hridayam.",
+        img: romy
     },
     , {
         heading: "Steffy Sunny",
