@@ -20,12 +20,12 @@ const Footer = () => {
 						<p className='text-5xl md:text-6xl font-thunder font-bold tracking-wide'>CONTACT US</p>
 						<div>
 							<p className='text-xl md:text-2xl font-Helvetica font-bold text-tedRed'>IVINE JOJU</p>
-							<p className='text-lg md:text-xl font-Helvetica font-bold'>Organizer, TEDxCUSAT 2024</p>
+							<p className='text-lg md:text-xl font-Helvetica font-bold'>Organizer, TEDxCUSAT'24</p>
 							<a href='tel:+919895545390' className='text-lg md:text-xl font-Helvetica font-bold'>+91 9895545390</a>
 						</div>
 						<div>
 							<p className='text-xl md:text-2xl font-Helvetica font-bold text-tedRed'>AKSHAY S VINOD</p>
-							<p className='text-lg md:text-xl font-Helvetica font-bold'>Organizer, TEDxCUSAT 2024</p>
+							<p className='text-lg md:text-xl font-Helvetica font-bold'>Organizer, TEDxCUSAT'24</p>
 							<a href='tel:+917306834384' className='text-lg md:text-xl font-Helvetica font-bold'>+91 7306834384</a>
 						</div>
 					</div>
