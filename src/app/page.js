@@ -22,18 +22,24 @@ export default function Home() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    const handleBeforeUnload = () => {
+    const handleDOMContentLoaded = () => {
       setTimeout(() => {
         window.scrollTo(0, 0);
       }, 0);
     };
   
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      handleDOMContentLoaded();
+    } else {
+      document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
+    }
   
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
     };
   }, []);
+  
+  
 
 
   useEffect(() => {
