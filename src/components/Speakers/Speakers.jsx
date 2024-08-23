@@ -16,6 +16,12 @@ import Image from 'next/image'
 const data = [
     
     {
+        heading: "Shariq shamsudeen",
+        subHeading: "Entrepreneur",
+        description: "Founder and CEO of Fundfolio, an organization focused on building India’s largest community of financially independent individuals. Fundfolio aims to empower its members by offering resources and a supportive network to achieve their financial goals.",
+        img: shariq
+    },
+    {
         heading: "Shaun Romy",
         subHeading: "Actress",
         description: "Shaun Romy is an actress, professional fashion model, and social media celebrity who has won the hearts of Malayalis. She debuted as a lead actress at 19 in the Malayalam film Blue Skies, Green Waters, Red Earth (2013) and recently gained acclaim for her role in the hit film Hridayam.",
@@ -39,12 +45,6 @@ const data = [
         description: "Steffy Sunny is a content creator and social media influencer known for her linguistic skills in English, Hindi, and Malayalam. A Malayali raised in Delhi, she blends charisma and intellect to reshape digital media, inspiring, educating, and entertaining her audience.",
         img: steffy
     }, 
-    {
-        heading: "Shariq shamsudeen",
-        subHeading: "Entrepreneur",
-        description: "Founder and CEO of Fundfolio, an organization focused on building India’s largest community of financially independent individuals. Fundfolio aims to empower its members by offering resources and a supportive network to achieve their financial goals.",
-        img: shariq
-    },
     , {
         heading: "Major Ravi",
         subHeading: "Filmmaker",

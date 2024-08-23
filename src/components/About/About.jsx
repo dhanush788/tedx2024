@@ -14,7 +14,7 @@ const About = () => {
         </div>
         <p className='font-medium text-sm md:text-base font-Inter '>
           TEDxCUSAT is a dynamic platform where the brightest minds of Cochin University of 
-          Science and Technology come together to share ideas that have the power to inspire 
+          Science And Technology come together to share ideas that have the power to inspire 
           meaningful change. This year's event, centered around the theme <span>"Kaleidoscope: Alchemy 
           of Voices,"</span> offers a blend of live talks and curated videos designed to spark thought-provoking 
           conversations. TEDxCUSAT goes beyond the traditional format of talks; it’s about creating a space where 

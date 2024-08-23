@@ -13,9 +13,9 @@ const Snapshots = () => {
 
   const images1 = [ '/snapshot/1.jpg', '/snapshot/1.jpg',   '/snapshot/1.jpg',  '/snapshot/1.jpg','/snapshot/1.jpg','/snapshot/1.jpg','/snapshot/1.jpg'];
   const images2 = ['/snapshot/8.jpg', '/snapshot/11.jpg', '/snapshot/3.jpg',  '/snapshot/12.jpg', '/snapshot/9.jpg', '/snapshot/10.jpg', '/snapshot/13.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/8.jpg'];
-  const images3 = ['/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/4.jpg', '/snapshot/9.jpg', '/snapshot/11.jpg', '/snapshot/13.jpg', '/snapshot/8.jpg', '/snapshot/3.jpg', '/snapshot/1.jpg','/snapshot/12.jpg'];
-  const images4 = ['/snapshot/11.jpg', '/snapshot/3.jpg', '/snapshot/12.jpg',  '/snapshot/8.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/1.jpg', '/snapshot/9.jpg', '/snapshot/13.jpg'];
-  const images5 = [ '/snapshot/11.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/9.jpg',  '/snapshot/8.jpg', '/snapshot/13.jpg', '/snapshot/1.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/8.jpg', '/snapshot/12.jpg'];
+  const images3 = ['/snapshot/14.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/4.jpg', '/snapshot/11.jpg', '/snapshot/9.jpg',  '/snapshot/13.jpg', '/snapshot/8.jpg', '/snapshot/3.jpg', '/snapshot/1.jpg','/snapshot/12.jpg'];
+  const images4 = ['/snapshot/11.jpg', '/snapshot/3.jpg', '/snapshot/12.jpg',  '/snapshot/8.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/1.jpg', '/snapshot/8.jpg', '/snapshot/2.jpg', '/snapshot/9.jpg', '/snapshot/13.jpg'];
+  const images5 = [ '/snapshot/4.jpg', '/snapshot/13.jpg', '/snapshot/9.jpg', '/snapshot/10.jpg',   '/snapshot/8.jpg', '/snapshot/13.jpg', '/snapshot/1.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/8.jpg', '/snapshot/12.jpg'];
   const images6 = ['/snapshot/9.jpg', '/snapshot/12.jpg', '/snapshot/14.jpg', '/snapshot/3.jpg', '/snapshot/8.jpg', '/snapshot/10.jpg', '/snapshot/8.jpg', '/snapshot/5.jpg',  '/snapshot/4.jpg', '/snapshot/11.jpg', '/snapshot/13.jpg'];
   const images7 = ['/snapshot/10.jpg', '/snapshot/5.jpg', '/snapshot/13.jpg', '/snapshot/4.jpg', '/snapshot/14.jpg', '/snapshot/9.jpg', '/snapshot/3.jpg', '/snapshot/8.jpg',  '/snapshot/8.jpg', '/snapshot/11.jpg', '/snapshot/12.jpg'];
   
