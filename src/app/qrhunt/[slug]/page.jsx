@@ -29,7 +29,7 @@ const Page = () => {
     const [isSlugChecked, setIsSlugChecked] = useState(false);
 
     useEffect(() => {
-        const slug = window.location.href.split('/').pop();
+        const slug = window.location.href.split('/').pop().toLowerCase();
         if (slug) {
             const found = data.find(item => item.slug === slug);
             if (found) {
