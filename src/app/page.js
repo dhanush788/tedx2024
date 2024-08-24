@@ -20,6 +20,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const scrollRef = useRef(null);
+  if (history.scrollRestoration) {
+    history.scrollRestoration = "manual";
+  }
 
   useEffect(() => {
     const handleDOMContentLoaded = () => {

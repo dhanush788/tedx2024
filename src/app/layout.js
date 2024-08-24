@@ -58,9 +58,8 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-  if (history.scrollRestoration) {
-    history.scrollRestoration = "manual";
-  }  return (
+
+  return (
     <html lang="en">
       <head>
       <link rel="icon" href="/favicon.ico" sizes="any" />
