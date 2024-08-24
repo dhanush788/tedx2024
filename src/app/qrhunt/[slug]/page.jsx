@@ -44,7 +44,7 @@ const Page = () => {
             {!isSlugChecked ? null : (
                 code === '' ? (
                     <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
-                        Invalid QR Code
+                        This page could not be found. 😢
                     </p>
                 ) : (
                     <>
