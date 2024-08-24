@@ -63,6 +63,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       <link rel="icon" href="/favicon.ico" sizes="any" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `history.scrollRestoration = "manual"`,
+        }}
+      />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
