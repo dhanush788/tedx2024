@@ -90,3 +90,7 @@ body {
 .filter-grey:hover {
   filter: grayscale(0%);
 }
+
+.filter-greyb{
+  filter: grayscale(100%);
+}

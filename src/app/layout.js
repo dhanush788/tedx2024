@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TEDxCUSAT 24",
+  title: "TEDxCUSAT'24",
   description: "Come join us for an inspiring day of talks and presentations by thought leaders and innovators from various fields. Experience the power of ideas worth spreading, network with like-minded individuals, and be a part of a global community striving for positive change.",
   keywords: [
     "TEDx",
