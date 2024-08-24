@@ -26,8 +26,8 @@ const Navbar = () => {
     const isMobile = window.innerWidth < 768;
     const tl = gsap.timeline();
 
-    document.body.style.overflow = 'hidden';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.style.overflow = 'hidden';
     tl.fromTo('.logo', {
       top: '50vh',
       opacity: 0,
