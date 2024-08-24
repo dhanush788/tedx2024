@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import copy from '../../../assets/img/copy.svg';
 import Image from 'next/image';
 import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Headers/Header';
 
 const data = [
     {
@@ -58,6 +59,7 @@ const Page = () => {
 
     return (
         <>
+            <Header />
             <div className='flex flex-col p-[8%] w-full gap-4 font-avenue'>
                 {!isSlugChecked ? null : (
                     code === '' ? (

@@ -27,6 +27,7 @@ const Navbar = () => {
     const tl = gsap.timeline();
 
     document.body.style.overflow = 'hidden';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     tl.fromTo('.logo', {
       top: '50vh',
       opacity: 0,
