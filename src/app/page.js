@@ -61,7 +61,7 @@ export default function Home() {
         trigger: scrollRef.current,
         start: "top top",
         end: calculateEndValue,
-        scrub: 1,
+        scrub: 0.2,
         snap: {
           snapTo: 1,
           duration: { min: 0.2, max: 0.8 },

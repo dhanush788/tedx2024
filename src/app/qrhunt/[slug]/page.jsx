@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import copy from '../../../assets/img/copy.svg';
 import Image from 'next/image';
 import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
 
 const data = [
     {
@@ -59,7 +58,6 @@ const Page = () => {
 
     return (
         <>
-            <Header />
             <div className='flex flex-col p-[8%] w-full gap-4 font-avenue'>
                 {!isSlugChecked ? null : (
                     code === '' ? (
@@ -101,7 +99,7 @@ const Page = () => {
                     )
                 )}
                 {isCopied && (
-                    <div className='fixed z-10 bottom-5 bg-white p-4 rounded-5 left-[50%] -translate-x-[50%] w-3/5'>
+                    <div className='fixed z-10 bottom-5 bg-white p-4 rounded-lg left-[50%] -translate-x-[50%] w-3/5'>
                         <p className='text-tedRed text-sm md:text-lg font-bold text-center'>
                             Code copied to clipboard! ✓
                         </p>
