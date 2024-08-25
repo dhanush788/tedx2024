@@ -90,7 +90,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <div className="logo" id='logo'></div>
+                <a href="/" className="logo" id='logo'></a>
                 <div className="date-time">{formatDate(currentDate)}</div>
                 <button className="menu" onClick={toggleMenu} aria-expanded={expanded ? 'true' : 'false'}>
                     {expanded ? (
