@@ -182,8 +182,8 @@ const Navbar = () => {
           </div>
           <div className="right-card">
             <div className="text-container">
-              <p className="subheading">Got An Idea?</p>
-              <h2 className="main-heading">Let's turn your idea into reality</h2>
+              <p className="subheading">Join the Conversation</p>
+              <h2 className="main-heading">Get Your Ticket Today!</h2>
             </div>
             <a href="/ticket" className="book-ticket">Book Ticket</a>
           </div>
