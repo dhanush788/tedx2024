@@ -6,7 +6,7 @@ const Marquee = () => {
 	return (
 		<div className="marquee">
 			<div className="marquee-img flex">
-				<Image src={mqImg} className='h-6 md:h-auto'/><Image src={mqImg} className='ml-6 h-6 md:h-auto'/>
+				<Image src={mqImg} alt='marquee' className='h-6 md:h-auto'/><Image src={mqImg} alt='marquee' className='ml-6 h-6 md:h-auto'/>
 			</div>
 		</div>
 	);

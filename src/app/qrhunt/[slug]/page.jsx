@@ -83,6 +83,7 @@ const Page = () => {
     const [isSlugChecked, setIsSlugChecked] = useState(false);
     const [isCopied, setIsCopied] = useState(false);
     const [showLink, setShowLink] = useState(false);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const slug = window.location.href.split('/').pop().toLowerCase();
@@ -113,6 +114,9 @@ const Page = () => {
         if (answer.toLowerCase() === data.code.toLowerCase()) {
             setShowLink(true);
         }
+        else {
+            setError(true);
+        }
     }
 
     return (
@@ -140,7 +144,8 @@ const Page = () => {
                                                     < p className='text-xl md:text-3xl'>
                                                         {data.question}
                                                     </p>
-                                                    <input type='text' className='border-b-2 border-tedRed w-full text-center my-4 py-2' />
+                                                    <input type='text' className='border-b-2 border-tedRed w-full text-center my-4 py-2 bg-transparent' />
+                                                    {error && ( <p className='text-red-500 text-sm md:text-lg'>invalid answer</p>)}
                                                     <button className='bg-tedRed text-white p-2 rounded-lg mt-4 w-full' onClick={handleClick}>Submit</button>
                                                 </div>
                                             )
