@@ -8,6 +8,7 @@ import devanand from '../../assets/img/team/devanand.jpg'
 import akshay from '../../assets/img/team/akshay.jpeg'
 import dhanush from '../../assets/img/team/dhanush.jpg'
 import ivine from '../../assets/img/team/ivine.jpg'
+import adil from '../../assets/img/team/adil.jpg'
 
 import Image from 'next/image'
 import Header from '@/components/Headers/Header'
@@ -24,6 +25,11 @@ const data = [
         heading: "Akshay S Vinod",
         subHeading: "Organiser",
         img: akshay
+    },
+    {
+        heading: "Adil",
+        subHeading: "Curator",
+        img: adil
     },
     {
         heading: "Archa",
