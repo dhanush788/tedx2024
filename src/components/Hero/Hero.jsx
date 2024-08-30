@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const textRefs = useRef([]);
   const [isEvent, setIsEvent] = useState(false);
+  const isMobile = window.innerWidth < 768;
+
   useEffect(() => {
     setTimeout(() => {
       setIsEvent(!isEvent);
@@ -90,8 +92,8 @@ const Hero = () => {
             }}
             className='w-full h-full md:h-auto object-cover'
           >
-            <source src="/video.mp4" type="video/mp4" />
-            <source src="/video.webm" type="video/webm" />
+            <source src={isMobile ? "/video_m.mp4" : "/video_main.mp4"} type="video/mp4" />
+            {/* <source src="/video.webm" type="video/webm" /> */}
             Your browser does not support the video tag.
           </video>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
@@ -99,11 +101,11 @@ const Hero = () => {
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block'>28 <br/> SEP<br/> 2024</p>
-          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right text-stroke'>Kaleidoscope<br/>Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block uppercase text-right'>Kaleidoscope<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right'>Kaleidoscope:<br/>Alchemy of Voices</p>
         </div>
       </div>
     </div>
