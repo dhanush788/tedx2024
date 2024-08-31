@@ -6,46 +6,16 @@ import TEDxLogo from "@/assets/img/logo-black.svg"
 import "@/components/utils/resizable.css"
 import { useState } from "react";
 import Copyright from "@/components/Copyright/Copyright";
+import { CheckBox, FoodPref, InputBox } from "@/components/utils/InputComponents";
 
-const InputBox = ({
-	name,
-	type = "Text",
-	value = "",
-	disabled = ""
-}) => {
-	let _n = name.replace(/\s+/, "");
-	return <div className="p-3 w-[100%]">
-		<label htmlFor={_n} className="text-md uppercase">{name}</label><br />
-		<input type={type} required defaultValue={value} disabled={disabled} name={_n} className="border border-black outline-none text-md w-[100%] h-11" />
-	</div>
-}
 
-const CheckBox = ({
-	name,
-	value,
-	onchange
-}) => {
-	return <div className="p-3 flex gap-2">
-		<label>{name}</label>
-		<input type="checkbox" style={{
-			width: "18px"
-		}} defaultChecked={value} onChange={(e) => onchange(e.target.checked)} className="cursor-pointer" />
-	</div>
-}
-
-const FoodPref = () => {
-	const [click] = useState(false);
-	return <div className="p-3">
-		<label className="text-md uppercase">Food Preference</label><br />
-		<select name="pref" id="pref" className="bg-transparent border-b border-b-gray-700 p-2 w-[100%] cursor-pointer">
-			<option value="veg">Vegetarian</option>
-			<option value="non-veg">Non-Vegetarian</option>
-		</select>
-	</div>
-}
 const page = () => {
 	const type = window.location.href.match(/(?<=type\=)[a-z]+/);	
 	const [isCusatian, setIsCusatian] = useState(type=="cusatian");
+	const goBack = (evt) => {
+		evt.preventDefault();
+		history.back();
+	}
 	return <div className="p-custom max-w-8xl font-[montserrat] font-semibold">
 		<Image src={TicketImg} />
 		<Image src={TEDxLogo} width={100} className="mt-4" />
@@ -67,7 +37,7 @@ const page = () => {
 
 			<div className="font-avenue gap-3 flex w-[100%] justify-center mt-8">
 				<button className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">Register</button>
-				<button className="border border-black py-1 px-5 rounded-md" onClick={() => history.back()}>Cancel</button>
+				<button className="border border-black py-1 px-5 rounded-md" onClick={goBack}>Cancel</button>
 			</div>
 		</form>
 		<Copyright />
