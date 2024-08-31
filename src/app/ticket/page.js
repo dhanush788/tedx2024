@@ -17,8 +17,8 @@ const TicketCard = ({
 
 		<a href={redirect}>
 			<button className="flex bg-black text-white p-3 pt-4 rounded-[8px] gap-3 items-center mt-2">
-				<span class="text-xl leading-5">BUY TICKETS</span>
-				<span class="btn__svg">
+				<span className="text-xl leading-5">BUY TICKETS</span>
+				<span className="btn__svg">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.85 24.85"
 						style={{ transform: "translate(0px)", opacity: 1, height: "20px", width: "20px", strokeWidth: 2 }}>
 						<g id="Calque_1-2" data-name="Calque 1">
@@ -41,22 +41,23 @@ const TicketCard = ({
 }
 const page = () => {
 	return (<>
+		<TicketNavbar />
+		<div className='mt-[18vh]'></div>
+		<Marquee addBorder="true" />
 		<main className='mb-5 our-journey p-custom font-thunder font-bold '>
-			<TicketNavbar />
-			<div className='mt-[18vh]'></div>
-			<Marquee addBorder="true" />
 			<div className='mt-[8vh]'></div>
 			<Sponsors />
 			<div className='get-tickets mt-[10vh]'>
-				<p className='md:text-6xl text-4xl leading-snug text-left'>GET YOUR<br /><span className='text-[#EB0028]'>TICKETS</span> NOW</p>
-
+				<p className='md:text-6xl text-5xl text-center md:text-left leading-none'>GET YOUR<br /><span className='text-tedRed'>TICKETS</span> NOW</p>
 				<div className='ticket-card-container flex flex-col items-center gap-5 md:flex-row justify-around p-10'>
 					<TicketCard redirect="/ticket/book?type=regular" price="1000" type="REGULAR" />
 					<TicketCard redirect="/ticket/book?type=cusatian" price="800" type="CUSAT STUDENTS" />
 				</div>
 			</div>
 			<FAQSection />
-			<ContactUs />
+			<footer className='flex flex-col gap-5 py-5'>
+				<ContactUs />
+			</footer>
 			<Copyright />
 		</main>
 	</>

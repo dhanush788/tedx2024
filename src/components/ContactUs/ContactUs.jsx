@@ -1,12 +1,13 @@
-import '../../components/utils/resizable.css'
+import '@/components/utils/resizable.css'
 import Image from 'next/image';
-import insagram from '../../assets/img/Instagram.png';
-import gmail from '../../assets/img/Gmail.png';
-import youtube from '../../assets/img/YouTube.png';
+import insagram from '@/assets/img/Instagram.png';
+import gmail from '@/assets/img/Gmail.png';
+import youtube from '@/assets/img/YouTube.png';
 
-const ContactUs = () =>
-	<div className='flex flex-col md:flex-row gap-3 md:gap-10 md:items-end'>
+const ContactUs = ({ mainPage = true }) => {
+	return <div className='flex flex-col md:flex-row gap-3 md:gap-10 md:items-end my-4'>
 		<div className='h-96 rounded-[6px] md:rounded-15 overflow-hidden flex-1 border-2 border-black bg-black text-white p-7 flex flex-col justify-between order-2 md:order-1 hover:scale-105 transform duration-75' id='contact'>
+			{mainPage ? <p className='text-4xl md:text-5xl font-thunder font-extrabold uppercase tracking-wide '>HAVE ANY QUESTIONS ?</p> : ""}
 			<p className='text-5xl md:text-6xl font-thunder font-bold tracking-wide'>CONTACT US</p>
 			<div>
 				<p className='text-xl md:text-2xl font-Helvetica font-bold text-tedRed'>IVINE JOJU</p>
@@ -39,5 +40,5 @@ const ContactUs = () =>
 				style={{ border: "15px" }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='rounded-15 border-2 border-black w-full h-96'></iframe>
 		</div>
 	</div>
-
+}
 export default ContactUs;

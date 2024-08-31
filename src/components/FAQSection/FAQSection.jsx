@@ -32,8 +32,9 @@ const FAQItem = ({
 function FAQSection() {
 	return (
 		<div className="p-4 rounded-lg">
-			<p className='text-4xl'>FAQ</p>
-			<FAQItem q="can we get exchange or refund" ans="You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion, and more. For example, use md:flex-row to apply the flex-row utility at only medium screen sizes and above." />
+			<p className='text-5xl'>FAQ</p>
+			<FAQItem q="can we get exchange or refund" ans="
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae." />
 			<FAQItem q="is there minimum age limit" />
 			<FAQItem q="can we get exchange or refund" />
 			<FAQItem q="is there minimum age limit" />

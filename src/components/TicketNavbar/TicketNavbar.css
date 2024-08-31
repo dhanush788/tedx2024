@@ -29,6 +29,7 @@ header {
     background: url('/logo-black.png');
     background-size: contain;
     background-repeat: no-repeat;
+		opacity: 1;
 }
 
 /* Date and Time */
@@ -45,6 +46,7 @@ header {
     line-height: 31.2px;
     text-transform: uppercase;
     color: #000000;
+		opacity: 1;
 }
 
 /* Menu */
@@ -67,6 +69,7 @@ header {
     gap: 10px;
     /* Initial opacity for animation */
     transition: width 0.3s ease, height 0.3s ease;
+		opacity: 1;
 }
 
 .menu span {
@@ -308,17 +311,13 @@ header {
         /* Add some padding for better spacing */
         flex-direction: column;
         /* Stack items vertically */
-        align-items: flex-start;
-        /* Align items to the start */
     }
 
     .logo {
         width: 160px;
         /* Mobile logo size */
         height: 40px;
-        left: 15px;
-        /* Position from the left */
-        top: 46px;
+        top: 10px;
         /* Position from the top */
         transform: none;
         /* Reset transform */
