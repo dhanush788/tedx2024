@@ -8,7 +8,7 @@ const About = () => {
       <div className='box-border flex flex-col md:flex-row border border-black rounded-[6px] md:rounded-[15px] px-3 py-5 md:px-8 md:py-10 gap-3 md:gap-5 bg-white'>
         <div className='flex flex-col md:items-center justify-center !float-left	'>
           <p className='text-5xl md:text-[130px] font-semibold font-thunder !leading-none'>ABOUT</p>
-          <p className='text-[#EB0028] md:text-4xl font-Helvetica font-bold -mt-3'>TED<sup>x</sup><span className='text-black font-HelveticaLight'>CUSAT</span></p>
+          <p className='text-tedRed md:text-4xl font-Helvetica font-bold -mt-3'>TED<sup>x</sup><span className='text-black font-HelveticaLight'>CUSAT</span></p>
           {/* <Image src={logo} alt='logo' className='w-36 h-auto md:w-auto md:h-20 md:-mt-10' /> */}
           {/* <div className='hidden md:flex bg-[#EB0028] py-4 px-9 rounded-2xl text-white font-avenue md:text-3xl'>KNOW MORE</div> */}
         </div>
