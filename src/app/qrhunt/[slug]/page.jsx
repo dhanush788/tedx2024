@@ -4,6 +4,9 @@ import copy from '../../../assets/img/copy.svg';
 import Image from 'next/image';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Headers/Header';
+import img from '../../../assets/img/team/adil.jpg'
+import meme1 from '../../../assets/img/meme/meme1.jpg'
+import meme2 from '../../../assets/img/meme/meme2.jpg'
 
 const question = [
     {
@@ -12,7 +15,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the expert who spoke at TEDxCUSAT about the promise and perils of Ed-Tech, emphasizing the importance of solving educational problems through technology rather than just increasing its usage. ( Clue: He is a Harvard graduate with a degree in computer science from NYU. )",
         "code": "Achuth Krishnan",
-        "redeem" : "C9D3-KL6T-V5ZC"
+        "redeem": "C9D3-KL6T-V5ZC",
+        "image": img
     },
     {
         "slug": "J8YH500",
@@ -20,8 +24,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Which content creator and social media influencer, who spoke at TEDxCUSAT, emphasizes breaking free from societal molds and finding fulfillment in embracing life's uncertainties? ( Clue: He/She reflected on journey into content creation and advocated for navigating moments of confusion and shattering conventional norms to discover one's true passions. )",
         "code": "Steffy Sunny",
-        "redeem" : "G4X1-Q7L2-J8YH"
-
+        "redeem": "G4X1-Q7L2-J8YH",
+        "image": img
     },
     {
         "slug": "V3J4PASS",
@@ -29,7 +33,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Which TEDxCUSAT speaker highlighted that creating with intention can lead to beautiful solutions, and stressed that mistakes are part of the learning process, reflecting on his own journey as a musician and designer? (Clue: Band Agam )",
         "code": "Harish Sivaramakrishnan",
-        "redeem" : "E2N6-P8T4-V3J4"
+        "redeem": "E2N6-P8T4-V3J4",
+        "image": img
     },
     {
         "slug": "T2VEHAMP",
@@ -37,7 +42,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the TEDxCUSAT speaker who, at the age of 34, ventured into sports for the first time, won gold medals in an international championship, and went on to inspire others with her story of perseverance and transformation. (Clue: Boxer)",
         "code": "Ann Mary Philip",
-        "redeem" : "H7L5-R9X3-T2VE"
+        "redeem": "H7L5-R9X3-T2VE",
+        "image": img
     },
     {
         "slug": "M9L2TSHI",
@@ -45,7 +51,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the TEDxCUSAT speaker known for roles in Malayalam cinema, is also a human rights lawyer and a trained Bharatanatyam dancer with a Doordarshan accreditation? (Clue: Malarvadi Arts Club )",
         "code": "Apoorva Bose",
-        "redeem" : "T6Q1-J8D4-M9L2"
+        "redeem": "T6Q1-J8D4-M9L2",
+        "image": img
     },
     {
         "slug": "CV5ZC1500",
@@ -53,7 +60,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "",
         "code": "C9D3-KL6T-V5ZC",
-        "redeem" : "CASH-001"
+        "redeem": "CASH-001",
+        "image": img
     },
     {
         "slug": "GJ8YH500",
@@ -61,7 +69,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "",
         "code": "G4X1-Q7L2-J8YH",
-        "redeem" : "VOUCH-002"
+        "redeem": "VOUCH-002",
+        "image": img
     },
     {
         "slug": "EV3J4PASS",
@@ -69,7 +78,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "",
         "code": "E2N6-P8T4-V3J4",
-        "redeem" : "PASS-003"
+        "redeem": "PASS-003",
+        "image": img
     },
     {
         "slug": "HT2VEHAMP",
@@ -77,7 +87,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "",
         "code": "H7L5-R9X3-T2VE",
-        "redeem" : "KIT-004"
+        "redeem": "KIT-004",
+        "image": img
     },
     {
         "slug": "TM9L2TSHI",
@@ -85,7 +96,8 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "",
         "code": "T6Q1-J8D4-M9L2",
-        "redeem" : "T-SHT-005"
+        "redeem": "T-SHT-005",
+        "image": img
     }
 ];
 
@@ -95,6 +107,8 @@ const Page = () => {
     const [isCopied, setIsCopied] = useState(false);
     const [showLink, setShowLink] = useState(false);
     const [error, setError] = useState(false);
+    const memes = [meme1, meme2];
+    const randomMeme = memes[Math.floor(Math.random() * memes.length)];
 
     useEffect(() => {
         const slug = window.location.href.split('/').pop().toLowerCase();
@@ -149,9 +163,24 @@ const Page = () => {
             <div className='flex flex-col p-[8%] w-full gap-4 font-avenue'>
                 {!isSlugChecked ? null : (
                     data.length === 0 ? (
-                        <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
-                            This page could not be found. 😢
-                        </p>
+                        <>
+                            <Image src={randomMeme} alt='meme' className='w-full h-auto rounded-lg' />
+                            <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
+                                Oops! Looks like this isn’t the winning QR code. 😅 But don’t give up—there’s still a chance to find the real prize. Keep hunting!
+                            </p>
+                            <p className='text-base md:text-2xl'>Here’s a more curious and hype-driven version:</p>
+                            <p className='text-base md:text-2xl'>Something incredible is brewing at TEDxCUSAT, and you won't want to miss it! Our 5th edition is on the horizon,
+                                and we're about to take you on a journey like never before. With the theme <span className='text-tedRed'>“Kaleidoscope: Alchemy of Voices,”</span>
+                                we're gearing up to bring together some of the most brilliant minds from Cochin University of Science And Technology
+                                to spark conversations that will challenge, inspire, and transform.
+                            </p>
+                            <p className='text-base md:text-2xl'>This is more than just an event; it’s the beginning of something extraordinary. Keep your eyes peeled, and make
+                                sure you’re following us on all our social media platforms to catch every update, teaser, and exclusive content.
+                                Trust us, you’ll want to be part of this!
+                            </p>
+                            <a href='https://linktr.ee/tedxcusat' className='underline font-bold'>https://linktr.ee/tedxcusat</a>
+                            <a href='mailto:outreach@tedxcusat.in' className='text-base md:text-2xl'>Email: outreach@tedxcusat.in </a>
+                        </>
                     ) : (
                         <>
                             <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
@@ -179,8 +208,10 @@ const Page = () => {
                                             (
                                                 <>
                                                     <p className='text-xl md:text-3xl'>
-                                                        Your final solution is here : <a href={data.link} className='font-bold underline' target='_blank' rel='noreferrer'>link</a>
+                                                        Your final solution is here : 
+                                                        {/* <a href={data.link} className='font-bold underline' target='_blank' rel='noreferrer'>link</a> */}
                                                     </p>
+                                                    <Image src={data.image} alt='image' className='w-48 h-48 rounded-full mx-auto' />
                                                     <p className='text-xl md:text-3xl'>
                                                         Your Unlock Code: <span className='font-bold'>{data.redeem}</span>
                                                         <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2' onClick={popUp} />
