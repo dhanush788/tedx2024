@@ -15,11 +15,50 @@ import arrowUp from '../assets/img/arrowUp.svg';
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { TextPlugin } from 'gsap/TextPlugin';
+
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
+
 
 export default function Home() {
   const scrollRef = useRef(null);
+  const textRef = useRef(null);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    console.log(element)
+    gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: element,
+          start: 'top center',
+          end: 'bottom top',
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(textRef.current, {
+        duration: 4,
+        text: "Innovating for the Future Together",
+        ease: "power2.inOut",
+        repeat: 10,
+        yoyo: true,
+        repeatDelay: 10,
+        delay: 10,
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     const handleDOMContentLoaded = () => {
@@ -27,19 +66,17 @@ export default function Home() {
         window.scrollTo(0, 0);
       }, 0);
     };
-  
+
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       handleDOMContentLoaded();
     } else {
       document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
     }
-  
+
     return () => {
       document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded);
     };
   }, []);
-  
-  
 
 
   useEffect(() => {
@@ -55,7 +92,7 @@ export default function Home() {
         ? heroTop - 100
         : heroTop - window.innerHeight * 0.2;
     };
-    
+
     gsap.to(sections, {
       scrollTrigger: {
         trigger: scrollRef.current,
@@ -88,10 +125,35 @@ export default function Home() {
         <Navbar />
         <section>
           <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center transition-all duration-1000">
-            {/* <p id="textMorph" className="absolute top-[55%] font-thunder uppercase font-bold text-xl md:text-3xl">Celebrating <span className="text-tedRed">5 Years</span> of Ideas Worth Spreading</p> */}
+            <div ref={elementRef}>
+              <div
+                className="flex gap-2 absolute top-[53%] md:top-[53%] opacity-0 animate-fadeIn left-[50%] -translate-x-1/2"
+              >
+                <>
+                  {[...Array(2)].map((_, index) => (
+                    <img key={`mobile-${index}`} src="/star.svg" alt="star" className="w-3 -mt-2 md:hidden" />
+                  ))}
+                  {[...Array(4)].map((_, index) => (
+                    <img key={`desktop-${index}`} src="/star.svg" alt="star" className="w-5 -mt-2 hidden md:inline" />
+                  ))}
+                </>
+                <p
+                  id="textMorph"
+                  ref={textRef}
+                  className=" font-thunder uppercase font-bold text-xl md:text-3xl">Celebrating <span className="text-tedRed">5 Years</span> of Ideas Worth Spreading</p>
+                <>
+                  {[...Array(2)].map((_, index) => (
+                    <img key={`mobile-${index}`} src="/star.svg" alt="star" className="w-3 -mt-2 md:hidden" />
+                  ))}
+                  {[...Array(4)].map((_, index) => (
+                    <img key={`desktop-${index}`} src="/star.svg" alt="star" className="w-5 -mt-2 hidden md:inline" />
+                  ))}
+                </>
+              </div>
             <a onClick={handleScrollToHero} className="absolute bottom-0 mb-10">
               <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16 opacity-0 animate-fadeIn cursor-pointer" />
             </a>
+            </div>
           </div>
         </section>
         <section id="hero">
