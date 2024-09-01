@@ -168,7 +168,6 @@ const Page = () => {
                             <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
                                 Oops! Looks like this isn’t the winning QR code. 😅 But don’t give up—there’s still a chance to find the real prize. Keep hunting!
                             </p>
-                            <p className='text-base md:text-2xl'>Here’s a more curious and hype-driven version:</p>
                             <p className='text-base md:text-2xl'>Something incredible is brewing at TEDxCUSAT, and you won't want to miss it! Our 5th edition is on the horizon,
                                 and we're about to take you on a journey like never before. With the theme <span className='text-tedRed'>“Kaleidoscope: Alchemy of Voices,”</span>
                                 we're gearing up to bring together some of the most brilliant minds from Cochin University of Science And Technology
