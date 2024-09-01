@@ -15,7 +15,7 @@ const question = [
         "redeem" : "C9D3-KL6T-V5ZC"
     },
     {
-        "slug": "dJ8YH500",
+        "slug": "J8YH500",
         "prefinal": true,
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Which content creator and social media influencer, who spoke at TEDxCUSAT, emphasizes breaking free from societal molds and finding fulfillment in embracing life's uncertainties? ( Clue: He/She reflected on journey into content creation and advocated for navigating moments of confusion and shattering conventional norms to discover one's true passions. )",
@@ -171,7 +171,7 @@ const Page = () => {
                                                         {data.question}
                                                     </p>
                                                     <input id="first-input" type='text' className='border-2 border-black rounded-md w-full text-center my-4 py-2 bg-transparent' />
-                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>invalid answer</p>)}
+                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect answer</p>)}
                                                     <button className='bg-tedRed text-white p-2 rounded-lg mt-4 w-full' onClick={handleClick}>Submit</button>
                                                 </div>
                                             )
@@ -197,7 +197,7 @@ const Page = () => {
                                                 <div className='py-8'>
                                                     <p className='text-lg md:text-xl text-tedRed'>Enter Unlock Code</p>
                                                     <input id="second-input" type='text' className='border-2 border-black rounded-md w-full text-center my-4 py-2 bg-transparent' />
-                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>invalid answer</p>)}
+                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect unlock code</p>)}
                                                     <button className='bg-tedRed text-white p-2 rounded-lg mt-4 w-full' onClick={handleCoupon}>Submit</button>
                                                 </div>
                                             </>

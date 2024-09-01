@@ -88,6 +88,7 @@ export default function Home() {
         <Navbar />
         <section>
           <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center transition-all duration-1000">
+            {/* <p id="textMorph" className="absolute top-[55%] font-thunder uppercase font-bold text-xl md:text-3xl">Celebrating <span className="text-tedRed">5 Years</span> of Ideas Worth Spreading</p> */}
             <a onClick={handleScrollToHero} className="absolute bottom-0 mb-10">
               <Image src={arrowUp} alt="arrow up" className="w-10 h-10 md:w-16 md:h-16 opacity-0 animate-fadeIn cursor-pointer" />
             </a>
