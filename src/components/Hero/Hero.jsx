@@ -34,11 +34,11 @@ const Hero = () => {
           { opacity: 1, yPercent: 0 },
           {
             opacity: 1,
-            yPercent: -4 - ((index + 1) * 3),
+            yPercent: -4 - ((index + 1)*3),
             duration: 1,
             scrollTrigger: {
               trigger: textRef,
-              start: 'top 80%',
+              start: 'top 80%', 
               end: 'top 0%',
               scrub: true,
             },
@@ -87,51 +87,30 @@ const Hero = () => {
               </clipPath>
             </defs>
           </svg>
-          {
-            isMobile ? (
-              <video
-                id="background-video"
-                loop
-                autoPlay
-                muted
-                playsInline
-                style={{
-                  position: "relative",
-                }}
-                className='w-full h-full md:h-auto object-cover'
-              >
-                <source src="/video_m.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            )
-              :
-              (
-                <video
-                  id="background-video"
-                  loop
-                  autoPlay
-                  muted
-                  playsInline
-                  style={{
-                    position: "relative",
-                  }}
-                  className='w-full h-full md:h-auto object-cover'
-                >
-                  <source src="/video_main.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )
-          }
-          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br /> SEP<br /> 2024</p>
-          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br /> SEP<br /> 2024</p>
-          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br /> SEP<br /> 2024</p>
-          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br /> SEP<br /> 2024</p>
-          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block'>28 <br /> SEP<br /> 2024</p>
-          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br />Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br />Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br />Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br />Alchemy of Voices</p>
-          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right'>Kaleidoscope:<br />Alchemy of Voices</p>
+          <video
+            id="background-video"
+            loop
+            autoPlay
+            muted
+            playsInline
+            style={{
+              position: "relative",
+            }}
+            className='w-full h-full md:h-auto object-cover'
+          >
+            <source src={isMobile ? "/video_m.mp4" : "/video_main.mp4"} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
+          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
+          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
+          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
+          <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block'>28 <br/> SEP<br/> 2024</p>
+          <p ref={el => (textRefs.current[0] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[1] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[2] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[3] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right text-stroke'>Kaleidoscope:<br/>Alchemy of Voices</p>
+          <p ref={el => (textRefs.current[4] = el)} className='absolute bottom-0 right-5 font-thunder font-normal text-5xl md:text-8xl text-white p-3 md:block uppercase text-right'>Kaleidoscope:<br/>Alchemy of Voices</p>
         </div>
       </div>
     </div>

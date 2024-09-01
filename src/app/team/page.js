@@ -6,9 +6,10 @@ import sreerag from '../../assets/img/team/sreerag.jpg'
 import archa from '../../assets/img/team/archa.jpg'
 import devanand from '../../assets/img/team/devanand.jpg'
 import akshay from '../../assets/img/team/akshay.jpeg'
-import dhanush from '../../assets/img/team/dhanush.jpg'
 import ivine from '../../assets/img/team/ivine.jpg'
 import adil from '../../assets/img/team/adil.jpg'
+import basil from '../../assets/img/team/basil.jpg'
+import anna from '../../assets/img/team/anna.jpg'
 
 import Image from 'next/image'
 import Header from '@/components/Headers/Header'
@@ -37,6 +38,16 @@ const data = [
         img: archa
     },
     {
+        heading: "Basil",
+        subHeading: "Outreach",
+        img: basil
+    },
+    {
+        heading: "Anna",
+        subHeading: "Outreach",
+        img: anna
+    },
+    {
         heading: "Sreerag",
         subHeading: "Media",
         img: sreerag
@@ -45,11 +56,6 @@ const data = [
         heading: "Devanand",
         subHeading: "Production",
         img: devanand
-    },
-    {
-        heading: "Dhanush P K",
-        subHeading: "Technical",
-        img: dhanush
     }
 ]
 
