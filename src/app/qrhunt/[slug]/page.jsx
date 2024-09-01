@@ -103,6 +103,7 @@ const Page = () => {
             if (found) {
                 setData(found);
             }
+            console.log(data)
         }
         setIsSlugChecked(true);
     }, []);
@@ -147,7 +148,7 @@ const Page = () => {
             <Header />
             <div className='flex flex-col p-[8%] w-full gap-4 font-avenue'>
                 {!isSlugChecked ? null : (
-                    data === '' ? (
+                    data.length === 0 ? (
                         <p className='text-tedRed !font-thunder font-bold text-center text-3xl md:text-5xl'>
                             This page could not be found. 😢
                         </p>
@@ -181,7 +182,7 @@ const Page = () => {
                                                         Your final solution is here : <a href={data.link} className='font-bold underline' target='_blank' rel='noreferrer'>link</a>
                                                     </p>
                                                     <p className='text-xl md:text-3xl'>
-                                                        Your Redeem Code: <span className='font-bold'>{data.redeem}</span>
+                                                        Your Unlock Code: <span className='font-bold'>{data.redeem}</span>
                                                         <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2' onClick={popUp} />
                                                     </p>
                                                 </>
@@ -203,10 +204,11 @@ const Page = () => {
                                         ) :
                                             (
                                                 <>
-                                                    <p className='text-xl md:text-3xl'>
+                                                    <p className='text-xl md:text-3xl pt-5'>
                                                         Your Redeem Code: <span className='font-bold'>{data.redeem}</span>
                                                         <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2' onClick={popUp} />
                                                     </p>
+                                                    <p className='text-base md:text-xl py-3'>Time’s ticking! Send the redeem code to our Instagram handle... it’s a race against the clock. Don’t forget to complete all the rules and criteria!</p>
                                                 </>
 
                                             )
