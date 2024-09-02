@@ -20,7 +20,7 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the expert who spoke at TEDxCUSAT about the promise and perils of Ed-Tech, emphasizing the importance of solving educational problems through technology rather than just increasing its usage. ( Clue: He is a Harvard graduate with a degree in computer science from NYU. )",
         "code": "Achuth Krishnan",
-        "redeem": "",
+        "redeem": "C9D3-KL6T-V5ZC",
         "image": cafe
     },
     {
@@ -29,7 +29,7 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Which content creator and social media influencer, who spoke at TEDxCUSAT, emphasizes breaking free from societal molds and finding fulfillment in embracing life's uncertainties? ( Clue: He/She reflected on journey into content creation and advocated for navigating moments of confusion and shattering conventional norms to discover one's true passions. )",
         "code": "Steffy Sunny",
-        "redeem": "",
+        "redeem": "G4X1-Q7L2-J8YH",
         "image": sms
     },
     {
@@ -38,7 +38,7 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Which TEDxCUSAT speaker highlighted that creating with intention can lead to beautiful solutions, and stressed that mistakes are part of the learning process, reflecting on his own journey as a musician and designer? (Clue: Band Agam )",
         "code": "Harish Sivaramakrishnan",
-        "redeem": "",
+        "redeem": "E2N6-P8T4-V3J4",
         "image": amenity
     },
     {
@@ -47,7 +47,7 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the TEDxCUSAT speaker who, at the age of 34, ventured into sports for the first time, won gold medals in an international championship, and went on to inspire others with her story of perseverance and transformation. (Clue: Boxer)",
         "code": "Ann Mary Philip",
-        "redeem": "",
+        "redeem": "H7L5-R9X3-T2VE",
         "image": cr
     },
     {
@@ -56,7 +56,7 @@ const question = [
         "link": "https://www.google.com/maps/place/Seminar+Complex,+CUSAT/@10.043907,76.324908,16z/data=!4m6!3m5!1s0x3b080d223eeb1de1:0xce06a9f0d256857a!8m2!3d10.0439073!4d76.3249082!16s%2Fg%2F11cltd2jr7?hl=en&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D",
         "question": "Name the TEDxCUSAT speaker known for roles in Malayalam cinema, is also a human rights lawyer and a trained Bharatanatyam dancer with a Doordarshan accreditation? (Clue: Malarvadi Arts Club )",
         "code": "Apoorva Bose",
-        "redeem": "",
+        "redeem": "T6Q1-J8D4-M9L2",
         "image": adm
     },
     {
@@ -204,7 +204,7 @@ const Page = () => {
                                                         {data.question}
                                                     </p>
                                                     <input id="first-input" type='text' className='border-2 border-black rounded-md w-full text-center my-4 py-2 bg-transparent' />
-                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect answer</p>)}
+                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect answer, Ensure that full name is entered</p>)}
                                                     <button className='bg-tedRed text-white p-2 rounded-lg mt-4 w-full' onClick={handleClick}>Submit</button>
                                                 </div>
                                             )
