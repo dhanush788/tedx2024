@@ -10,6 +10,8 @@ import meme2 from '../../../assets/img/meme/meme2.jpg'
 import sms from '../../../assets/img/qrlocations/sms.jpg'
 import amenity from '../../../assets/img/qrlocations/amenity.jpg'
 import cr from '../../../assets/img/qrlocations/cr.jpg'
+import adm from '../../../assets/img/qrlocations/adm.jpg'
+import cafe from '../../../assets/img/qrlocations/cafe.jpg'
 
 const question = [
     {
@@ -19,7 +21,7 @@ const question = [
         "question": "Name the expert who spoke at TEDxCUSAT about the promise and perils of Ed-Tech, emphasizing the importance of solving educational problems through technology rather than just increasing its usage. ( Clue: He is a Harvard graduate with a degree in computer science from NYU. )",
         "code": "Achuth Krishnan",
         "redeem": "",
-        "image": img
+        "image": cafe
     },
     {
         "slug": "J8YH500",
@@ -55,7 +57,7 @@ const question = [
         "question": "Name the TEDxCUSAT speaker known for roles in Malayalam cinema, is also a human rights lawyer and a trained Bharatanatyam dancer with a Doordarshan accreditation? (Clue: Malarvadi Arts Club )",
         "code": "Apoorva Bose",
         "redeem": "",
-        "image": img
+        "image": adm
     },
     {
         "slug": "CV5ZC1500",
