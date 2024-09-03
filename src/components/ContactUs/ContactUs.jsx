@@ -21,7 +21,7 @@ const ContactUs = ({ mainPage = true }) => {
 			</div>
 		</div>
 		<div className='h-96 rounded-[6px] md:rounded-15 overflow-hidden flex-1 border-2 border-black p-7 bg-white order-3 md:order-2 hover:scale-105 transform duration-75'>
-			<p className='text-5xl md:text-7xl font-thunder font-extrabold uppercase tracking-normal '><span className='text-tedRed text-5xl	 md:text-9xl'>Follow</span><br className='hidden md:block' /> Us On</p>
+			<p className='text-5xl md:text-7xl font-thunder font-extrabold uppercase tracking-normal '><span className='text-tedRed text-5xl md:text-8xl xl:text-9xl'>Follow</span><br className='hidden md:block' /> Us On</p>
 			<div className='flex gap-5 mt-5'>
 				<a href='mailto:organizer@tedxcusat.in' target='_blank' rel='noreferrer'>
 					<Image src={gmail} alt='facebook' width={50} height={50} />

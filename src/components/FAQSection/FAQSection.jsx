@@ -10,7 +10,7 @@ const FAQItem = ({
 		setIsExpanded(!isExpanded);
 	};
 	return <div className='m-1 mb-5'>
-		<p className='text-3xl uppercase flex justify-between items-center p-2 cursor-pointer hover:bg-gray-200 transition-all' onClick={handleToggle} >
+		<p className='text-2xl uppercase flex justify-between items-center p-2 cursor-pointer hover:bg-gray-200 transition-all' onClick={handleToggle} >
 			<span>{q}</span>
 			<span>
 				{
