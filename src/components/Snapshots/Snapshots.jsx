@@ -65,7 +65,7 @@ const Snapshots = () => {
         </div>
       </div>
       {/* <div className='md:flex-1 md:max-w-28 w-full flex md:justify-center items-center'>
-        <p className='text-[40px] md:text-[110px] !leading-none !-tracking-wider md:-rotate-90 text-[#EB0028] font-bold md:font-semibold'>
+        <p className='text-[40px] md:text-[110px] !leading-none !-tracking-wider md:-rotate-90 text-tedRed font-bold md:font-semibold'>
           SNAP<span className='text-black'>SHOTS</span>
         </p>
       </div> */}

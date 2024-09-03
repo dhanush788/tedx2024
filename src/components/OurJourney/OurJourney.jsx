@@ -70,8 +70,8 @@ const OurJourney = () => {
 		<div className='mb-5 our-journey'>
 			<div className="pt-10 pb-8 title">
 				<div className="hr relative">
-					<div className="bg-tedRed border border-black rounded-[6px] md:rounded-15 bg-text flex items-center md:justify-center">
-						<h2 className='text-black font-thunder text-xl md:text-5xl uppercase font-bold !leading-none'><span>Our </span><span className="text-white">Journey</span></h2>
+					<div className="bg-tedRed border border-black rounded-[6px] md:rounded-15 bg-text py-[18px] px-[20px] md:px-[40px] flex items-center md:justify-center text-center">
+						<h2 className='text-black font-thunder text-2xl md:text-5xl uppercase font-bold !leading-none w-[100%]'><span>Our </span><span className="text-white">Journey</span></h2>
 					</div>
 					<hr className='absolute w-full top-1/2 bg-black -z-10 h-px border-0' />
 				</div>

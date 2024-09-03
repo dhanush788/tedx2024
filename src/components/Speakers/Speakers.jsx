@@ -64,7 +64,7 @@ const Cards = ({ item, i }) => {
                 </div>
                 <div className={`absolute rounded-[6px] md:rounded-15 bottom-0 left-0 w-full p-custom flex flex-col transition-all duration-300 ease bg-white ${hover ? ' min-h-full ' : 'min-h-[75px] md:min-h-[100px]'}`}>
                     <p className={`font-Geist font-bold text-xl md:text-2xl ${hover ? 'pt-4 md:pt-6' : 'pt-2 md:pt-4'} uppercase`}>{item.heading}</p>
-                    <p className='font-Geist text-base md:text-lg text-[#EB0028]'>{item.subHeading}</p>
+                    <p className='font-Geist text-base md:text-lg text-tedRed'>{item.subHeading}</p>
                     <p className={`font-Helvetica text-sm md:text-base transition-all duration-300 ${hover ? '' : 'hidden'}`}>{item.description}</p>
                 </div>
                 <div className='min-h-[75px] md:min-h-[100px]'></div>
@@ -110,7 +110,7 @@ const Speakers = () => {
     return (
         <div className='w-full flex flex-col inter md:px-[8%] py-5' id='speakers'>
             <div className='flex flex-row justify-between px-[4%] md:px-0'>
-                <p className='font-thunder font-bold md:text-6xl text-4xl leading-snug max-w-md text-left'>OUR <span className='text-[#EB0028]'>PREVIOUS</span> SPEAKERS</p>
+                <p className='font-thunder font-bold md:text-6xl text-4xl leading-snug max-w-md text-left'>OUR <span className='text-tedRed'>PREVIOUS</span> SPEAKERS</p>
                 <div className='md:flex flex-row hidden gap-3'>
                     <Image src={arrow} alt='slide' className='w-full md:w-12 h-auto cursor-pointer' onClick={scrollLeft} />
                     <Image src={arrow2} alt='slide' className='w-full md:w-12 h-auto cursor-pointer' onClick={scrollRight} />
