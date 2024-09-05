@@ -46,21 +46,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(textRef.current, {
-        duration: 4,
-        text: "Innovating for the Future Together",
-        ease: "power2.inOut",
-        repeat: 10,
-        yoyo: true,
-        repeatDelay: 10,
-        delay: 10,
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
     const handleDOMContentLoaded = () => {
       setTimeout(() => {
         window.scrollTo(0, 0);
@@ -127,7 +112,7 @@ export default function Home() {
           <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center transition-all duration-1000">
             <div ref={elementRef}>
               <div
-                className="flex gap-2 absolute top-[53%] md:top-[53%] opacity-0 animate-fadeIn left-[50%] -translate-x-[47%] md:-translate-x-1/2 w-full md:w-auto"
+                className="flex gap-2 absolute top-[53%] opacity-0 animate-fadeIn left-[50%] -translate-x-[47%] md:-translate-x-1/2 w-[90%] md:w-auto"
               >
                 <>
                   {[...Array(2)].map((_, index) => (
