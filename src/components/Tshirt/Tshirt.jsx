@@ -102,8 +102,7 @@ const Tshirt = () => {
             return;
         }
 
-        const filePath = `uploads/${file.name}`;
-        console.log(filePath);
+        const filePath = `uploads/${email}/${file.name}`;
         const { error: uploadError } = await supabase.storage
             .from('payment-id')
             .upload(filePath, file);
@@ -158,7 +157,7 @@ const Tshirt = () => {
                 </div>
                 {images.map((img, i) => (
                     <div key={i} onClick={() => setIndex(i)} className='cursor-pointer col-span-1 '>
-                        <Image src={img} alt='meme' className='h-auto w-full border-black border rounded-15' />
+                        <Image src={img} alt='meme' className={`h-auto w-full ${index === i ? 'border-red-500 border-2' : 'border-black'} border rounded-15`} />
                     </div>
                 ))
                 }
