@@ -12,6 +12,7 @@ import { supabase } from "@/utils/supabaseClient";
 const Page = () => {
   const type = window.location.href.match(/(?<=type\=)[a-z]+/);
   const [isCusatian, setIsCusatian] = useState(type === "cusatian");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleCusatianChange = (checked) => {
     setIsCusatian(checked);
@@ -26,10 +27,10 @@ const Page = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const contact = formData.get('contact');
-    const foodPreference = document.querySelector('select[name="pref"]').value; // Get value from the select element
+    const foodPreference = formData.get('pref'); // maybe a little confusing due to inputcomponent setup
     const registrationFee = isCusatian ? 800 : 1000;
 
-    const { error } = await supabase.from('tedx_ticket_data').insert([
+    const { error } = await supabase.from('tedx_ticket_data').insert([ //table name 
       {
         name: name,
         email: email,
@@ -42,8 +43,16 @@ const Page = () => {
 
     if (error) {
       console.error("Error submitting form:", error);
+      setSuccessMessage(""); // Clear previous success message
     } else {
-      console.log("Form submitted successfully!");
+		console.log("registered successfully")
+      setSuccessMessage("Successfully registered!");
+      form.reset(); // Clear the form fields
+
+      // navigate back after a delay to show the success message
+      setTimeout(() => {
+        history.back();
+      }, 2000); // 2 seconds
     }
   };
 
@@ -83,6 +92,9 @@ const Page = () => {
           </button>
         </div>
       </form>
+      {successMessage && (
+        <p className="text-green-500 text-lg font-bold text-center">{successMessage}</p>
+      )}
       <Copyright />
     </div>
   );
