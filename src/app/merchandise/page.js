@@ -3,7 +3,7 @@ import Header from '@/components/Headers/Header'
 import Tshirt from '@/components/Tshirt/Tshirt'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <div>
         <Header />
@@ -14,4 +14,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
