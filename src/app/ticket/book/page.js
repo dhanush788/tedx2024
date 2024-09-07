@@ -13,6 +13,12 @@ const Page = () => {
   const type = window.location.href.match(/(?<=type\=)[a-z]+/);
   const [isCusatian, setIsCusatian] = useState(type === "cusatian");
   const [successMessage, setSuccessMessage] = useState("");
+  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
 
   const handleCusatianChange = (checked) => {
     setIsCusatian(checked);
@@ -27,32 +33,53 @@ const Page = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const contact = formData.get('contact');
-    const foodPreference = formData.get('pref'); // maybe a little confusing due to inputcomponent setup
+    const foodPreference = formData.get('pref');
     const registrationFee = isCusatian ? 800 : 1000;
 
-    const { error } = await supabase.from('tedx_ticket_data').insert([ //table name 
+    let imageUrl = null;
+
+    if (image) {
+      const { data, error: uploadError } = await supabase.storage
+        .from('image_test')
+        .upload(`public/${Date.now()}_${image.name}`, image);
+
+      if (uploadError) {
+        console.error("Error uploading image:", uploadError);
+        setSuccessMessage("Error uploading image. Please try again.");
+        return;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('image_test')
+        .getPublicUrl(data.path);
+
+      imageUrl = publicUrl;
+    }
+
+    const { error: insertError } = await supabase.from('tedx_ticket_data').insert([
       {
-        name: name,
-        email: email,
+        name,
+        email,
         contact_number: contact,
         food_pref: foodPreference,
         cusatian: isCusatian,
         registration_fee: registrationFee,
+        image_url: imageUrl
       },
     ]);
 
-    if (error) {
-      console.error("Error submitting form:", error);
-      setSuccessMessage(""); // Clear previous success message
+    if (insertError) {
+      console.error("Error submitting form:", insertError);
+      setSuccessMessage("Error submitting form. Please try again.");
     } else {
-		console.log("registered successfully")
+      console.log("registered successfully");
       setSuccessMessage("Successfully registered!");
-      form.reset(); // Clear the form fields
+      form.reset();
+      setImage(null);
 
-      // navigate back after a delay to show the success message
       setTimeout(() => {
         history.back();
-      }, 2000); // 2 seconds
+      }, 2000);
     }
   };
 
@@ -81,6 +108,15 @@ const Page = () => {
         <div className="md:grid items-end md:grid-cols-2">
           <InputBox name="registrationFee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
           <CheckBox name="cusatian" checked={isCusatian} onchange={handleCusatianChange} />
+        </div>
+        <div className="md:grid items-end md:grid-cols-2">
+          <input 
+            type="file" 
+            name="image" 
+            accept="image/*" 
+            onChange={handleImageChange} 
+            required
+          />
         </div>
 
         <div className="font-avenue gap-3 flex w-[100%] justify-center mt-8">
