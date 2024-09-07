@@ -33,14 +33,14 @@ const Page = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const contact = formData.get('contact');
-    const foodPreference = formData.get('pref');
+    const foodPreference = formData.get('pref'); //confusing for now due to inpucomponet 
     const registrationFee = isCusatian ? 800 : 1000;
 
     let imageUrl = null;
 
     if (image) {
       const { data, error: uploadError } = await supabase.storage
-        .from('image_test')
+        .from('image_test') //bucket name
         .upload(`public/${Date.now()}_${image.name}`, image);
 
       if (uploadError) {
@@ -56,7 +56,7 @@ const Page = () => {
       imageUrl = publicUrl;
     }
 
-    const { error: insertError } = await supabase.from('tedx_ticket_data').insert([
+    const { error: insertError } = await supabase.from('tedx_ticket_data').insert([ //table name
       {
         name,
         email,
