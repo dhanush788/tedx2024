@@ -122,7 +122,7 @@ export default function Home() {
                 <p
                   id="textMorph"
                   ref={textRef}
-                  className=" font-thunder uppercase font-bold text-[4.2vw] md:text-[1.8vw] text-center">Celebrating <span className="text-tedRed">5 Years</span> of Ideas Worth Spreading</p>
+                  className=" font-thunder uppercase font-bold text-[4.2vw] md:text-[1.8vw] text-center mx-auto">Celebrating <span className="text-tedRed">5 Years</span> of Ideas Worth Spreading</p>
                 <>
                   {[...Array(4)].map((_, index) => (
                     <img key={`desktop-${index}`} src="/star.svg" alt="star" className="w-5 -mt-2 hidden md:inline" />

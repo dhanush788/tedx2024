@@ -59,6 +59,11 @@ const Header = () => {
 
     const toggleMenu = () => {
         setExpanded(!expanded);
+        if (!expanded) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }    
     };
 
     const formatDate = (date) => {
