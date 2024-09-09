@@ -112,7 +112,7 @@ export default function Home() {
           <div className="bg-white bg-pattern bg-fixed h-screen w-screen flex items-center justify-center transition-all duration-1000">
             <div ref={elementRef}>
               <div
-                className="flex gap-2 absolute top-[53%] opacity-0 animate-fadeIn left-[10%] md:left-[50%] md:-translate-x-1/2 w-[80%] md:w-auto"
+                className="flex gap-2 absolute top-[53vh] opacity-0 animate-fadeIn left-[10%] md:left-[50%] md:-translate-x-1/2 w-[80%] md:w-auto"
               >
                 <>
                   {[...Array(4)].map((_, index) => (
