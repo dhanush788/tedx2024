@@ -7,6 +7,11 @@ import Header from '@/components/Headers/Header';
 import img from '../../../assets/img/team/adil.jpg'
 import meme1 from '../../../assets/img/meme/meme1.jpg'
 import meme2 from '../../../assets/img/meme/meme2.jpg'
+import sms from '../../../assets/img/qrlocations/sms.jpg'
+import amenity from '../../../assets/img/qrlocations/amenity.jpg'
+import cr from '../../../assets/img/qrlocations/cr.jpg'
+import adm from '../../../assets/img/qrlocations/adm.jpg'
+import cafe from '../../../assets/img/qrlocations/cafe.jpg'
 
 const question = [
     {
@@ -16,7 +21,7 @@ const question = [
         "question": "Name the expert who spoke at TEDxCUSAT about the promise and perils of Ed-Tech, emphasizing the importance of solving educational problems through technology rather than just increasing its usage. ( Clue: He is a Harvard graduate with a degree in computer science from NYU. )",
         "code": "Achuth Krishnan",
         "redeem": "C9D3-KL6T-V5ZC",
-        "image": img
+        "image": cafe
     },
     {
         "slug": "J8YH500",
@@ -25,7 +30,7 @@ const question = [
         "question": "Which content creator and social media influencer, who spoke at TEDxCUSAT, emphasizes breaking free from societal molds and finding fulfillment in embracing life's uncertainties? ( Clue: He/She reflected on journey into content creation and advocated for navigating moments of confusion and shattering conventional norms to discover one's true passions. )",
         "code": "Steffy Sunny",
         "redeem": "G4X1-Q7L2-J8YH",
-        "image": img
+        "image": sms
     },
     {
         "slug": "V3J4PASS",
@@ -34,7 +39,7 @@ const question = [
         "question": "Which TEDxCUSAT speaker highlighted that creating with intention can lead to beautiful solutions, and stressed that mistakes are part of the learning process, reflecting on his own journey as a musician and designer? (Clue: Band Agam )",
         "code": "Harish Sivaramakrishnan",
         "redeem": "E2N6-P8T4-V3J4",
-        "image": img
+        "image": amenity
     },
     {
         "slug": "T2VEHAMP",
@@ -43,7 +48,7 @@ const question = [
         "question": "Name the TEDxCUSAT speaker who, at the age of 34, ventured into sports for the first time, won gold medals in an international championship, and went on to inspire others with her story of perseverance and transformation. (Clue: Boxer)",
         "code": "Ann Mary Philip",
         "redeem": "H7L5-R9X3-T2VE",
-        "image": img
+        "image": cr
     },
     {
         "slug": "M9L2TSHI",
@@ -52,7 +57,7 @@ const question = [
         "question": "Name the TEDxCUSAT speaker known for roles in Malayalam cinema, is also a human rights lawyer and a trained Bharatanatyam dancer with a Doordarshan accreditation? (Clue: Malarvadi Arts Club )",
         "code": "Apoorva Bose",
         "redeem": "T6Q1-J8D4-M9L2",
-        "image": img
+        "image": adm
     },
     {
         "slug": "CV5ZC1500",
@@ -199,7 +204,7 @@ const Page = () => {
                                                         {data.question}
                                                     </p>
                                                     <input id="first-input" type='text' className='border-2 border-black rounded-md w-full text-center my-4 py-2 bg-transparent' />
-                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect answer</p>)}
+                                                    {error && (<p className='text-red-500 text-sm md:text-lg'>incorrect answer, Ensure that full name is entered</p>)}
                                                     <button className='bg-tedRed text-white p-2 rounded-lg mt-4 w-full' onClick={handleClick}>Submit</button>
                                                 </div>
                                             )
@@ -207,10 +212,10 @@ const Page = () => {
                                             (
                                                 <>
                                                     <p className='text-xl md:text-3xl'>
-                                                        Your final solution is here : 
+                                                        Your final QRcode is hidden here : 
                                                         {/* <a href={data.link} className='font-bold underline' target='_blank' rel='noreferrer'>link</a> */}
                                                     </p>
-                                                    <Image src={data.image} alt='image' className='w-48 h-48 rounded-full mx-auto' />
+                                                    <Image src={data.image} alt='image' className='w-65 h-65 mx-auto' />
                                                     <p className='text-xl md:text-3xl'>
                                                         Your Unlock Code: <span className='font-bold'>{data.redeem}</span>
                                                         <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2' onClick={popUp} />
@@ -253,7 +258,7 @@ const Page = () => {
                                 <a href='https://ig.me/m/tedxcusat' className='text-tedRed font-bold'> (@tedxcusat)</a>.
                             </p> */}
                             <p className='text-lg md:text-2xl font-semibold'>How to Play:                            </p>
-                            <p className='text-sm md:text-lg'>1. We’ve placed multiple QR codes around the campus. Find the special QR codes that contain the Unlock Code and the Location of the Final Hidden QR Code.
+                            <p className='text-sm md:text-lg'>1. We’ve placed multiple QR codes at common places around the campus. Find the special QR codes that contain the Unlock Code and the Location of the Final Hidden QR Code.
                                 <br />2. Be the first to use the Unlock Code to unlock the Final QR Code and obtain the redeem code for your reward.
                                 <br />3. Send the redeem code to our official Instagram handle
                                 <a href='https://ig.me/m/tedxcusat' className='text-tedRed font-bold'> (@tedxcusat) </a>

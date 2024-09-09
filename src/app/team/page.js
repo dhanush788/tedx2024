@@ -10,6 +10,9 @@ import ivine from '../../assets/img/team/ivine.jpg'
 import adil from '../../assets/img/team/adil.jpg'
 import basil from '../../assets/img/team/basil.jpg'
 import anna from '../../assets/img/team/anna.jpg'
+import dhanush from '../../assets/img/team/dhanush.jpg'
+import farhan from '../../assets/img/team/farhan.jpg'
+import melbin from '../../assets/img/team/melbin.jpg'
 
 import Image from 'next/image'
 import Header from '@/components/Headers/Header'
@@ -34,7 +37,7 @@ const data = [
     },
     {
         heading: "Archa",
-        subHeading: "Treasure",
+        subHeading: "Treasurer",
         img: archa
     },
     {
@@ -53,9 +56,24 @@ const data = [
         img: sreerag
     },
     {
-        heading: "Devanand",
+        heading: "Farhan",
+        subHeading: "Production",
+        img: farhan
+    },
+    {
+        heading: "Devnandan",
         subHeading: "Production",
         img: devanand
+    },
+    {
+        heading: "Dhanush",
+        subHeading: "Technical",
+        img: dhanush
+    },
+    {
+        heading: "Melbin",
+        subHeading: "Event",
+        img: melbin
     }
 ]
 

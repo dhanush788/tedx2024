@@ -74,7 +74,6 @@ const Hero = () => {
     <div className='h-auto'>
       <div className="marq-ticket mt-10 bg-white">
         <Marquee />
-        {/* <button className='hidden md:block absolute top-0 right-0 h-full rounded-l-md md:rounded-15 uppercase bg-tedRed text-white font-avenue md:text-3xl px-3 get-ticket'>Get Tickets</button> */}
       </div>
       <div className='relative mt-4 px-[4%] md:px-[8%]'>
         <a href='/ticket' className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 cursor-pointer `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</a>
@@ -96,9 +95,24 @@ const Hero = () => {
             style={{
               position: "relative",
             }}
-            className='w-full h-full md:h-auto object-cover'
+            className='w-full h-full md:h-auto object-cover hidden md:block'
           >
-            <source src={isMobile ? "/video_m.mp4" : "/video_main.mp4"} type="video/mp4" />
+            <source src="/video_main.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video
+            id="background-video"
+            loop
+            autoPlay
+            muted
+            playsInline
+            style={{
+              position: "relative",
+              clipPath: "url(#svgTextPath)",
+            }}
+            className='w-full h-full md:h-auto object-cover md:hidden block'
+          >
+            <source src="/video_m.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <p className='absolute bottom-0 left-5 font-thunder font-normal text-2xl md:text-8xl text-white p-3 hidden md:block text-stroke'>28 <br/> SEP<br/> 2024</p>
