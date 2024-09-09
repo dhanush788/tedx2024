@@ -72,7 +72,7 @@ const Hero = () => {
 
   return (
     <div className='h-auto'>
-      <div className="marq-ticket border border-black py-2 md:rounded-15 relative min-w-max md:mx-[8%] mt-10 bg-white">
+      <div className="marq-ticket mt-10 bg-white">
         <Marquee />
       </div>
       <div className='relative mt-4 px-[4%] md:px-[8%]'>
