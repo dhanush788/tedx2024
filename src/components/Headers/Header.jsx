@@ -111,9 +111,10 @@ const Header = () => {
             {expanded && (
                 <div className="menu-panel">
                     <div className="left-card">
-                        <div className="section-card" onClick={() => handleScroll("about")}>ABOUT</div>
+                        {/* <div className="section-card" onClick={() => handleScroll("about")}>ABOUT</div> */}
                         <div className="section-card" onClick={() => handleScroll("speakers")}>SPEAKERS</div>
                         <div className="section-card" onClick={() => handleScroll("contact")}>CONTACT</div>
+                        <a href='/team' className="section-card">TEAM</a>
                         <a href="https://www.google.com/maps?ll=10.043907,76.324908&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=14845740073459549562" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
                     </div>
                     <div className="right-card">

@@ -72,9 +72,9 @@ const Hero = () => {
 
   return (
     <div className='h-auto'>
-      <div className="marq-ticket mt-10 bg-white">
-        <Marquee />
-      </div>
+      <div className="md:mx-[8%] marq-ticket border border-black py-2 md:rounded-15 relative min-w-max bg-white mt-10">
+					<Marquee />
+			</div>
       <div className='relative mt-4 px-[4%] md:px-[8%]'>
         <a href='/ticket' className={`absolute top-0 flex border-black border ${isEvent ? 'bg-white px-[14px] md:px-9' : 'bg-tedRed text-white px-6 md:px-14'} py-3 md:py-6 rounded-[6px] md:rounded-[15px] font-avenue text-base md:text-3xl mr-auto !z-50 cursor-pointer `}>{isEvent ? 'UPCOMING EVENT' : 'BOOK TICKETS'}</a>
         <div className='w-full overflow-hidden flex-1 h-[70vh] rounded-15 relative'>

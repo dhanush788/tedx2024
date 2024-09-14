@@ -1,6 +1,7 @@
 "use client"
 import FAQSection from '@/components/FAQSection/FAQSection';
 import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Headers/Header';
 import Marquee from '@/components/Marquee/Marquee';
 import Sponsors from '@/components/Sponsors/Sponsors';
 import TicketNavbar from '@/components/TicketNavbar/TicketNavbar';
@@ -62,9 +63,11 @@ const page = () => {
 	const [popupTitle, setPopupTitle] = useState("");
 	const [popupMessage, setPopupMessage] = useState("");
 	return (<>
-		<TicketNavbar />
-		<div className='mt-[18vh]'></div>
-		<Marquee addBorder="true" />
+		<Header />
+		<div className='mt-20 md:mt-[16vh]'></div>
+		<div className="md:mx-[8%] marq-ticket border border-black py-2 md:rounded-15 relative min-w-max bg-white">
+					<Marquee />
+		</div>
 		<main className='mb-5 our-journey p-custom font-thunder font-bold '>
 			<div className='mt-[8vh]'></div>
 			<Sponsors />

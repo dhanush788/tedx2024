@@ -8,6 +8,8 @@ import { useState } from "react";
 import Copyright from "@/components/Copyright/Copyright";
 import { CheckBox, InputBox, FoodPref } from "@/components/utils/InputComponents";
 import { supabase } from "@/utils/supabaseClient";
+import Header from "@/components/Headers/Header";
+import Footer from "@/components/Footer/Footer";
 
 const Page = () => {
   const type = window.location.href.match(/(?<=type\=)[a-z]+/);
@@ -40,7 +42,7 @@ const Page = () => {
 
     if (image) {
       const { data, error: uploadError } = await supabase.storage
-        .from('image_test') //bucket name
+        .from('ticket-id') //bucket name
         .upload(`public/${Date.now()}_${image.name}`, image);
 
       if (uploadError) {
@@ -50,19 +52,19 @@ const Page = () => {
       }
 
       const { data: { publicUrl } } = supabase.storage
-        .from('image_test')
+        .from('ticket-id')
         .getPublicUrl(data.path);
 
       imageUrl = publicUrl;
     }
 
-    const { error: insertError } = await supabase.from('tedx_ticket_data').insert([ //table name
+    const { error: insertError } = await supabase.from('participants').insert([ //table name
       {
         name,
         email,
-        contact_number: contact,
-        food_pref: foodPreference,
-        cusatian: isCusatian,
+        contact: contact,
+        food_preference: foodPreference,
+        is_cusatian: isCusatian,
         registration_fee: registrationFee,
         image_url: imageUrl
       },
@@ -89,50 +91,61 @@ const Page = () => {
   };
 
   return (
-    <div className="p-custom max-w-8xl font-[montserrat] font-semibold">
-      <Image src={TicketImg} alt="Ticket" />
-      <Image src={TEDxLogo} width={100} className="mt-4" alt="TEDx Logo" />
-      <p className="text-4xl uppercase mt-3">Participant Information</p>
-      <p className="text-gray-500 text-sm font-medium">
-        Make sure you fill all the necessary details carefully; once completed, no changes can be applied.
-      </p>
-      <form className="mt-10 mb-14" onSubmit={handleSubmit}>
-        <div className="md:grid items-end md:grid-cols-2">
-          <InputBox name="name" placeholder="Enter your name" />
-          <InputBox name="email" type="email" placeholder="Enter your email" />
-        </div>
-        <div className="md:grid items-end md:grid-cols-2">
-          <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
-          <FoodPref name="foodPreference" />
-        </div>
-        <div className="md:grid items-end md:grid-cols-2">
-          <InputBox name="registrationFee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
-          <CheckBox name="cusatian" checked={isCusatian} onchange={handleCusatianChange} />
-        </div>
-        <div className="md:grid items-end md:grid-cols-2">
-          <input 
-            type="file" 
-            name="image" 
-            accept="image/*" 
-            onChange={handleImageChange} 
-            required
-          />
-        </div>
+    <>
+      <Header />
+      <div className="p-custom max-w-8xl font-sans font-semibold">
+        {/* <Image src={TicketImg} alt="Ticket" /> */}
+        {/* <Image src={TEDxLogo} width={300} className="mt-4" alt="TEDx Logo" /> */}
+        <p className="text-4xl uppercase mt-3">Participant Information</p>
+        <p className="text-gray-500 text-sm font-medium">
+          Make sure you fill all the necessary details carefully; once completed, no changes can be applied.
+        </p>
+        <form className="mt-10 mb-14" onSubmit={handleSubmit}>
+          <div className="md:grid items-end md:grid-cols-2">
+            <InputBox name="name" placeholder="Enter your name" />
+            <InputBox name="email" type="email" placeholder="Enter your email" />
+          </div>
+          <div className="md:grid items-end md:grid-cols-2">
+            <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
+            <FoodPref name="foodPreference" />
+          </div>
+          <div className="md:grid items-end md:grid-cols-2">
+            <InputBox name="registration Fee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
+            {/* <CheckBox name="cusatian" checked={isCusatian} onchange={handleCusatianChange} /> */}
+            {
+              isCusatian && (
+                <div className="flex items-center gap-2">
+                  <input type="checkbox" name="cusatian" id="cusatian" checked={isCusatian} onChange={handleCusatianChange} />
+                  <label htmlFor="cusatian">CUSAT Student</label>
+                </div>
+              )
+            }
+          </div>
+          <div className="md:grid items-end md:grid-cols-2">
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={handleImageChange}
+              required
+            />
+          </div>
 
-        <div className="font-avenue gap-3 flex w-[100%] justify-center mt-8">
-          <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
-            Register
-          </button>
-          <button className="border border-black py-1 px-5 rounded-md" onClick={goBack}>
-            Cancel
-          </button>
-        </div>
-      </form>
-      {successMessage && (
-        <p className="text-green-500 text-lg font-bold text-center">{successMessage}</p>
-      )}
-      <Copyright />
-    </div>
+          <div className="font-sans gap-3 flex w-[100%] justify-center mt-8">
+            <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+              Register
+            </button>
+            <button className="border border-black py-1 px-5 rounded-md" onClick={goBack}>
+              Cancel
+            </button>
+          </div>
+        </form>
+        {successMessage && (
+          <p className="text-green-500 text-lg font-bold text-center">{successMessage}</p>
+        )}
+      </div>
+      <Footer />
+    </>
   );
 };
 

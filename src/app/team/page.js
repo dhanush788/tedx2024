@@ -13,6 +13,7 @@ import anna from '../../assets/img/team/anna.jpg'
 import dhanush from '../../assets/img/team/dhanush.jpg'
 import farhan from '../../assets/img/team/farhan.jpg'
 import melbin from '../../assets/img/team/melbin.jpg'
+import evlyn from '../../assets/img/team/evlyn.jpg'
 
 import Image from 'next/image'
 import Header from '@/components/Headers/Header'
@@ -31,7 +32,7 @@ const data = [
         img: akshay
     },
     {
-        heading: "Adil",
+        heading: "A S Adil Mohammed",
         subHeading: "Curator",
         img: adil
     },
@@ -66,14 +67,19 @@ const data = [
         img: devanand
     },
     {
-        heading: "Dhanush",
+        heading: "Dhanush p k",
         subHeading: "Technical",
         img: dhanush
     },
     {
-        heading: "Melbin",
+        heading: "Melbin sebastian",
         subHeading: "Event",
         img: melbin
+    },
+    {
+        heading: "Evlyn",
+        subHeading: "Content",
+        img: evlyn
     }
 ]
 
@@ -100,7 +106,7 @@ const Team = () => {
 
 
     return (
-        <div className='w-full flex flex-col inter' id='speakers'>
+        <div className='w-full flex flex-col inter'>
             <Header />
             <div className='flex flex-row justify-between px-[4%] md:px-[8%] py-5 mt-5'>
                 <p className='font-thunder font-bold md:text-6xl text-4xl leading-snug max-w-md text-left '>MEET OUR <span className='text-[#EB0028]'>TEAM</span> </p>
