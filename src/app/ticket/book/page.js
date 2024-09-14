@@ -1,22 +1,24 @@
 "use client";
 
-import Image from "next/image";
-import TicketImg from "@/assets/img/ticket.png";
-import TEDxLogo from "@/assets/img/logo-black.svg";
+
 import "@/components/utils/resizable.css";
 import { useState } from "react";
-import Copyright from "@/components/Copyright/Copyright";
-import { CheckBox, InputBox, FoodPref } from "@/components/utils/InputComponents";
+import { InputBox, FoodPref } from "@/components/utils/InputComponents";
 import { supabase } from "@/utils/supabaseClient";
 import Header from "@/components/Headers/Header";
 import Footer from "@/components/Footer/Footer";
 
 const Page = () => {
-  const type = window.location.href.match(/(?<=type\=)[a-z]+/);
-  const [isCusatian, setIsCusatian] = useState(type === "cusatian");
+  const [isCusatian, setIsCusatian] = useState(false); // initially false
   const [successMessage, setSuccessMessage] = useState("");
   const [image, setImage] = useState(null);
-  // const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const type = window.location.href.match(/(?<=type\=)[a-z]+/);
+      setIsCusatian(type && type[0] === "cusatian");
+    }
+  }, []);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
