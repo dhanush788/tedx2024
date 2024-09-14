@@ -2,7 +2,7 @@
 
 
 import "@/components/utils/resizable.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InputBox, FoodPref } from "@/components/utils/InputComponents";
 import { supabase } from "@/utils/supabaseClient";
 import Header from "@/components/Headers/Header";
