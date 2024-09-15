@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from 'react'
-import img1 from '../../assets/img/tshirt/1.jpeg'
-import img2 from '../../assets/img/tshirt/2.jpeg'
+import img1 from '../../assets/img/tshirt/front.png'
+import img2 from '../../assets/img/tshirt/back.jpg'
+import img3 from '../../assets/img/tshirt/chart.jpeg'
 import Image from 'next/image';
 import copy from '../../assets/img/copy.svg';
 import { createClient } from '@supabase/supabase-js';
 
-const images = [img1, img2, img2]
+const images = [img1, img2, img3]
+const referralCode = ['TEDX2021', 'TED2021', 'TE2021']
 
 
 const Tshirt = () => {
@@ -23,6 +25,7 @@ const Tshirt = () => {
     const [size, setSize] = useState('');
     const [error, setError] = useState('');
     const [fileName, setFileName] = useState('');
+    const [referral, setReferral] = useState('');
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -136,6 +139,7 @@ const Tshirt = () => {
                     address,
                     size,
                     file_name: fileUrl,
+                    referral : referral ? referral : null,
                 },
             ]);
 
@@ -149,15 +153,26 @@ const Tshirt = () => {
     };
 
 
+    const handleReferral = (e) => {
+        setReferral(e.target.value);
+        if (referralCode.includes(e.target.value)) {
+            setAmount(400);
+        } else {
+            setAmount(500);
+        }
+    }
+
+
+
     return (
         <div className='p-custom my-10 flex flex-col md:flex-row gap-5'>
             <div className='grid grid-cols-3 gap-4 flex-1'>
-                <div className='col-span-3 border-black border-2 rounded-15 overflow-hidden'>
+                <div className=' col-span-3 border-black border-2 rounded-15 overflow-hidden'>
                     <Image src={images[index]} alt='meme' className='w-full h-auto hover:scale-105 transition-all duration-100' />
                 </div>
                 {images.map((img, i) => (
                     <div key={i} onClick={() => setIndex(i)} className='cursor-pointer col-span-1 '>
-                        <Image src={img} alt='meme' className={`h-auto w-full ${index === i ? 'border-red-500 border-2' : 'border-black'} border rounded-15`} />
+                        <Image src={img} alt='meme' className={`h-auto min-h-[150px] md:min-h-[200px] object-fit w-full ${index === i ? 'border-red-500 border-2' : 'border-black'} border rounded-15`} />
                     </div>
                 ))
                 }
@@ -234,6 +249,14 @@ const Tshirt = () => {
                                     <option value='L'>L</option>
                                     <option value='XL'>XL</option>
                                 </select>
+                                <p className='text-lg mt-2'>Referral code</p>
+                                <input
+                                    type='text'
+                                    placeholder='Referral code if any..'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    onChange={handleReferral}
+                                />
+                                <p className='text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span></p>
 
                                 {error && <p className='text-red-500 mt-2'>{error}</p>}
 
