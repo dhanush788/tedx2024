@@ -6,6 +6,7 @@ import img3 from '../../assets/img/tshirt/chart.jpeg'
 import Image from 'next/image';
 import copy from '../../assets/img/copy.svg';
 import { createClient } from '@supabase/supabase-js';
+import { QRCodeSVG } from 'qrcode.react';
 
 const images = [img1, img2, img3]
 const referralCode = [
@@ -173,7 +174,7 @@ const Tshirt = () => {
     const [index, setIndex] = React.useState(0)
     const [popUp, setPopUp] = React.useState(false)
     const [payment, setPayment] = React.useState(false)
-    const [amount, setAmount] = React.useState(500)
+    const [amount, setAmount] = React.useState(369)
     const [status, setStatus] = React.useState('');
 
     const [name, setName] = useState('');
@@ -184,12 +185,14 @@ const Tshirt = () => {
     const [error, setError] = useState('');
     const [fileName, setFileName] = useState('');
     const [referral, setReferral] = useState('');
+    const [comment, setComment] = useState('');
+    const [upiUrl, setUpiUrl] = useState('');
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.NEXT_PUBLIC_API_KEY;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const UPI = 'dhanushpk50@okhdfcbank';
+    const UPI = 'tedxcusat@sbi';
 
     React.useEffect(() => {
         if (popUp) {
@@ -218,17 +221,19 @@ const Tshirt = () => {
         }
         setError('');
         setPayment(true);
+        setUpiUrl(`upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Tshirt`);
     };
 
     const handlePayment = () => {
         if (window.innerWidth >= 768) {
             setError('This feature is not available on desktop. Please try on mobile');
         }
-        const receiverUPI = 'dhanushpk50@okhdfcbank';
+        // const receiverUPI = 'tedxcusat@sbi';
         const note = 'Payment for Tshirt';
         const name = 'TEDxCUSAT';
 
-        const upiUrl = `upi://pay?pa=${receiverUPI}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+        // const upiUrl = `upi://pay?pa=${receiverUPI}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+        setUpiUrl(`upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Tshirt`);
 
         window.location.href = upiUrl;
     }
@@ -313,10 +318,12 @@ const Tshirt = () => {
 
     const handleReferral = (e) => {
         setReferral(e.target.value);
-        if (referralCode.some(code => code.toLowerCase().includes(e.target.value.toLowerCase()))) {
-            setAmount(400);
+        if (referralCode.includes(e.target.value)) {
+            setAmount(332);
+            setComment(' (10% discount applied)');
         } else {
-            setAmount(500);
+            setAmount(369);
+            setComment('');
         }
     }
 
@@ -414,8 +421,9 @@ const Tshirt = () => {
                                     className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
                                     onChange={handleReferral}
                                 />
-                                <p className='text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span></p>
-
+                                <p className='text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span>
+                                    {comment}
+                                </p>
                                 {error && <p className='text-red-500 mt-2'>{error}</p>}
 
                                 <button
@@ -430,7 +438,9 @@ const Tshirt = () => {
                                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
                                 <p className='text-lg mt-2 text-center'>OR</p>
                                 <p className='text-lg mt-2 text-center'>Scan the QR code to pay</p>
-                                <Image src={img1} alt='meme' className='w-40 h-40 mx-auto mt-2' />
+                                <div className='mx-auto'>
+                                    <QRCodeSVG value={upiUrl} size={128} />
+                                </div>
                                 <div className='flex items-center'>
                                     <p className='text-lg mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
                                     <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
