@@ -68,7 +68,7 @@ const data = [
         img: farhan
     },
     {
-        heading: "Devnandan",
+        heading: "Deva nandan",
         subHeading: "Production",
         img: devanand
     },
