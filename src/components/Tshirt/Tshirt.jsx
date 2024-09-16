@@ -7,6 +7,8 @@ import Image from 'next/image';
 import copy from '../../assets/img/copy.svg';
 import { createClient } from '@supabase/supabase-js';
 import { QRCodeSVG } from 'qrcode.react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const images = [img1, img2, img3]
 const referralCode = [
@@ -240,6 +242,7 @@ const Tshirt = () => {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(UPI);
+        setStatus('UPI copied to clipboard');
     }
 
     const handleFileChange = (e) => {
@@ -312,6 +315,7 @@ const Tshirt = () => {
         } else {
             setStatus('Order placed successfully');
             setPopUp(false);
+            setPayment(false);
         }
     };
 
@@ -330,28 +334,33 @@ const Tshirt = () => {
 
 
     return (
-        <div className='p-custom my-10 flex flex-col md:flex-row gap-5'>
+        <div className='p-custom my-10 flex flex-col md:flex-row md:gap-5  font-sans'>
             <div className='grid grid-cols-3 gap-4 flex-1'>
-                <div className=' col-span-3 border-black border-2 rounded-15 overflow-hidden'>
-                    <Image src={images[index]} alt='meme' className='w-full h-auto hover:scale-105 transition-all duration-100' />
+                <div className=' col-span-3 border-black border-2 rounded-15 overflow-hidden h-full'>
+                    <Carousel showArrows={true} showStatus={true} showThumbs={true} showIndicators={true} selectedItem={index} onChange={setIndex} infiniteLoop={true} className=' col-span-3 -mb-10'>
+                        <Image src={images[0]} alt='meme' className='w-full h-full object-cover hover:scale-105 transition-all duration-100' />
+                        <Image src={images[1]} alt='meme' className='w-full h-full object-cover hover:scale-105 transition-all duration-100' />
+                        <Image src={images[2]} alt='meme' className='w-full h-full object-cover hover:scale-105 transition-all duration-100' />
+                    </Carousel>
                 </div>
                 {images.map((img, i) => (
-                    <div key={i} onClick={() => setIndex(i)} className='cursor-pointer col-span-1 '>
-                        <Image src={img} alt='meme' className={`h-auto min-h-[150px] md:min-h-[200px] object-fit w-full ${index === i ? 'border-red-500 border-2' : 'border-black'} border rounded-15`} />
+                    <div key={i} onClick={() => setIndex(i)} className='cursor-pointer col-span-1 h-full flex '>
+                        <Image src={img} alt='meme' className={`h-full object-cover w-full ${index === i ? 'border-red-500 border-2' : 'border-black'} border rounded-15`} />
                     </div>
                 ))
                 }
             </div>
             <div className='flex-1 p-4'>
-                <p className='font-bold text-2xl md:text-3xl font-mono'>Buy <span className='text-tedRed'>TEDx</span>CUSAT exclusive merchantise </p>
+                <p className='font-bold text-2xl md:text-3xl capitalize'>Buy <span className='text-tedRed'>TED<sup>x</sup></span>CUSAT exclusive merchantise Tshirt</p>
+                <p className='text-lg md:text-lg mt-2'><span className='font-bold'>Item Specifications</span></p>
+                <p className='text-lg md:text-lg mt-2'>Size: <span className='font-bold'>XS, S, M, L, XL</span></p>
+                <p className='text-lg md:text-lg mt-2'>Color: <span className='font-bold'>Black</span></p>
                 <p className='text-lg md:text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span></p>
-                <p className='text-lg md:text-lg mt-2'>Size: <span className='font-bold'>S, M, L, XL</span></p>
-                <p className='text-lg md:text-lg mt-2'>Color: <span className='font-bold'>White</span></p>
-                <p className='text-lg md:text-lg mt-2'>Material: <span className='font-bold'>Cotton</span></p>
+                {/* <p className='text-lg md:text-lg mt-2'>Material: <span className='font-bold'>Cotton</span></p> */}
                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={() => setPopUp(true)}>Buy Now</button>
             </div>
             {popUp &&
-                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-center justify-center z-[999]'>
+                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start py-5 md:py-0 md:items-center justify-center z-[999] overflow-y-auto'>
                     <div className='absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50' onClick={() => setPopUp(false)}></div>
                     <div className='bg-white p-5 pt-14 rounded-md relative flex flex-col md:flex-wrap w-[90%] md:w-1/2 gap-2'>
                         <svg
@@ -409,6 +418,7 @@ const Tshirt = () => {
                                     onChange={(e) => setSize(e.target.value)}
                                 >
                                     <option value=''>Select size</option>
+                                    <option value='XS'>XS</option>
                                     <option value='S'>S</option>
                                     <option value='M'>M</option>
                                     <option value='L'>L</option>
@@ -468,7 +478,7 @@ const Tshirt = () => {
                 </div>
             }
             {status && (
-                <div className='fixed z-10 bottom-10 bg-white p-4 rounded-lg left-[50%] -translate-x-[50%] w-3/5 border-black border'>
+                <div className='fixed z-[999] bottom-10 bg-white p-4 rounded-lg left-[50%] -translate-x-[50%] w-3/5 border-black border'>
                     <p className=' text-xl md:text-3xl font-bold text-center'>
                         {status}
                     </p>
