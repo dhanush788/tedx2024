@@ -189,7 +189,7 @@ const Tshirt = () => {
     const [referral, setReferral] = useState('');
     const [comment, setComment] = useState('');
     const [upiUrl, setUpiUrl] = useState('');
-    const [quantity , setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
     const [cusatian, setCusatian] = useState(false);
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -219,7 +219,7 @@ const Tshirt = () => {
     }, [status])
 
     const handleForm = () => {
-        if (!name || !email || !phone || !address || !size || !quantity || !cusatian || !amount) {
+        if (!name || !email || !phone || !address || !size || !quantity || !amount) {
             setError('All fields are required');
             return;
         }
@@ -321,6 +321,7 @@ const Tshirt = () => {
             setStatus('Order placed successfully');
             setPopUp(false);
             setPayment(false);
+            window.location.href = '/merchandise/success';            
         }
     };
 
@@ -335,7 +336,7 @@ const Tshirt = () => {
             setComment('');
         }
     }
-    
+
 
     React.useEffect(() => {
         if (referralCode.includes(referral)) {
@@ -345,7 +346,7 @@ const Tshirt = () => {
             setAmount(Math.round(369 * quantity));
             setComment('');
         }
-    },[quantity])
+    }, [quantity])
 
 
     return (
@@ -476,15 +477,18 @@ const Tshirt = () => {
                             </>
                         ) : (
                             <>
-                                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
-                                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
-                                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
-                                <div className='mx-auto'>
-                                    <QRCodeSVG value={upiUrl} size={128} />
-                                </div>
-                                <div className='flex items-center'>
-                                    <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
-                                    <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
+                                <p className='text-lg md:text-xl font-bold'>Please note: Upload the payment details after making the payment</p>
+                                <div className='border-2 w-full flex flex-col p-3 border-black rounded-lg'>
+                                    <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
+                                    <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
+                                    <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
+                                    <div className='mx-auto'>
+                                        <QRCodeSVG value={upiUrl} size={128} />
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
+                                        <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
+                                    </div>
                                 </div>
                                 <div className="w-full max-w-xl mt-1 md:mt-2">
                                     <input
@@ -509,7 +513,7 @@ const Tshirt = () => {
                 </div>
             }
             {status && (
-                <div className='fixed z-[999] bottom-10 bg-white p-4 rounded-lg left-[50%] -translate-x-[50%] w-3/5 border-black border'>
+                <div className='fixed z-[999] bottom-10 bg-tedRed text-white p-4 rounded-lg left-[50%] -translate-x-[50%] w-3/5 border-black border'>
                     <p className=' text-xl md:text-3xl font-bold text-center'>
                         {status}
                     </p>
