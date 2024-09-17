@@ -12,7 +12,11 @@ const Page = () => {
           Your order has been placed successfully 🎉
         </p>
         <p className='text-base md:text-xl'>
-          You've successfully ordered <span className='font-bold'>TED<sup>x</sup>CUSAT24</span> official merchandise. You will receive an email with the details of your order shortly. If you have any questions or need further assistance, feel free to contact us at <a href='mailto:outreach@tedxcusat.in' className='underline font-bold'>outreach@tedxcusat.in</a>.
+          You've successfully ordered <span className='font-bold'><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT24</span> official merchandise. You will receive an email with the details of your order shortly. If you have any questions or need further assistance, feel free to contact us at 
+          <br/>
+          <span className='font-bold'>Basil: <a href='tel:+91 8111920644'>+91 8111920644</a></span>
+          <br/>
+          <span className='font-bold'>Anna: <a href='tel:+91 9567170459'>+91 9567170459</a></span>
         </p>
 
         <p className='text-sm md:text-lg mt-20'>
