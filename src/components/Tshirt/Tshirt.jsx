@@ -189,6 +189,8 @@ const Tshirt = () => {
     const [referral, setReferral] = useState('');
     const [comment, setComment] = useState('');
     const [upiUrl, setUpiUrl] = useState('');
+    const [quantity , setQuantity] = useState(1);
+    const [cusatian, setCusatian] = useState(false);
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -217,7 +219,7 @@ const Tshirt = () => {
     }, [status])
 
     const handleForm = () => {
-        if (!name || !email || !phone || !address || !size) {
+        if (!name || !email || !phone || !address || !size || !quantity || !cusatian || !amount) {
             setError('All fields are required');
             return;
         }
@@ -306,6 +308,9 @@ const Tshirt = () => {
                     size,
                     file_name: fileUrl,
                     referral: referral ? referral : null,
+                    quantity: quantity,
+                    cusatian,
+                    amount
                 },
             ]);
 
@@ -323,14 +328,24 @@ const Tshirt = () => {
     const handleReferral = (e) => {
         setReferral(e.target.value);
         if (referralCode.includes(e.target.value)) {
-            setAmount(332);
-            setComment(' (10% discount applied)');
+            setAmount(Math.round(369 * 0.9 * quantity));
+            setComment(' HURRAY! 10% DISCOUNT APPLIED');
         } else {
-            setAmount(369);
+            setAmount(Math.round(369 * quantity));
             setComment('');
         }
     }
+    
 
+    React.useEffect(() => {
+        if (referralCode.includes(referral)) {
+            setAmount(Math.round(369 * 0.9 * quantity));
+            setComment(' HURRAY! 10% DISCOUNT APPLIED');
+        } else {
+            setAmount(Math.round(369 * quantity));
+            setComment('');
+        }
+    },[quantity])
 
 
     return (
@@ -352,17 +367,17 @@ const Tshirt = () => {
             </div>
             <div className='flex-1 p-4'>
                 <p className='font-bold text-2xl md:text-3xl capitalize'>Buy <span className='text-tedRed'>TED<sup>x</sup></span>CUSAT exclusive merchantise Tshirt</p>
-                <p className='text-lg md:text-lg mt-2'><span className='font-bold'>Item Specifications</span></p>
-                <p className='text-lg md:text-lg mt-2'>Size: <span className='font-bold'>XS, S, M, L, XL</span></p>
-                <p className='text-lg md:text-lg mt-2'>Color: <span className='font-bold'>Black</span></p>
-                <p className='text-lg md:text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span></p>
-                {/* <p className='text-lg md:text-lg mt-2'>Material: <span className='font-bold'>Cotton</span></p> */}
+                <p className='text-base md:text-lg mt-1 md:mt-2'><span className='font-bold'>Item Specifications</span></p>
+                <p className='text-base md:text-lg mt-1 md:mt-2'>Size: <span className='font-bold'>XS, S, M, L, XL</span></p>
+                <p className='text-base md:text-lg mt-1 md:mt-2'>Color: <span className='font-bold'>Black</span></p>
+                <p className='text-base md:text-lg mt-1 md:mt-2'>Price: <span className='font-bold'>₹ 369</span></p>
+                {/* <p className='text-base md:text-lg md:text-lg mt-1 md:mt-2'>Material: <span className='font-bold'>Cotton</span></p> */}
                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={() => setPopUp(true)}>Buy Now</button>
             </div>
             {popUp &&
-                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start py-5 md:py-0 md:items-center justify-center z-[999] overflow-y-auto'>
-                    <div className='absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50' onClick={() => setPopUp(false)}></div>
-                    <div className='bg-white p-5 pt-14 rounded-md relative flex flex-col md:flex-wrap w-[90%] md:w-1/2 gap-2'>
+                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start pb-5 md:pb-0 pt-2 md:items-center justify-center z-[999] overflow-y-auto'>
+                    <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50' onClick={() => setPopUp(false)}></div>
+                    <div className='bg-white p-5 pt-8 md:pt-14 rounded-md relative flex flex-col md:flex-wrap w-[90%] md:w-1/2 gap-2'>
                         <svg
                             className="absolute top-5 right-5 cursor-pointer"
                             onClick={() => setPopUp(false)}
@@ -381,39 +396,47 @@ const Tshirt = () => {
                         </svg>
                         {!payment ? (
                             <>
-                                <p className='text-lg'>Contact</p>
+                                <p className='text-base md:text-lg'>Contact</p>
                                 <input
                                     type='text'
                                     placeholder='Name'
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 />
                                 <input
                                     type='text'
                                     placeholder='Email'
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <input
                                     type='text'
                                     placeholder='Phone'
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
                                 />
-                                <p className='text-lg mt-2'>Address</p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Are you cusatian</p>
+                                <select
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
+                                    onChange={(e) => setCusatian(e.target.value)}
+                                >
+                                    <option value={false}>No</option>
+                                    <option value={true}>Yes</option>
+                                </select>
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Address</p>
                                 <input
                                     type='text'
                                     placeholder='Address'
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     value={address}
                                     onChange={(e) => setAddress(e.target.value)}
                                 />
-                                <p className='text-lg mt-2'>Size</p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Size</p>
                                 <select
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     value={size}
                                     onChange={(e) => setSize(e.target.value)}
                                 >
@@ -424,17 +447,24 @@ const Tshirt = () => {
                                     <option value='L'>L</option>
                                     <option value='XL'>XL</option>
                                 </select>
-                                <p className='text-lg mt-2'>Referral code</p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Quantity</p>
+                                <input
+                                    type='number'
+                                    placeholder='Quantity'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
+                                    value={quantity}
+                                    onChange={(e) => setQuantity(e.target.value)}
+                                />
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Referral code</p>
                                 <input
                                     type='text'
                                     placeholder='Referral code if any..'
-                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 mt-2'
+                                    className='w-full max-w-xl border border-gray-300 rounded-md p-2 md:mt-2'
                                     onChange={handleReferral}
                                 />
-                                <p className='text-lg mt-2'>Price: <span className='font-bold'>₹ {amount}</span>
-                                    {comment}
-                                </p>
-                                {error && <p className='text-red-500 mt-2'>{error}</p>}
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>Price: <span className='font-bold'>₹ {amount}</span></p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2'>{comment}</p>
+                                {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
 
                                 <button
                                     className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md'
@@ -446,16 +476,16 @@ const Tshirt = () => {
                         ) : (
                             <>
                                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
-                                <p className='text-lg mt-2 text-center'>OR</p>
-                                <p className='text-lg mt-2 text-center'>Scan the QR code to pay</p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
+                                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
                                 <div className='mx-auto'>
                                     <QRCodeSVG value={upiUrl} size={128} />
                                 </div>
                                 <div className='flex items-center'>
-                                    <p className='text-lg mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
+                                    <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
                                     <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
                                 </div>
-                                <div className="w-full max-w-xl mt-2">
+                                <div className="w-full max-w-xl mt-1 md:mt-2">
                                     <input
                                         type="file"
                                         accept="image/*"
@@ -470,7 +500,7 @@ const Tshirt = () => {
                                         {fileName ? fileName : 'Upload Your Payment Screenshot'}
                                     </label>
                                 </div>
-                                {error && <p className='text-red-500 mt-2'>{error}</p>}
+                                {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
                                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handleUpload}>Complete your purchase</button>
                             </>
                         )}
