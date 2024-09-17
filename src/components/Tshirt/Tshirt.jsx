@@ -368,7 +368,7 @@ const Tshirt = () => {
             <div className='flex-1 p-4'>
                 <p className='font-bold text-2xl md:text-3xl capitalize'>Buy <span className='text-tedRed'>TED<sup>x</sup></span>CUSAT exclusive merchantise Tshirt</p>
                 <p className='text-base md:text-lg mt-1 md:mt-2'><span className='font-bold'>Item Specifications</span></p>
-                <p className='text-base md:text-lg mt-1 md:mt-2'>Size: <span className='font-bold'>XS, S, M, L, XL</span></p>
+                <p className='text-base md:text-lg mt-1 md:mt-2'>Size: <span className='font-bold'>XS, S, M, L, XL ,XXL</span></p>
                 <p className='text-base md:text-lg mt-1 md:mt-2'>Color: <span className='font-bold'>Black</span></p>
                 <p className='text-base md:text-lg mt-1 md:mt-2'>Price: <span className='font-bold'>₹ 369</span></p>
                 {/* <p className='text-base md:text-lg md:text-lg mt-1 md:mt-2'>Material: <span className='font-bold'>Cotton</span></p> */}
@@ -446,6 +446,7 @@ const Tshirt = () => {
                                     <option value='M'>M</option>
                                     <option value='L'>L</option>
                                     <option value='XL'>XL</option>
+                                    <option value='XXL'>XXL</option>
                                 </select>
                                 <p className='text-base md:text-lg mt-1 md:mt-2'>Quantity</p>
                                 <input
