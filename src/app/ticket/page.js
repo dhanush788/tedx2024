@@ -87,7 +87,7 @@ const page = () => {
 			<div className='get-tickets mt-[10vh]'>
 				<p className='md:text-6xl text-5xl text-center md:text-left leading-none'>GET YOUR<br /><span className='text-tedRed'>TICKETS</span> NOW</p>
 				<div className='flex flex-col md:flex-wrap items-center gap-10 md:flex-row justify-start py-5'>
-					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(EARLY_CUSAT_POPUP_MSG)} popupHandler={setShowPopup} redirect="/ticket/book?type=earlycusatian" price="600" type="EARLY BIRD CUSAT STUDENTS" popupMessage={EARLY_CUSAT_POPUP_MSG} />
+					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(EARLY_CUSAT_POPUP_MSG)} popupHandler={setShowPopup} redirect="/ticket/book?type=earlycusatian" price="600" type="EARLY BIRD CUSAT STUDENTS" popupMessage={EARLY_CUSAT_POPUP_MSG}/>
 					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(EARLY_REG_POPUP_MSG)} popupHandler={setShowPopup} redirect="/ticket/book?type=earlyregular" price="800" type="EARLY BIRD REGULAR" popupMessage={EARLY_REG_POPUP_MSG} />
 					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(CUSAT_POPUP_MSG)} popupHandler={setShowPopup} redirect="/ticket/book?type=cusatian" price="700" type="CUSAT STUDENTS" popupMessage={CUSAT_POPUP_MSG} />
 					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(REG_POPUP_MSG)} popupHandler={setShowPopup} redirect="/ticket/book?type=regular" price="900" type="REGULAR" popupMessage={REG_POPUP_MSG} />
@@ -95,6 +95,7 @@ const page = () => {
 			</div>
 			<FAQSection />
 		</main>
+		<hr className='border-t border-black' />
 		<Footer />
 		{showPopup ? (
 			<div className="absolute top-0 left-0 z-[9999] w-[100vw] h-[100vw]">

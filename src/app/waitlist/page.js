@@ -65,7 +65,6 @@ const page = () => {
 					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(InfoparkMessage)} popupHandler={setShowPopup} redirect="/waitlist/book" price="700" type="TEDxCUSAT'24 TICKET" popupMessage={InfoparkMessage} />
 				</div>
 			</div>
-			<FAQSection />
 		</main>
 		<hr className='border-t border-black' />
 		<Footer />
