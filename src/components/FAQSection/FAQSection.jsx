@@ -2,28 +2,27 @@ import React, { useState } from 'react';
 
 const faqData = [
 	{
-		question: "Can we get exchange or refund?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+		question: "How can I find out more about the speakers or the event schedule?",
+		answer: "You can visit the TEDxCUSAT website or follow our social media channels for updates on the event schedule and speaker lineup."
 	},
 	{
-		question: "Is there a minimum age limit?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+		question: "Is there a limit to the number of tickets I can buy?",
+		answer: "Yes, you can purchase up to 1 ticket per transaction. If you need more, you can make another purchase."
 
 	},
 	{
-		question: "Can we get exchange or refund?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+		question: "When will I receive my ticket??",
+		answer: "Once payment is completed, your e-ticket will be sent to your registered email within 1-2 days. Please check your spam/junk folder."
 
 	},
 	{
-		question: "Is there a minimum age limit?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+		question: "Who can I contact for ticket-related issues?",
+		answer: "For any ticket-related inquiries, message or call Dhanush - +91 97465 30193 "
 
 	},
 	{
-		question: "Can we get exchange or refund?",
-		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
-
+		question: "What do I need to bring to the event ?",
+		answer: "Bring a digital or printed copy of your e-ticket and Cusat ID if you have a student ticket. (For first year students, ID pdf is also preferred)."
 	}
 ]
 
@@ -37,7 +36,7 @@ const FAQItem = ({
 		setIsExpanded(!isExpanded);
 	};
 	return <div className='mb-5'>
-		<p className='text-3xl tracking-wider font-medium uppercase flex justify-between items-center py-2 cursor-pointer transition-all' onClick={handleToggle} >
+		<p className='text-xl md:text-3xl tracking-wider font-medium  flex justify-between items-center py-2 cursor-pointer transition-all' onClick={handleToggle} >
 			<span>{q}</span>
 			<span>
 				{
@@ -49,7 +48,7 @@ const FAQItem = ({
 			</span>
 		</p>
 		{isExpanded ?
-			<div className='faq-ans font-medium text-2xl mb-5'>
+			<div className='faq-ans font-medium text-lg md:text-2xl mb-5'>
 				{ans}
 			</div> : ""
 		}
