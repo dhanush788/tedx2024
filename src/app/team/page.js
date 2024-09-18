@@ -7,12 +7,12 @@ import archa from '../../assets/img/team/archa.jpg'
 import devanand from '../../assets/img/team/devanand.jpg'
 import akshay from '../../assets/img/team/akshay.jpeg'
 import ivine from '../../assets/img/team/ivine.jpg'
-// import adil from '../../assets/img/team/adil.jpg'
-// import basil from '../../assets/img/team/basil.jpg'
+import adil from '../../assets/img/team/adil.jpg'
+import basil from '../../assets/img/team/basil.jpg'
 import anna from '../../assets/img/team/anna.jpg'
 import dhanush from '../../assets/img/team/dhanush.jpg'
 import farhan from '../../assets/img/team/farhan.jpg'
-// import melbin from '../../assets/img/team/melbin.jpg'
+import melbin from '../../assets/img/team/melbin.jpg'
 import evlyn from '../../assets/img/team/evlyn.jpg'
 import sheena from '../../assets/img/team/sheena.jpg'
 
@@ -37,21 +37,21 @@ const data = [
         subHeading: "Staff Coordinator",
         img: sheena
     },
-    // {
-    //     heading: "A S Adil Mohammed",
-    //     subHeading: "Curator",
-    //     img: adil
-    // },
+    {
+        heading: "A S Adil Mohammed",
+        subHeading: "Curator",
+        img: adil
+    },
     {
         heading: "Archa",
         subHeading: "Treasurer",
         img: archa
     },
-    // {
-    //     heading: "Basil",
-    //     subHeading: "Outreach",
-    //     img: basil
-    // },
+    {
+        heading: "Basil",
+        subHeading: "Outreach",
+        img: basil
+    },
     {
         heading: "Anna",
         subHeading: "Outreach",
@@ -77,11 +77,11 @@ const data = [
         subHeading: "Technical",
         img: dhanush
     },
-    // {
-    //     heading: "Melbin sebastian",
-    //     subHeading: "Event",
-    //     img: melbin
-    // },
+    {
+        heading: "Melbin sebastian",
+        subHeading: "Event",
+        img: melbin
+    },
     {
         heading: "Evlyn",
         subHeading: "Content",

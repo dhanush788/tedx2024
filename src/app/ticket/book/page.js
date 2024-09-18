@@ -1,6 +1,5 @@
 "use client";
 
-
 import "@/components/utils/resizable.css";
 import { useEffect, useState } from "react";
 import { InputBox, FoodPref } from "@/components/utils/InputComponents";
@@ -12,49 +11,48 @@ import { QRCodeSVG } from "qrcode.react";
 import Image from "next/image";
 
 const Page = () => {
-  const [isCusatian, setIsCusatian] = useState(false); // initially false
   const [successMessage, setSuccessMessage] = useState("");
   const [paymentDone, setPaymentDone] = useState(false);
+  const [isCusatian, setIsCusatian] = useState(false);
   const [image, setImage] = useState(null);
   const [amount, setAmount] = useState(1000);
   const [error, setError] = useState(null);
   const [upiUrl, setUpiUrl] = useState(null);
-  const [fileName, setFileName] = useState('');
+  const [fileName, setFileName] = useState('Upload Image');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    contact: '',
+    foodPreference: 'veg',
+  });
 
   const UPI = "tedxcusat@sbi";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const type = window.location.href.match(/(?<=type\=)[a-z]+/);
-      setIsCusatian(type && type[0] === "cusatian");
+      setIsCusatian((type && type[0] === "cusatian") || (type && type[0] === "earlycusatian"));
     }
   }, []);
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const handleCusatianChange = (checked) => {
-    setIsCusatian(checked);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const contact = formData.get('contact');
-    const foodPreference = formData.get('pref'); //confusing for now due to inpucomponet 
-    const registrationFee = isCusatian ? 800 : 1000;
+    console.log(formData);
+    const registrationFee = 1000;
 
     let imageUrl = null;
 
     if (image) {
       const { data, error: uploadError } = await supabase.storage
-        .from('ticket-id') //bucket name
+        .from('ticket-id')
         .upload(`public/${Date.now()}_${image.name}`, image);
 
       if (uploadError) {
@@ -70,25 +68,15 @@ const Page = () => {
       imageUrl = publicUrl;
     }
 
-    const { error: insertError } = await supabase.from('participants').insert([ //table name
-      {
-        name,
-        email,
-        contact: contact,
-        food_preference: foodPreference,
-        is_cusatian: isCusatian,
-        registration_fee: registrationFee,
-        image_url: imageUrl
-      },
-    ]);
+    const { error: insertError } = await supabase.from('participants').insert([ formData ]);
 
     if (insertError) {
       console.error("Error submitting form:", insertError);
       setSuccessMessage("Error submitting form. Please try again.");
     } else {
-      console.log("registered successfully");
+      console.log("Registered successfully");
       setSuccessMessage("Successfully registered!");
-      form.reset();
+      e.target.reset();
       setImage(null);
 
       setTimeout(() => {
@@ -114,14 +102,10 @@ const Page = () => {
 
   const handlePayment = () => {
     if (window.innerWidth >= 768) {
-      setError('This feature is not available on desktop. Please try on mobile');
+      setError('This feature is not available on desktop. Please try on mobile.');
+      return;
     }
-    const receiverUPI = 'tedxcusat@sbi';
-    const note = 'Payment for Ticket';
-    const name = 'TEDxCUSAT';
-
-    const upiUrl = `upi://pay?pa=${receiverUPI}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
-
+    const upiUrl = `upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Ticket`;
     window.location.href = upiUrl;
   }
 
@@ -131,7 +115,7 @@ const Page = () => {
       setError('');
     } else {
       setFileName('Upload Image');
-      setError('Please upload the payment screenshot');
+      setError('Please upload the payment screenshot.');
     }
   };
 
@@ -145,12 +129,12 @@ const Page = () => {
         <p className="text-gray-500 text-sm font-medium">
           Make sure you fill all the necessary details carefully; once completed, no changes can be applied.
         </p>
-        <form className="md:my-10 my-4" onSubmit={handleForm}>
+        <form className="md:my-10 my-4" onSubmit={paymentDone ? handleSubmit : handleForm}>
           {paymentDone ? (
             <div className="max-w-3xl">
               <p className='text-lg md:text-xl font-bold'>Please note: Upload the payment details after making the payment</p>
               <div className='border w-full flex flex-col p-3 border-black rounded-lg'>
-                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
+                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using UPI</button>
                 <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
                 <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
                 <div className='mx-auto'>
@@ -173,7 +157,7 @@ const Page = () => {
                   htmlFor="fileInput"
                   className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
                 >
-                  {fileName ? fileName : 'Upload Your Payment Screenshot'}
+                  {fileName}
                 </label>
               </div>
               {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
@@ -181,53 +165,80 @@ const Page = () => {
           ) : (
             <>
               <div className="md:grid items-end md:grid-cols-2 text-black md:gap-8">
-                <InputBox name="name" placeholder="Enter your name" />
-                <InputBox name="email" type="email" placeholder="Enter your email" />
+                <InputBox
+                  name="name"
+                  displayName="Name"
+                  value={formData.name}
+                  placeholder="Enter your name"
+                  onChange={handleChange}
+                />
+                <InputBox
+                  name="email"
+                  displayName="Email"
+                  type="email"
+                  value={formData.email}
+                  placeholder="Enter your email"
+                  onChange={handleChange}
+                />
               </div>
               <div className="md:grid items-end md:grid-cols-2 md:gap-8">
-                <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
-                <FoodPref name="foodPreference" />
+                <InputBox
+                  name="contact"
+                  displayName="Contact"
+                  type="tel"
+                  value={formData.contact}
+                  placeholder="Enter your contact number"
+                  onChange={handleChange}
+                />
+                <FoodPref
+                  name="foodPreference"
+                  displayName="Food Preference"
+                  value={formData.foodPreference}
+                  onChange={handleChange}
+                />
               </div>
               <div className="md:grid items-end md:grid-cols-2 md:gap-8">
-                <InputBox name="registration Fee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
-                {
-                  isCusatian && (
-                    <div className="w-full max-w-xl mt-2 ml-5">
-                      <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        id="fileInput"
-                        className="hidden"
-                        required
-                      />
-                      <label
-                        htmlFor="fileInput"
-                        className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
-                      >
-                        {image ? image.name : 'Upload Your CUSAT id card'}
-                      </label>
-                    </div>
-                  )
-                }
+                <InputBox
+                  name="registrationFee"
+                  displayName="Registration Fee"
+                  disabled={true}
+                  value={"₹1000"}
+                />
+                {isCusatian && (
+                  <div className="w-full max-w-xl ">
+                    <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      id="fileInput"
+                      className="hidden"
+                      required
+                      onChange={(e) => setImage(e.target.files[0])}
+                    />
+                    <label
+                      htmlFor="fileInput"
+                      className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
+                    >
+                      {image ? image.name : 'Upload Your CUSAT id card'}
+                    </label>
+                  </div>
+                )}
               </div>
             </>
           )}
 
           <div className="font-sans gap-3 flex w-[100%] justify-center mt-8">
-            {
-              paymentDone ? (
-                <button
-                  onClick={handleSubmit}
-                  className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
-                  Register
-                </button>) : (
-                <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
-                  Proceed to Payment
-                </button>
-              )
-            }
-
+            {paymentDone ? (
+              <button
+                onClick={handleSubmit}
+                className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+                Register
+              </button>
+            ) : (
+              <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+                Proceed to Payment
+              </button>
+            )}
             <button className="border border-black py-1 px-5 rounded-md" onClick={goBack}>
               Cancel
             </button>

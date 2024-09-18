@@ -49,7 +49,6 @@ const TicketCard = ({
 	return (
 		<div
 			className={`text-left w-[90vw] md:w-[35vw] border-black border rounded-[8px] px-4 py-7 hover:scale-105 transform duration-75 overflow-hidden bg-white ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-			onClick={showPopup}
 		>
 			<p className='text-3xl text-tedRed text-left'>{type}</p>
 			<p className='text-lg mt-5 line-clamp-6 md:line-clamp-4 tracking-wider'>{popupMessage}</p>
