@@ -7,12 +7,21 @@ import { InputBox, FoodPref } from "@/components/utils/InputComponents";
 import { supabase } from "@/utils/supabaseClient";
 import Header from "@/components/Headers/Header";
 import Footer from "@/components/Footer/Footer";
+import copy from '../../../assets/img/copy.svg';
+import { QRCodeSVG } from "qrcode.react";
+import Image from "next/image";
 
 const Page = () => {
   const [isCusatian, setIsCusatian] = useState(false); // initially false
   const [successMessage, setSuccessMessage] = useState("");
   const [paymentDone, setPaymentDone] = useState(false);
   const [image, setImage] = useState(null);
+  const [amount, setAmount] = useState(1000);
+  const [error, setError] = useState(null);
+  const [upiUrl, setUpiUrl] = useState(null);
+  const [fileName, setFileName] = useState('');
+
+  const UPI = "tedxcusat@sbi";
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -93,78 +102,127 @@ const Page = () => {
     history.back();
   };
 
+  const handleForm = async (e) => {
+    e.preventDefault();
+    setPaymentDone(true);
+    setUpiUrl(`upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Ticket`);
+  }
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(UPI);
+  }
+
+  const handlePayment = () => {
+    if (window.innerWidth >= 768) {
+      setError('This feature is not available on desktop. Please try on mobile');
+    }
+    const receiverUPI = 'tedxcusat@sbi';
+    const note = 'Payment for Ticket';
+    const name = 'TEDxCUSAT';
+
+    const upiUrl = `upi://pay?pa=${receiverUPI}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+    window.location.href = upiUrl;
+  }
+
+  const handleFileChange = (e) => {
+    if (e.target.files.length > 0) {
+      setFileName(e.target.files[0].name);
+      setError('');
+    } else {
+      setFileName('Upload Image');
+      setError('Please upload the payment screenshot');
+    }
+  };
+
   return (
     <>
-      <Header />
-      <div className="p-custom max-w-8xl font-sans font-semibold">
-        {/* <Image src={TicketImg} alt="Ticket" /> */}
-        {/* <Image src={TEDxLogo} width={300} className="mt-4" alt="TEDx Logo" /> */}
-        <p className="text-4xl uppercase mt-3">Participant Information</p>
+      <div className="bg-white">
+        <Header />
+      </div>
+      <div className="p-custom max-w-8xl font-sans font-semibold border-y border-black !py-8 md:!py-12">
+        <p className="text-3xl md:text-4xl uppercase mt-3">{paymentDone ? "Payment Information" : "Participant Information"}</p>
         <p className="text-gray-500 text-sm font-medium">
           Make sure you fill all the necessary details carefully; once completed, no changes can be applied.
         </p>
-        <form className="mt-10 mb-14" onSubmit={handleSubmit}>
-          <div className="md:grid items-end md:grid-cols-2 text-black">
-            <InputBox name="name" placeholder="Enter your name" />
-            <InputBox name="email" type="email" placeholder="Enter your email" />
-          </div>
-          <div className="md:grid items-end md:grid-cols-2">
-            <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
-            <FoodPref name="foodPreference" />
-          </div>
-          <div className="md:grid items-end md:grid-cols-2">
-            <InputBox name="registration Fee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
-            {/* <CheckBox name="cusatian" checked={isCusatian} onchange={handleCusatianChange} /> */}
-            {
-              isCusatian && (
-                // <div className="flex items-center gap-2">
-                //   <input type="checkbox" name="cusatian" id="cusatian" checked={isCusatian} onChange={handleCusatianChange} />
-                //   <label htmlFor="cusatian">CUSAT Student</label>
-                // </div>
-                <div className="w-full max-w-xl mt-2 ml-5">
-                  <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    id="fileInput"
-                    className="hidden"
-                    required
-                  />
-                  <label
-                    htmlFor="fileInput"
-                    className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
-                  >
-                    {image ? image.name : 'Upload Your CUSAT id card'}
-                  </label>
+        <form className="md:my-10 my-4" onSubmit={handleForm}>
+          {paymentDone ? (
+            <div className="max-w-3xl">
+              <p className='text-lg md:text-xl font-bold'>Please note: Upload the payment details after making the payment</p>
+              <div className='border w-full flex flex-col p-3 border-black rounded-lg'>
+                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using upi</button>
+                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
+                <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
+                <div className='mx-auto'>
+                  <QRCodeSVG value={upiUrl} size={128} />
                 </div>
-              )
-            }
-          </div>
-          {/* <div className="w-full max-w-xl mt-2">
-            <p className="text-md uppercase">Upload your payment screenshot</p>
-            <input
-              type="file"
-              accept="image/*"
-              id="fileInput"
-              className="hidden"
-              onChange={handleImageChange}
-              required
-            />
-            <label
-              htmlFor="fileInput"
-              className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
-            >
-              {image ? image.name : 'Upload Your Payment Screenshot'}
-            </label>
-          </div> */}
+                <div className='flex items-center'>
+                  <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
+                  <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
+                </div>
+              </div>
+              <div className="w-full max-w-xl mt-1 md:mt-2">
+                <input
+                  type="file"
+                  accept="image/*"
+                  id="fileInput"
+                  className="hidden"
+                  onChange={handleFileChange}
+                />
+                <label
+                  htmlFor="fileInput"
+                  className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
+                >
+                  {fileName ? fileName : 'Upload Your Payment Screenshot'}
+                </label>
+              </div>
+              {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
+            </div>
+          ) : (
+            <>
+              <div className="md:grid items-end md:grid-cols-2 text-black">
+                <InputBox name="name" placeholder="Enter your name" />
+                <InputBox name="email" type="email" placeholder="Enter your email" />
+              </div>
+              <div className="md:grid items-end md:grid-cols-2">
+                <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
+                <FoodPref name="foodPreference" />
+              </div>
+              <div className="md:grid items-end md:grid-cols-2">
+                <InputBox name="registration Fee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
+                {
+                  isCusatian && (
+                    <div className="w-full max-w-xl mt-2 ml-5">
+                      <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        id="fileInput"
+                        className="hidden"
+                        required
+                      />
+                      <label
+                        htmlFor="fileInput"
+                        className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
+                      >
+                        {image ? image.name : 'Upload Your CUSAT id card'}
+                      </label>
+                    </div>
+                  )
+                }
+              </div>
+            </>
+          )}
 
           <div className="font-sans gap-3 flex w-[100%] justify-center mt-8">
             {
               paymentDone ? (
-                <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+                <button
+                  onClick={handleSubmit}
+                  className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
                   Register
                 </button>) : (
-                <button className="border border-black py-1 px-5 rounded-md bg-tedRed text-white" onClick={() => setPaymentDone(true)}>
+                <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
                   Proceed to Payment
                 </button>
               )

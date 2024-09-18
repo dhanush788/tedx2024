@@ -1,5 +1,32 @@
 import React, { useState } from 'react';
 
+const faqData = [
+	{
+		question: "Can we get exchange or refund?",
+		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+	},
+	{
+		question: "Is there a minimum age limit?",
+		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+
+	},
+	{
+		question: "Can we get exchange or refund?",
+		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+
+	},
+	{
+		question: "Is there a minimum age limit?",
+		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+
+	},
+	{
+		question: "Can we get exchange or refund?",
+		answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae."
+
+	}
+]
+
 const FAQItem = ({
 	q,
 	ans = ""
@@ -9,8 +36,8 @@ const FAQItem = ({
 	const handleToggle = () => {
 		setIsExpanded(!isExpanded);
 	};
-	return <div className='m-1 mb-5'>
-		<p className='text-2xl uppercase flex justify-between items-center p-2 cursor-pointer hover:bg-gray-200 transition-all' onClick={handleToggle} >
+	return <div className='mb-5'>
+		<p className='text-3xl tracking-wider font-medium uppercase flex justify-between items-center py-2 cursor-pointer transition-all' onClick={handleToggle} >
 			<span>{q}</span>
 			<span>
 				{
@@ -22,23 +49,20 @@ const FAQItem = ({
 			</span>
 		</p>
 		{isExpanded ?
-			<div className='faq-ans font-medium text-xl mb-5'>
+			<div className='faq-ans font-medium text-2xl mb-5'>
 				{ans}
 			</div> : ""
 		}
-		<hr style={{ height: "2px", backgroundColor: "#000" }} />
+		<hr style={{ height: "1.5px", backgroundColor: "#000" }} />
 	</div>
 }
 function FAQSection() {
 	return (
-		<div className="p-4 rounded-lg">
-			<p className='text-5xl'>FAQ</p>
-			<FAQItem q="can we get exchange or refund" ans="
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta maiores nostrum commodi id cum sed laudantium, perspiciatis itaque numquam? Asperiores enim hic doloremque aliquid et repellat, rem voluptate velit vitae." />
-			<FAQItem q="is there minimum age limit" />
-			<FAQItem q="can we get exchange or refund" />
-			<FAQItem q="is there minimum age limit" />
-			<FAQItem q="can we get exchange or refund" />
+		<div className="py-20 rounded-lg">
+			<p className='text-5xl pb-5 uppercase tracking-wide'>Frequently Asked <br /><span className='text-tedRed'>Questions</span></p>
+			{faqData.map((faq, index) => (
+				<FAQItem key={index} q={faq.question} ans={faq.answer} />
+			))}
 		</div>
 	);
 }
