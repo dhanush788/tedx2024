@@ -180,15 +180,15 @@ const Page = () => {
             </div>
           ) : (
             <>
-              <div className="md:grid items-end md:grid-cols-2 text-black">
+              <div className="md:grid items-end md:grid-cols-2 text-black md:gap-8">
                 <InputBox name="name" placeholder="Enter your name" />
                 <InputBox name="email" type="email" placeholder="Enter your email" />
               </div>
-              <div className="md:grid items-end md:grid-cols-2">
+              <div className="md:grid items-end md:grid-cols-2 md:gap-8">
                 <InputBox name="contact" type="tel" placeholder="Enter your contact number" />
                 <FoodPref name="foodPreference" />
               </div>
-              <div className="md:grid items-end md:grid-cols-2">
+              <div className="md:grid items-end md:grid-cols-2 md:gap-8">
                 <InputBox name="registration Fee" disabled={true} value={isCusatian ? "₹800" : "₹1000"} />
                 {
                   isCusatian && (
