@@ -10,12 +10,13 @@ import About from "@/components/About/About";
 import Filler from "@/components/utils/filler";
 import Statusbar from "@/components/Statusbar/Statusbar";
 import Speakers from "@/components/Speakers/Speakers";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import arrowUp from '../assets/img/arrowUp.svg';
 import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { TextPlugin } from 'gsap/TextPlugin';
+import Alert from "@/components/Alert/Alert";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +27,32 @@ export default function Home() {
   const scrollRef = useRef(null);
   const textRef = useRef(null);
   const elementRef = useRef(null);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const aboutSection = document.getElementById("about");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setOpen(true);
+          // Disconnect the observer once the alert has been triggered
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+
+    return () => {
+      if (aboutSection) {
+        observer.unobserve(aboutSection);
+      }
+    };
+  }, []);
+
 
   useEffect(() => {
     const element = elementRef.current;
@@ -104,6 +131,10 @@ export default function Home() {
     }
   };
 
+  const handleOpen = () => {
+    setOpen(false);
+  }
+
   return (
     <main className="bg-opacity-0 bg-contain bg-repeat-y">
       <div className="snapping" ref={scrollRef} >
@@ -146,6 +177,7 @@ export default function Home() {
       <Speakers />
       <OurJourney />
       <Footer />
+      <Alert open={open} handleClose={handleOpen}/>
     </main>
   );
 }

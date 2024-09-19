@@ -39,7 +39,7 @@ const data = [
         img: sheena
     },
     {
-        heading: "A S Adil Mohammed",
+        heading: "A S Adil Mohammad",
         subHeading: "Curator",
         img: adil
     },
