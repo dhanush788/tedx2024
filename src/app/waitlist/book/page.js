@@ -13,7 +13,8 @@ const Page = () => {
     email: '',
     address: '',
     contact: '',
-    foodPreference: 'veg'
+    foodPreference: 'veg',
+    designation: '',
   });
 
   const handleChange = (e) => {
@@ -66,6 +67,15 @@ const Page = () => {
             type="email"
             value={formData.email}
             placeholder="Enter your email"
+            onChange={handleChange}
+          />
+        </div>
+        <div className='md:grid items-end md:grid-cols-2 md:gap-8'>
+          <InputBox
+            name="designation"
+            displayName="Designation"
+            value={formData.designation}
+            placeholder="Enter your designation"
             onChange={handleChange}
           />
         </div>
