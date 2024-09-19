@@ -174,10 +174,12 @@ const Page = () => {
   const [isCusatian, setIsCusatian] = useState(false);
   const [image, setImage] = useState(null);
   const [amount, setAmount] = useState(1000);
+  const [originalAmount, setOriginalAmount] = useState(1000);
   const [error, setError] = useState(null);
   const [upiUrl, setUpiUrl] = useState(null);
   const [fileName, setFileName] = useState('Upload the payment screenshot.');
   const [loading, setLoading] = useState(false)
+  const [referralStatus, setReferralStatus] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -204,7 +206,7 @@ const Page = () => {
       })();
 
       setIsCusatian((cusatianType === "cusatian") || (cusatianType === "earlycusatian"));
-      console.log(newAmount)
+      setOriginalAmount(newAmount);
       setAmount(newAmount);
 
       setFormData((prevData) => ({
@@ -214,7 +216,31 @@ const Page = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (formData.referral === "") return;
+    if (referralCode.includes(formData.referral.toUpperCase())) {
+      setReferralStatus('valid');
+      if (typeof window !== "undefined") {
+        const type = window.location.href.match(/(?<=type\=)[a-z]+/);
+        const cusatianType = type && type[0];
+        if (cusatianType === "earlycusatian") return;
+        if (cusatianType === "earlyregular") return;
+      }
 
+      setAmount(Math.round(originalAmount * 0.9));
+      setFormData((prevData) => ({
+        ...prevData,
+        registration_fee: amount,
+      }));
+    } else {
+      setAmount(originalAmount);
+      setFormData((prevData) => ({
+        ...prevData,
+        registration_fee: originalAmount,
+      }));
+      setReferralStatus('');
+    }
+  }, [formData.referral]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -380,7 +406,6 @@ const Page = () => {
                   {fileName}
                 </label>
               </div>
-              {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
             </div>
           ) : (
             <>
@@ -432,6 +457,7 @@ const Page = () => {
                   disabled={true}
                   value={amount}
                 />
+                {referralStatus === 'valid' && <p className='font-avenue italic mb-3 md:mb-5'>Referral code applied successfully!</p>}
                 {isCusatian && (
                   <div className="w-full max-w-xl ">
                     <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
