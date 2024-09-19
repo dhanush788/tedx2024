@@ -11,7 +11,7 @@ const faqData = [
 
 	},
 	{
-		question: "When will I receive my ticket??",
+		question: "When will I receive my ticket?",
 		answer: "Once payment is completed, your e-ticket will be sent to your registered email within 1-2 days. Please check your spam/junk folder."
 
 	},

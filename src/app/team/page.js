@@ -15,6 +15,7 @@ import farhan from '../../assets/img/team/farhan.jpg'
 import melbin from '../../assets/img/team/melbin.jpg'
 import evlyn from '../../assets/img/team/evlyn.jpg'
 import sheena from '../../assets/img/team/sheena.jpg'
+import diya from '../../assets/img/team/diya.jpg'
 
 import Image from 'next/image'
 import Header from '@/components/Headers/Header'
@@ -86,6 +87,11 @@ const data = [
         heading: "Evlyn",
         subHeading: "Content",
         img: evlyn
+    },
+    {
+        heading: "Diya",
+        subHeading: "Sponsorship",
+        img: diya
     }
 ]
 

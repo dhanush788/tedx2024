@@ -8,17 +8,17 @@ import { useState } from 'react';
 
 
 const InfoparkMessage = [
-	"TEDxCUSAT 2024 presents a distinguished day designed for intellectual and professional advancement.",
-	"Experience insights from 7 distinguished speakers representing diverse fields and expertise",
-	"Engage in curated networking opportunities with peers and industry leaders",
-	"Each ticket includes:",
-	"Comprehensive access to all sessions and talks",
-	"A gourmet lunch and a selection of refreshments throughout the day",
-	"A sophisticated event hamper featuring keepsakes and essential materials",
-	"Venue: Athulya Hall, Infopark, Kochi",
-	"Date: 28th September 2024",
-	"Join us for a remarkable day of inspiration and enrichment tailored just for you."
-]
+	{ content: "TEDxCUSAT 2024 presents a distinguished day designed for intellectual and professional advancement.", isList: false },
+	{ content: "Experience insights from 7 distinguished speakers representing diverse fields and expertise", isList: true },
+	{ content: "Engage in curated networking opportunities with peers and industry leaders", isList: true },
+	{ content: "Each ticket includes:", isList: false },
+	{ content: "Comprehensive access to all sessions and talks", isList: true },
+	{ content: "A gourmet lunch and a selection of refreshments throughout the day", isList: true },
+	{ content: "A sophisticated event hamper featuring keepsakes and essential materials", isList: true },
+	{ content: "Venue: Athulya Hall, Infopark, Kochi", isList: true },
+	{ content: "Date: 28th September 2024", isList: true },
+	{ content: "Join us for a remarkable day of inspiration and enrichment tailored just for you.", isList: false },
+];
 
 const TicketCard = ({
 	type,
@@ -38,8 +38,8 @@ const TicketCard = ({
 		<p className='text-base md:text-lg mb-10'>
 			{popupMessage.map((item, index) =>
 				<span key={index} className='block'>
-					<span className={`text-tedRed mr-2 ${(index === 0 || index == popupMessage.length - 1 ) ? 'hidden' : ''}`}>•</span>
-					{item}
+					<span className={`text-tedRed mr-2 ${(!item.isList) ? 'hidden' : ''}`}>•</span>
+					{item.content}
 				</span>
 			)}
 		</p>

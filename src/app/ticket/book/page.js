@@ -177,6 +177,7 @@ const Page = () => {
   const [error, setError] = useState(null);
   const [upiUrl, setUpiUrl] = useState(null);
   const [fileName, setFileName] = useState('Upload the payment screenshot.');
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -194,37 +195,26 @@ const Page = () => {
     if (typeof window !== "undefined") {
       const type = window.location.href.match(/(?<=type\=)[a-z]+/);
       const cusatianType = type && type[0];
-      setIsCusatian((type && type[0] === "cusatian") || (type && type[0] === "earlycusatian"));
-      if (cusatianType === "cusatian") {
-        setIsCusatian(true);
-        setAmount(700);
-      } else if (cusatianType === "earlycusatian") {
-        setIsCusatian(true);
-        setAmount(600);
-      } else if (cusatianType === "earlyregular") {
-        setIsCusatian(false);
-        setAmount(800);
-      } else {
-        setIsCusatian(false);
-        setAmount(900);
-      }
+
+      const newAmount = (() => {
+        if (cusatianType === "cusatian") return 700;
+        if (cusatianType === "earlycusatian") return 600;
+        if (cusatianType === "earlyregular") return 800;
+        return 900;
+      })();
+
+      setIsCusatian((cusatianType === "cusatian") || (cusatianType === "earlycusatian"));
+      console.log(newAmount)
+      setAmount(newAmount);
 
       setFormData((prevData) => ({
         ...prevData,
-        registration_fee: amount,
+        registration_fee: newAmount,
       }));
     }
   }, []);
 
-  useEffect(() => {
-    if (formData.referral && !referralCode.includes(formData.referral)) {
-      setError('Invalid referral code.');
-    } else {
-      setError('');
-      setAmount(amount - 100);
-    }
-    
-  }, [formData.referral]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -236,9 +226,6 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    let imageUrlCusat = null;
-    let imageUrl = null;
 
     if (isCusatian && !image) {
       setError('Please upload your CUSAT id card.');
@@ -255,6 +242,7 @@ const Page = () => {
       return;
     }
 
+    setLoading(true);
     if (image) {
       const { data, error: uploadError } = await supabase.storage
         .from('ticket-id')
@@ -295,7 +283,7 @@ const Page = () => {
         ...prevData,
         imageUrl: publicUrl,
       }));
-      }
+    }
 
     const { error: insertError } = await supabase.from('participants').insert([formData]);
 
@@ -306,17 +294,22 @@ const Page = () => {
       console.log("Registered successfully");
       setSuccessMessage("Successfully registered!");
       window.location.href = '/ticket/success';
-
     }
+    setLoading(false);
   };
 
   const goBack = (evt) => {
     evt.preventDefault();
-    history.back();
+    window.location.href = '/ticket';
   };
 
   const handleForm = async (e) => {
     e.preventDefault();
+    if (isCusatian && !image) {
+      setError('Please upload your CUSAT id card.');
+      return;
+    }
+    setError('');
     setPaymentDone(true);
     setUpiUrl(`upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Ticket`);
   }
@@ -340,13 +333,15 @@ const Page = () => {
       setError('');
     } else {
       setFileName('Upload the payment screenshot.');
-      setError('Please upload the payment screenshot.');
     }
   };
 
   return (
     <>
       <div className="bg-white">
+        {loading && (
+          <div className="fixed w-full h-full bg-black bg-opacity-50 z-[200]"></div>
+        )}
         <Header />
       </div>
       <div className="p-custom max-w-8xl font-sans font-semibold border-y border-black !py-8 md:!py-12">
@@ -429,9 +424,8 @@ const Page = () => {
                   value={formData.referral}
                   placeholder="Enter referral code"
                   onChange={handleChange}
+                  required={false}
                 />
-              </div>
-              <div className="md:grid items-end md:grid-cols-2 md:gap-8">
                 <InputBox
                   name="registrationFee"
                   displayName="Registration Fee"
@@ -447,7 +441,6 @@ const Page = () => {
                       accept="image/*"
                       id="fileInput"
                       className="hidden"
-                      required={isCusatian}
                       onChange={(e) => setImage(e.target.files[0])}
                     />
                     <label
@@ -461,20 +454,19 @@ const Page = () => {
               </div>
             </>
           )}
-
+          {error && <p className='text-red-500 mt-1 md:mt-2'>{error}</p>}
           <div className="font-sans gap-3 flex w-[100%] justify-center mt-8">
             {paymentDone ? (
               <button
-                onClick={handleSubmit}
-                className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+                className="border border-black hover:scale-105 duration-75 py-3 px-5 rounded-md bg-tedRed text-white">
                 Register
               </button>
             ) : (
-              <button type="submit" className="border border-black py-1 px-5 rounded-md bg-tedRed text-white">
+              <button type="submit" className="border border-black hover:scale-105 duration-75 py-3 px-5 rounded-md bg-tedRed text-white">
                 Proceed to Payment
               </button>
             )}
-            <button className="border border-black py-1 px-5 rounded-md" onClick={goBack}>
+            <button className="border border-black hover:scale-105 duration-75 py-3 px-5 rounded-md" onClick={goBack}>
               Cancel
             </button>
           </div>

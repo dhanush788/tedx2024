@@ -6,7 +6,8 @@ export const InputBox = ({
 	type = "text",
 	value = "",
 	disabled = false,
-	onChange
+	onChange,
+	required = true
 }) => {
 	let _n = name.replace(/\s+/, "");
 	return (
@@ -14,7 +15,7 @@ export const InputBox = ({
 			<label htmlFor={_n} className="text-md uppercase">{displayName}</label><br />
 			<input
 				type={type}
-				required
+				required = {required}
 				value={value}
 				disabled={disabled}
 				name={_n}
