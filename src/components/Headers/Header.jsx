@@ -94,7 +94,7 @@ const Header = () => {
 
     return (
         <>
-            <header>
+            <header style = {{backgroundColor:"rgb(255, 255, 255)" , boxShadow: "rgba(0, 0, 0, 0.15) 0px 0px 10px"}}>
                 <a href="/" className="logo" id='logo'></a>
                 <div className="date-time">{formatDate(currentDate)}</div>
                 <button className="menu" onClick={toggleMenu} aria-expanded={expanded ? 'true' : 'false'}>
