@@ -27,7 +27,7 @@ const REG_POPUP_MSG = [
 
 const CUSAT_POPUP_MSG = [
     { content: "TEDxCUSAT 2024 presents a distinguished day designed for intellectual and professional advancement.", isList: false },
-    { content: "Special rate of ₹800 exclusively for CUSAT students", isList: true },
+    { content: "Special rate of ₹700 exclusively for CUSAT students", isList: true },
     { content: "Experience insights from 7 distinguished speakers representing diverse fields and expertise", isList: true },
     { content: "Engage in curated networking opportunities with peers and industry leaders", isList: true },
     { content: "Each ticket includes:", isList: false },
@@ -47,7 +47,7 @@ const EARLY_REG_POPUP_MSG = [
     { content: " A special event hamper with keepsakes and essential materials", isList: true },
     { content: "Details:", isList: false },
     { content: "Who should attend: Students,professionals,and visionaries  passionate about innovation and progress", isList: true },
-    { content: "Price: Special early bird rate", isList: true },
+    { content: "Price: Special early bird rate of ₹800", isList: true },
     { content: "Venue: Athulya Hall, Infopark, Kochi", isList: true },
     { content: "Date: 28th September 2024", isList: true },
 ]
