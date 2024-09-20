@@ -177,7 +177,7 @@ const Page = () => {
   const [originalAmount, setOriginalAmount] = useState(1000);
   const [error, setError] = useState(null);
   const [upiUrl, setUpiUrl] = useState(null);
-  const [fileName, setFileName] = useState('Upload the payment screenshot.');
+  const [fileName, setFileName] = useState(null);
   const [loading, setLoading] = useState(false)
   const [referralStatus, setReferralStatus] = useState('');
   const [formData, setFormData] = useState({
@@ -260,7 +260,7 @@ const Page = () => {
       return;
     }
 
-    if (fileName === 'Upload the payment screenshot.') {
+    if (!fileName) {
       setError('Please upload the payment screenshot.');
       return;
     }
@@ -294,10 +294,10 @@ const Page = () => {
         }
     }
 
-    if (fileName !== 'Upload the payment screenshot.') {
+    if (fileName) {
       const { data, error: uploadError } = await supabase.storage
         .from('ticket-id')
-        .upload(`public/${formData.name}/payment_${image.name}`, image);
+        .upload(`public/${formData.name}/payment_${fileName.name}`, fileName);
 
       if (uploadError) {
         console.error("Error uploading image:", uploadError);
@@ -402,13 +402,13 @@ const Page = () => {
                   accept="image/*"
                   id="fileInput"
                   className="hidden"
-                  onChange={handleFileChange}
+                  onChange={(e) => {setFileName(e.target.files[0]);}}
                 />
                 <label
                   htmlFor="fileInput"
                   className="w-full block border border-black rounded-md p-2 text-center bg-white cursor-pointer hover:bg-[#f0f4ff] focus:ring-2 focus:ring-[#394095] transition duration-200 ease-in-out shadow-sm"
                 >
-                  {fileName}
+                  {fileName ? fileName.name : 'Upload the payment screenshot.'}
                 </label>
               </div>
             </div>
