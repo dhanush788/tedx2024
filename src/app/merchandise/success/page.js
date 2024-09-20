@@ -12,7 +12,7 @@ const Page = () => {
           Your order has been placed successfully 🎉
         </p>
         <p className='text-base md:text-xl'>
-          You've successfully ordered <span className='font-bold'><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT24</span> official merchandise. You will receive an email with the details of your order shortly. If you have any questions or need further assistance, feel free to contact us at 
+          You've successfully ordered <span className='font-bold'><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT24</span> official merchandise. You will receive an email with the details of your order within 4-5 business days. If you have any questions or need further assistance, feel free to contact us at 
           <br/>
           <span className='font-bold'>Basil: <a href='tel:+91 8111920644'>+91 8111920644</a></span>
           <br/>

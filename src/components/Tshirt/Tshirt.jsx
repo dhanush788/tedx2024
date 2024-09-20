@@ -376,7 +376,7 @@ const Tshirt = () => {
                 <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={() => setPopUp(true)}>Buy Now</button>
             </div>
             {popUp &&
-                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start pb-5 md:pb-0 pt-2 md:items-center justify-center z-[999] overflow-y-auto'>
+                <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start pb-5 md:pb-0 pt-2 md:items-start justify-center z-[999] overflow-y-auto'>
                     <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50' onClick={() => setPopUp(false)}></div>
                     <div className='bg-white p-5 pt-8 md:pt-14 rounded-md relative flex flex-col md:flex-wrap w-[90%] md:w-1/2 gap-2'>
                         <svg
