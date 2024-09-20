@@ -189,6 +189,7 @@ const Page = () => {
     imageUrl: '',
     cusatImageUrl: '',
     referral: '',
+    is_cusatian: isCusatian,
   });
 
   const UPI = "tedxcusat@sbi";
@@ -212,6 +213,7 @@ const Page = () => {
       setFormData((prevData) => ({
         ...prevData,
         registration_fee: newAmount,
+        is_cusatian: (cusatianType === "cusatian") || (cusatianType === "earlycusatian"),
       }));
     }
   }, []);
@@ -230,7 +232,7 @@ const Page = () => {
       setAmount(Math.round(originalAmount * 0.9));
       setFormData((prevData) => ({
         ...prevData,
-        registration_fee: amount,
+        registration_fee: Math.round(originalAmount * 0.9),
       }));
     } else {
       setAmount(originalAmount);
@@ -284,10 +286,12 @@ const Page = () => {
         .from('ticket-id')
         .getPublicUrl(data.path);
 
-      setFormData((prevData) => ({
-        ...prevData,
-        cusatImageUrl: publicUrl,
-      }));
+        if (publicUrl) {
+          setFormData((prevData) => ({
+            ...prevData,
+            cusatImageUrl: publicUrl,
+          }));
+        }
     }
 
     if (fileName !== 'Upload the payment screenshot.') {
@@ -305,12 +309,13 @@ const Page = () => {
         .from('ticket-id')
         .getPublicUrl(data.path);
 
-      setFormData((prevData) => ({
-        ...prevData,
-        imageUrl: publicUrl,
-      }));
+        if (publicUrl) {
+          setFormData((prevData) => ({
+            ...prevData,
+            imageUrl: publicUrl,
+          }));
+        }
     }
-
     const { error: insertError } = await supabase.from('participants').insert([formData]);
 
     if (insertError) {
@@ -457,7 +462,11 @@ const Page = () => {
                   disabled={true}
                   value={amount}
                 />
+              </div>
+              <div>
                 {referralStatus === 'valid' && <p className='font-avenue italic mb-3 md:mb-5'>Referral code applied successfully!</p>}
+              </div>
+              <div className="md:grid items-end md:grid-cols-2 md:gap-8">
                 {isCusatian && (
                   <div className="w-full max-w-xl ">
                     <p className="text-md uppercase mb-3">Upload your CUSAT id card</p>
