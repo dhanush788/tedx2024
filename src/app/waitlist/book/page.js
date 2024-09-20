@@ -15,7 +15,34 @@ const Page = () => {
     contact: '',
     foodPreference: 'veg',
     designation: '',
+    location: ''
   });
+
+  const location = [
+    "Thapasya",
+    "Vismaya",
+    "Athulya",
+    "Athulya Annexe",
+    "Lulu Cyber Tower 1",
+    "Lulu Cyber Tower 2",
+    "World Trade Centre Tower 1",
+    "World Trade Centre Tower 2",
+    "TCS Campus",
+    "Wipro Campus",
+    "IBS Campus",
+    "Carnival Phase 1",
+    "Carnival Phase 2",
+    "Carnival Phase 3",
+    "Carnival Phase 4",
+    "Jyothirmaya",
+    "Claysys Campus",
+    "Cognizant Campus",
+    "Trans Asia Cyber Park",
+    "Cloudscapes",
+    "Infopark Thrissur",
+    "Infopark Cherthala"
+  ]
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,6 +97,22 @@ const Page = () => {
             onChange={handleChange}
           />
         </div>
+        <div className="md:grid items-end md:grid-cols-2 text-black md:gap-8">
+          <InputBox
+            name="companyName"
+            displayName="company Name"
+            value={formData.companyName}
+            placeholder="Enter your company name"
+            onChange={handleChange}
+          />
+          <InputBox
+            name="address"
+            displayName="company Address"
+            value={formData.address}
+            placeholder="Enter your company address"
+            onChange={handleChange}
+          />
+        </div>
         <div className='md:grid items-end md:grid-cols-2 md:gap-8'>
           <InputBox
             name="designation"
@@ -78,6 +121,21 @@ const Page = () => {
             placeholder="Enter your designation"
             onChange={handleChange}
           />
+          <div className="py-3">
+            <label className="text-md uppercase">Building</label><br />
+            <select
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              className="bg-transparent border-b border-b-gray-700 p-2 w-[100%] cursor-pointer"
+              required
+            >
+              <option value="">Select your building</option>
+              {location.map((loc, index) => (
+                <option key={index} value={loc}>{loc}</option>
+              ))}
+            </select>
+          </div>
         </div>
         <div className="md:grid items-end md:grid-cols-2 md:gap-8">
           <InputBox
@@ -92,22 +150,6 @@ const Page = () => {
             name="foodPreference"
             displayName="Food Preference"
             value={formData.foodPreference}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="md:grid items-end md:grid-cols-2 text-black md:gap-8">
-          <InputBox
-            name="companyName"
-            displayName="company Name"
-            value={formData.companyName}
-            placeholder="Enter your company name"
-            onChange={handleChange}
-          />
-          <InputBox
-            name="address"
-            displayName="company Address"
-            value={formData.address}
-            placeholder="Enter your company address"
             onChange={handleChange}
           />
         </div>
