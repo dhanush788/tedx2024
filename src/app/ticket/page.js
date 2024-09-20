@@ -168,7 +168,7 @@ const page = () => {
                             price="600"
                             type="EARLY BIRD CUSAT STUDENTS"
                             popupMessage={EARLY_CUSAT_POPUP_MSG}
-                            disabled={true}
+                            disabled={false}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
@@ -178,7 +178,7 @@ const page = () => {
                             price="800"
                             type="EARLY BIRD REGULAR"
                             popupMessage={EARLY_REG_POPUP_MSG}
-                            disabled={true}
+                            disabled={false}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
@@ -188,7 +188,7 @@ const page = () => {
                             price="700"
                             type="CUSAT STUDENTS"
                             popupMessage={CUSAT_POPUP_MSG}
-                            disabled={true}
+                            disabled={false}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
@@ -198,7 +198,7 @@ const page = () => {
                             price="900"
                             type="REGULAR"
                             popupMessage={REG_POPUP_MSG}
-                            disabled={true}
+                            disabled={false}
                         />
                     </div>
                 </div>
