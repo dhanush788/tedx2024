@@ -385,7 +385,7 @@ const Page = () => {
             <div className="max-w-3xl">
               <p className='text-lg md:text-xl font-bold'>Please note: Upload the payment details after making the payment</p>
               <div className='border w-full flex flex-col p-3 border-black rounded-lg'>
-                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using UPI</button>
+                <button type="button" className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={handlePayment}>Pay ₹ {amount} using UPI</button>
                 <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>OR</p>
                 <p className='text-base md:text-lg mt-1 md:mt-2 text-center'>Scan the QR code to pay</p>
                 <div className='mx-auto'>
@@ -493,6 +493,7 @@ const Page = () => {
           <div className="font-sans gap-3 flex w-[100%] justify-center mt-8">
             {paymentDone ? (
               <button
+                type="submit"
                 className="border border-black hover:scale-105 duration-75 py-3 px-5 rounded-md bg-tedRed text-white">
                 Register
               </button>
