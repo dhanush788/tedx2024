@@ -12,7 +12,7 @@ const Page = () => {
           Your ticket has been booked successfully
         </p>
         <p className='text-base md:text-xl md:pt-5'>
-          You've successfully booked your ticket for <span className='font-bold'><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT24</span> You will receive an email with the details of your booking within 1 - 2 business days. If you have any questions or need further assistance, feel free to contact us at <a href='mailto:outreach@tedxcusat.in' className='underline font-bold'>outreach@tedxcusat.in</a>
+          You've successfully booked your ticket for <span className='font-bold'><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT24</span> You will receive an email with the details of your booking 2 to 3 days before the event. If you have any questions or need further assistance, feel free to contact us at <a href='mailto:outreach@tedxcusat.in' className='underline font-bold'>outreach@tedxcusat.in</a>
           <br />
         </p>
         <p className='text-sm md:text-lg pt-5 md:pt-8'>
