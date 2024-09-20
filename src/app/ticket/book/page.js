@@ -180,6 +180,7 @@ const Page = () => {
   const [fileName, setFileName] = useState(null);
   const [loading, setLoading] = useState(false)
   const [referralStatus, setReferralStatus] = useState('');
+  const [isCopied, setIsCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -347,7 +348,16 @@ const Page = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(UPI);
+    setIsCopied(true);
   }
+
+  useEffect(() => {
+    if (isCopied) {
+        setTimeout(() => {
+            setIsCopied(false)
+        }, 3000)
+    }
+}, [isCopied])
 
   const handlePayment = () => {
     if (window.innerWidth >= 768) {
@@ -511,6 +521,11 @@ const Page = () => {
           <p className="text-green-500 text-lg font-bold text-center">{successMessage}</p>
         )}
       </div>
+      {isCopied && (
+        <div className='fixed bottom-5 right-5 bg-black bg-opacity-50 text-white p-2 rounded-md z-[200]'>
+          <p className='text-center'>UPI copied to clipboard</p>
+        </div>
+      )}
       <Footer />
     </>
   );
