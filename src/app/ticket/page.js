@@ -85,54 +85,62 @@ const TicketCard = ({
     }
 
     return (
-        <div className={`flex flex-col justify-between text-left w-[90vw] md:w-[35vw] border-black border rounded-[8px] px-4 py-7 hover:scale-105 transform duration-75 overflow-hidden bg-white min-h-[500px] md:min-h-[450px] ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`} >
-            <div>
-                <p className='text-3xl text-tedRed text-left'>{type}</p>
-                <p className='text-lg md:mt-3 tracking-wider'>
-                    {popupMessage.slice(0, 4).map((item, index) => (
-                        <span key={index} className={`${!item.isList && 'pt-1 md:pt-2'} ${index !== 3 && 'block'}`}>
-                            {item.isList && (
-                                <span className='text-tedRed mr-2'>•</span>
-                            )}
-                            {item.content}
-                        </span>
-                    ))}
-                    ...
-                </p>
-            </div>
-            <div>
+        <div className='relative '>
+            {disabled && (
+                <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center z-10 cursor-not-allowed'>
+                    <div className="absolute top-0 left-0 w-full h-full z-0 rounded-[8px]"></div>
+                    <p className='text-7xl md:text-8xl z-10 md:-rotate-45'>SOLD <span className='text-tedRed'>OUT</span></p>
+                </div>
+            )}
+            <div className={`flex flex-col justify-between text-left w-[90vw] md:w-[35vw] border-black border rounded-[8px] px-4 py-7 hover:scale-105 transform duration-75 overflow-hidden bg-white min-h-[500px] md:min-h-[450px] ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`} >
+                <div>
+                    <p className='text-3xl text-tedRed text-left'>{type}</p>
+                    <p className='text-lg md:mt-3 tracking-wider'>
+                        {popupMessage.slice(0, 4).map((item, index) => (
+                            <span key={index} className={`${!item.isList && 'pt-1 md:pt-2'} ${index !== 3 && 'block'}`}>
+                                {item.isList && (
+                                    <span className='text-tedRed mr-2'>•</span>
+                                )}
+                                {item.content}
+                            </span>
+                        ))}
+                        ...
+                    </p>
+                </div>
+                <div>
 
-                <p className='text-2xl'>₹{price}</p>
-                <div className='flex items-center gap-5'>
-                    <a href={redirect} className={disabled ? 'pointer-events-none' : ''}>
-                        <button
-                            className={`flex hover:bg-black border border-black text-white p-3 pt-4 rounded gap-3 items-center bg-tedRed transform duration-75 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            disabled={disabled}
+                    <p className='text-2xl'>₹{price}</p>
+                    <div className='flex items-center gap-5'>
+                        <a href={redirect} className={disabled ? 'pointer-events-none' : ''}>
+                            <button
+                                className={`flex hover:bg-black border border-black text-white p-3 pt-4 rounded gap-3 items-center bg-tedRed transform duration-75 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                disabled={disabled}
+                            >
+                                <span className="text-xl leading-5">BUY TICKETS</span>
+                                <span className="btn__svg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.85 24.85"
+                                        style={{ transform: "translate(0px)", opacity: 1, height: "20px", width: "20px", strokeWidth: 2 }}>
+                                        <g id="Calque_1-2" data-name="Calque 1">
+                                            <line style={{ fill: "none", stroke: "#fff", strokeMiterlimit: 10 }} x1="0.35" y1="24.5" x2="24.35" y2="0.5"></line>
+                                            <polyline style={{ fill: "none", stroke: "#fff", strokeMiterlimit: 10 }} points="24.35 24.4 24.35 0.5 0.46 0.5"></polyline>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </button>
+                        </a>
+                        <p
+                            className={`text-xl inline-flex gap-2 cursor-pointer border border-black py-3 px-5 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            onClick={showPopup}
                         >
-                            <span className="text-xl leading-5">BUY TICKETS</span>
-                            <span className="btn__svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.85 24.85"
-                                    style={{ transform: "translate(0px)", opacity: 1, height: "20px", width: "20px", strokeWidth: 2 }}>
-                                    <g id="Calque_1-2" data-name="Calque 1">
-                                        <line style={{ fill: "none", stroke: "#fff", strokeMiterlimit: 10 }} x1="0.35" y1="24.5" x2="24.35" y2="0.5"></line>
-                                        <polyline style={{ fill: "none", stroke: "#fff", strokeMiterlimit: 10 }} points="24.35 24.4 24.35 0.5 0.46 0.5"></polyline>
-                                    </g>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
                                 </svg>
                             </span>
-                        </button>
-                    </a>
-                    <p
-                        className={`text-xl inline-flex gap-2 cursor-pointer border border-black py-3 px-5 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        onClick={showPopup}
-                    >
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000">
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
-                            </svg>
-                        </span>
-                        <span>DETAILS</span>
-                    </p>
+                            <span>DETAILS</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +176,7 @@ const page = () => {
                             price="600"
                             type="EARLY BIRD CUSAT STUDENTS"
                             popupMessage={EARLY_CUSAT_POPUP_MSG}
-                            disabled={false}
+                            disabled={true}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
@@ -178,7 +186,7 @@ const page = () => {
                             price="800"
                             type="EARLY BIRD REGULAR"
                             popupMessage={EARLY_REG_POPUP_MSG}
-                            disabled={false}
+                            disabled={true}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
