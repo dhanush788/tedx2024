@@ -5,6 +5,7 @@ import pillai from '../../assets/img/speakers/Pillai.jpg'
 import hani from '../../assets/img/speakers/hani.png'
 import arvind from '../../assets/img/speakers/arvind.png'
 import anantharaman from '../../assets/img/speakers/anantharaman.png'
+import arrow from '../../assets/img/Arrowlong.svg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
 
@@ -87,18 +88,12 @@ const Newspeakers = () => {
                     <p className='font-thunder uppercase font-bold md:text-[6.7vw] text-center text-tedRed tracking-wide'>Speakers</p>
                 </div>
                 <div className='absolute bottom-[130vw] md:bottom-0 -right-[24vw] md:right-0 flex flex-row justify-between md:px-[5vw] z-10 rotate-90 md:rotate-0' style={{ width: 'calc(100% - 25.5vw)', height: '6vw' }}>
-                    <div className='w-[40%] flex items-center'>
-                        <span class="mr-2 text-black font-extralight text-3xl cursor-pointer"
-                            onClick={() => setIndex((index - 1 + speakers.length) % speakers.length)}
-                        >&lt;</span>
-                        <hr className='w-full bg-black -z-10 h-px border-0 my-auto' />
+                    <div className='w-[25vw] md:w-[16vw] flex items-center'>
+                        <Image src={arrow} alt='arrow w-full h-auto' className='cursor-pointer' onClick={() => setIndex((index - 1 + speakers.length) % speakers.length)} />
                     </div>
                     <p className='font-avenue my-auto -rotate-90 md:rotate-0'>{index + 1}/{speakers.length}</p>
-                    <div className='w-[40%] flex items-center'>
-                        <hr className='w-full bg-black -z-10 h-px border-0 my-auto' />
-                        <span class="ml-2 text-black font-extralight text-3xl cursor-pointer"
-                            onClick={() => setIndex((index + 1) % speakers.length)}
-                        >&gt;</span>
+                    <div className='w-[25vw] md:w-[16vw] flex items-center rotate-180'>
+                        <Image src={arrow} alt='arrow w-full h-auto' className='cursor-pointer' onClick={() => setIndex((index + 1) % speakers.length)} />
                     </div>
                 </div>
                 <div className='absolute top-0 left-0 w-full h-full rounded-15'>
