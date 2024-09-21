@@ -19,6 +19,7 @@ const REG_POPUP_MSG = [
     { content: "Price: ₹900", isList: true },
     { content: "Venue: Athulya Hall, Infopark, Kochi", isList: true },
     { content: "Date: 28th September 2024", isList: true },
+    { content: "Time: 9:30 AM to 5:00 PM", isList: true },
     { content: "Note:Tickets are in high demand—secure your place at this exclusive event today!", isList: false },
 ]
 
@@ -36,6 +37,7 @@ const CUSAT_POPUP_MSG = [
     { content: "A sophisticated event hamperfeaturing keepsakes and essential materials", isList: true },
     { content: "Venue: Athulya Hall, Infopark, Kochi", isList: true },
     { content: "Date: 28th September 2024", isList: true },
+    { content: "Time: 9:30 AM to 5:00 PM", isList: true },
     { content: "Join us for a remarkable day of inspiration and enrichment tailored just for you.", isList: false },
 ]
 const EARLY_REG_POPUP_MSG = [

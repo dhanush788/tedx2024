@@ -17,6 +17,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { TextPlugin } from 'gsap/TextPlugin';
 import Alert from "@/components/Alert/Alert";
+import Newspeakers from "@/components/NewSpeakers/Newspeakers";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -173,6 +174,7 @@ export default function Home() {
       <CountDownTimer />
       <About />
       <Statusbar />
+      {/* <Newspeakers /> */}
       <Snapshots />
       <Speakers />
       <OurJourney />
