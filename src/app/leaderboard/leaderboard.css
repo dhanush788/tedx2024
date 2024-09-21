@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway:wght@300;500&family=Bebas+Neue&family=Montserrat:wght@400&display=swap');
+
+/* General Styles */
+body {
+    background-color: #f4f4f4; /* Slightly off-white background for better contrast */
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000; /* Default text color */
+}
+
+/* Leaderboard container */
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.leaderboard-heading {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 55px; /* Prominent size */
+    color: #ffffff; /* White for contrast */
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Section Heading (TOP CONTRIBUTORS and ALL CONTRIBUTORS) */
+.section-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    background-color: #eb0028; /* Updated red */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Contributors */
+.top-contributors {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #000;
+    margin: 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Space between TOP CONTRIBUTORS title and list */
+.top-contributors .section-heading {
+    margin-bottom: 20px;
+}
+
+.top-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.contributor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eb0028; /* Updated red */
+    color: #fff;
+    padding: 15px;
+    width: 220px;
+    margin: 10px 0;
+    font-family: 'Bebas Neue', cursive;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added smooth transition */
+    border-radius: 8px;
+    cursor: pointer; /* Cursor pointer for interactivity */
+}
+
+.contributor-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift and slight enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+.contributor-card:active {
+    transform: translateY(0px) scale(0.98); /* Small scale on click */
+}
+
+.contributor-card .rank {
+    background-color: #000;
+    color: #eb0028; /* Updated red */
+    padding: 5px 15px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contributor-card:hover .rank {
+    background-color: #eb0028; /* Updated red */
+    color: #000; /* Invert colors on hover for rank */
+}
+
+.contributor-card .name {
+    font-size: 20px;
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.contributor-card .score {
+    font-size: 22px;
+}
+
+/* All Contributors */
+.all-contributors {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #000;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Space between ALL CONTRIBUTORS title and list */
+.all-contributors .section-heading {
+    margin-bottom: 20px;
+}
+
+/* Header cells (Rank, Name, Score) */
+.cell-header {
+    color: #fff; /* White text */
+    background-color: #eb0028;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 0; /* Reduced padding for thinner appearance */
+    text-align: center;
+}
+
+/* Additional spacing between titles and content */
+.contributors-grid {
+    margin-top: 20px; /* Add more spacing between header and content */
+}
+
+/* Individual Cells for Rank, Name, Score */
+.contributors-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* Rank and Score smaller, Name wider */
+    gap: 20px; /* Increased spacing between cells */
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Rank and Score Cells */
+.cell {
+    border: 2px solid #621f2e; /* Dark red border */
+    padding: 20px; /* Adjusted padding */
+    font-size: 16px; /* Smaller font size for Rank and Score */
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Name Cell (Wider) */
+.cell:nth-child(3n+2) {
+    text-align: left; /* Align text to the left for Name */
+    padding: 20px 30px; /* Added more horizontal padding for Name */
+    font-size: 18px;
+    text-transform: capitalize; /* Capitalize names */
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #111; /* Darker background on hover */
+    color: #eb0028; /* Red text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-list {
+        flex-direction: column;
+    }
+
+    .contributor-card {
+        width: 100%;
+    }
+
+    .contributors-grid {
+        grid-template-columns: 1fr; /* Stack cells in a single column for small screens */
+    }
+}
