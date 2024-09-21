@@ -401,6 +401,7 @@ const Page = () => {
                 <div className='mx-auto'>
                   <QRCodeSVG value={upiUrl} size={128} />
                 </div>
+                <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">In case of any issues with the payment process, please try sending your payment directly to this UPI ID.</p>
                 <div className='flex items-center'>
                   <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
                   <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
