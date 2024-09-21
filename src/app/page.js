@@ -174,7 +174,7 @@ export default function Home() {
       <CountDownTimer />
       <About />
       <Statusbar />
-      {/* <Newspeakers /> */}
+      <Newspeakers />
       <Snapshots />
       <Speakers />
       <OurJourney />
