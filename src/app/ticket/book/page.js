@@ -272,11 +272,11 @@ const Page = () => {
     }
 
     setLoading(true);
+    const timestamp = Date.now(); 
     if (image) {
       const { data, error: uploadError } = await supabase.storage
         .from('ticket-id')
-        .upload(`public/${formData.name}/cusatid_${image.name}`, image);
-
+        .upload(`public/${formData.name}/cusatid_${image.name}_${timestamp}`, image);
       if (uploadError) {
         console.error("Error uploading image:", uploadError);
         setSuccessMessage("Error uploading image. Please try again.");
@@ -298,7 +298,7 @@ const Page = () => {
     if (fileName) {
       const { data, error: uploadError } = await supabase.storage
         .from('ticket-id')
-        .upload(`public/${formData.name}/payment_${fileName.name}`, fileName);
+        .upload(`public/${formData.name}/payment_${fileName.name}_${timestamp}`, fileName);
 
       if (uploadError) {
         console.error("Error uploading image:", uploadError);
