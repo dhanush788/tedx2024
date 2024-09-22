@@ -193,7 +193,8 @@ const Page = () => {
     is_cusatian: isCusatian,
   });
 
-  const UPI = "tedxcusat@sbi";
+  const UPI = "tedxcusat2024@sbi";
+  const UPI1 = "tedxcusat2024@ybl"
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -346,8 +347,8 @@ const Page = () => {
     setUpiUrl(`upi://pay?pa=${UPI}&pn=TEDxCUSAT&am=${amount}&cu=INR&tn=Payment for Ticket`);
   }
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(UPI);
+  const handleCopy = (upi) => {
+    navigator.clipboard.writeText(upi);
     setIsCopied(true);
   }
 
@@ -404,7 +405,11 @@ const Page = () => {
                 <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">In case of any issues with the payment process, please try sending your payment directly to this UPI ID.</p>
                 <div className='flex items-center'>
                   <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
-                  <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
+                  <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={() => handleCopy(UPI)} />
+                </div>
+                <div className='flex items-center'>
+                  <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI1}</span></p>
+                  <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={() => handleCopy(UPI1)} />
                 </div>
                 <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">Still facing issues? Try using another UPI app.</p>
                 <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">If the problem persists, contact Dhanush at +91 97465 30193.</p>
