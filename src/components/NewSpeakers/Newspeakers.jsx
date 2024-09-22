@@ -5,6 +5,7 @@ import pillai from '../../assets/img/speakers/Pillai.jpg'
 import hani from '../../assets/img/speakers/hani.png'
 import arvind from '../../assets/img/speakers/arvind.png'
 import anantharaman from '../../assets/img/speakers/anantharaman.png'
+import anima from '../../assets/img/speakers/anima.png'
 import arrow from '../../assets/img/Arrowlong.svg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
@@ -34,6 +35,12 @@ const speakers = [
         title: 'Retired IAS Officer',
         description: `Dr. V. Venu IAS, a senior Indian Administrative Services officer from the 1990 batch, is widely respected for his charismatic leadership and professional achievements. With key roles at both state and central levels, he has made significant contributions in tourism, culture, and public policy. Currently serving as the 48th Chief Secretary of Kerala, Dr. Venu is highly regarded, particularly by the youth, who see him as a role model for effective governance and social responsibility. His ability to connect with people, combined with his strategic vision, has transformed various sectors and improved the lives of many.`,
         img: venu
+    },
+    {
+        name: 'Anima Nair',
+        title: 'Director of NeuroGifted',
+        description: `Anima Nair is a Neurodiversity Advocate and CPD-certified Neurodiversity Practitioner, dedicated to promoting inclusion and accessibility for neurodivergent individuals. An alumnus of NIT Calicut, she is the former Director of NeuroGifted where she leveraged her expertise in fostering diverse and inclusive workplaces. She currently serves on the boards of multiple companies as an Independent Director. Anima co-founded Sense Kaleidoscopes, an NGO that empowers autistic youngsters through art-based vocational training.`,
+        img: anima
     }
 ]
 
