@@ -272,7 +272,7 @@ const Page = () => {
     }
 
     setLoading(true);
-    const timestamp = Date.now(); 
+    const timestamp = Date.now();
     if (image) {
       const { data, error: uploadError } = await supabase.storage
         .from('ticket-id')
@@ -287,12 +287,12 @@ const Page = () => {
         .from('ticket-id')
         .getPublicUrl(data.path);
 
-        if (publicUrl) {
-          setFormData((prevData) => ({
-            ...prevData,
-            cusatImageUrl: publicUrl,
-          }));
-        }
+      if (publicUrl) {
+        setFormData((prevData) => ({
+          ...prevData,
+          cusatImageUrl: publicUrl,
+        }));
+      }
     }
 
     if (fileName) {
@@ -310,12 +310,12 @@ const Page = () => {
         .from('ticket-id')
         .getPublicUrl(data.path);
 
-        if (publicUrl) {
-          setFormData((prevData) => ({
-            ...prevData,
-            imageUrl: publicUrl,
-          }));
-        }
+      if (publicUrl) {
+        setFormData((prevData) => ({
+          ...prevData,
+          imageUrl: publicUrl,
+        }));
+      }
     }
     const { error: insertError } = await supabase.from('participants').insert([formData]);
 
@@ -353,11 +353,11 @@ const Page = () => {
 
   useEffect(() => {
     if (isCopied) {
-        setTimeout(() => {
-            setIsCopied(false)
-        }, 3000)
+      setTimeout(() => {
+        setIsCopied(false)
+      }, 3000)
     }
-}, [isCopied])
+  }, [isCopied])
 
   const handlePayment = () => {
     if (window.innerWidth >= 768) {
@@ -406,7 +406,9 @@ const Page = () => {
                   <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
                   <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
                 </div>
-                <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">Still facing any issues? Contact Dhanush - +91 9746530193</p>
+                <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">Still facing issues? Try using another UPI app.</p>
+                <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">If the problem persists, contact Dhanush at +91 97465 30193.</p>
+
               </div>
               <div className="w-full max-w-xl mt-1 md:mt-2">
                 <input
@@ -414,7 +416,7 @@ const Page = () => {
                   accept="image/*"
                   id="fileInput"
                   className="hidden"
-                  onChange={(e) => {setFileName(e.target.files[0]);}}
+                  onChange={(e) => { setFileName(e.target.files[0]); }}
                 />
                 <label
                   htmlFor="fileInput"
