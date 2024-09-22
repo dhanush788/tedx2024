@@ -406,6 +406,7 @@ const Page = () => {
                   <p className='text-base md:text-lg mt-1 md:mt-2'>UPI: <span className='font-bold'>{UPI}</span></p>
                   <Image src={copy} alt='copy' className='w-4 h-4 inline-block ml-2 cursor-pointer' onClick={handleCopy} />
                 </div>
+                <p className="text-base md:text-lg mt-2 md:mt-3 font-bold text-tedRed">Still facing any issues? Contact Dhanush - +91 9746530193</p>
               </div>
               <div className="w-full max-w-xl mt-1 md:mt-2">
                 <input
