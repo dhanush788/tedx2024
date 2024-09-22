@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     color: #000; /* Default text color */
+    background-color: #000;
 }
 
 /* Leaderboard container */
@@ -198,6 +199,14 @@ body {
     }
 
     .contributors-grid {
-        grid-template-columns: 1fr; /* Stack cells in a single column for small screens */
+        grid-template-columns: 1fr 2fr 1fr; /* Stack cells in a single column for small screens */
+    }
+
+    .cell {
+        padding: 10px; /* Reduced padding for smaller cells */
+    }
+
+    .leaderboard-heading{
+        font-size: 32px;
     }
 }
