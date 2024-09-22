@@ -203,8 +203,6 @@ const Page = () => {
 
       const newAmount = (() => {
         if (cusatianType === "cusatian") return 700;
-        if (cusatianType === "earlycusatian") return 600;
-        if (cusatianType === "earlyregular") return 800;
         return 900;
       })();
 
