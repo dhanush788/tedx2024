@@ -179,7 +179,7 @@ const Navbar = () => {
             <div className="section-card" onClick={() => handleScroll("speakers")}>SPEAKERS</div>
             <div className="section-card" onClick={() => handleScroll("contact")}>CONTACT</div>
             <a href='/team' className="section-card">TEAM</a>
-            <a href="https://maps.app.goo.gl/uDVE7p77ZgaK1vWt5" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
+            <a href="https://maps.app.goo.gl/KtVUikNxKibTnU9L6" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
           </div>
           <div className="right-card">
             <div className="text-container">

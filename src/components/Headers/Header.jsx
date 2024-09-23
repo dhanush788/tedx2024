@@ -115,7 +115,7 @@ const Header = () => {
                         <div className="section-card" onClick={() => handleScroll("speakers")}>SPEAKERS</div>
                         <div className="section-card" onClick={() => handleScroll("contact")}>CONTACT</div>
                         <a href='/team' className="section-card">TEAM</a>
-                        <a href="https://www.google.com/maps?ll=10.043907,76.324908&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=14845740073459549562" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
+                        <a href="https://maps.app.goo.gl/KtVUikNxKibTnU9L6" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
                     </div>
                     <div className="right-card">
                         <div className="text-container">

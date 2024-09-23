@@ -76,7 +76,7 @@ const TicketNavbar = () => {
 					<div className="section-card"><a href="/#about">ABOUT</a></div>
 					<div className="section-card"><a href="/#speakers">SPEAKERS</a></div>
 					<div className="section-card"><a href="/#contact">CONTACT</a></div>
-					<a href="https://www.google.com/maps?ll=10.043907,76.324908&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=14845740073459549562" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
+					<a href="https://maps.app.goo.gl/KtVUikNxKibTnU9L6" className="section-card" rel="noreferrer" target="_blank">EVENT MAP</a>
 				</div>
 				<div className="right-card">
 					<div className="text-container">
