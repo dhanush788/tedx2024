@@ -40,7 +40,8 @@ const Page = () => {
     "Trans Asia Cyber Park",
     "Cloudscapes",
     "Infopark Thrissur",
-    "Infopark Cherthala"
+    "Infopark Cherthala",
+    "Infopark Park Centre"
   ]
 
 
