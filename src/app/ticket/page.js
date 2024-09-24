@@ -198,7 +198,7 @@ const page = () => {
                             price="700"
                             type="CUSAT STUDENTS"
                             popupMessage={CUSAT_POPUP_MSG}
-                            disabled={false}
+                            disabled={true}
                         />
                         <TicketCard
                             popupTitleSetter={setPopupTitle}
@@ -208,7 +208,7 @@ const page = () => {
                             price="900"
                             type="REGULAR"
                             popupMessage={REG_POPUP_MSG}
-                            disabled={false}
+                            disabled={true}
                         />
                     </div>
                 </div>

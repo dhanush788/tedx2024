@@ -378,13 +378,17 @@ const Page = () => {
 
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-white relative">
         {loading && (
           <div className="fixed w-full h-full bg-black bg-opacity-50 z-[200]"></div>
         )}
+          <div className="fixed w-full h-full bg-black bg-opacity-50 z-[200]">
+            <p className="text-tedRed text-5xl font-bold text-center mt-40">SOLD OUT</p>
+          </div>
+
         <Header />
       </div>
-      <div className="p-custom max-w-8xl font-sans font-semibold border-y border-black !py-8 md:!py-12">
+      {/* <div className="p-custom max-w-8xl font-sans font-semibold border-y border-black !py-8 md:!py-12">
         <p className="text-3xl md:text-4xl uppercase mt-3">{paymentDone ? "Payment Information" : "Participant Information"}</p>
         <p className="text-gray-500 text-sm font-medium">
           Make sure you fill all the necessary details carefully; once completed, no changes can be applied.
@@ -532,7 +536,7 @@ const Page = () => {
         <div className='fixed bottom-5 right-5 bg-black bg-opacity-50 text-white p-2 rounded-md z-[200]'>
           <p className='text-center'>UPI copied to clipboard</p>
         </div>
-      )}
+      )} */}
       <Footer />
     </>
   );

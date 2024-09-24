@@ -39,9 +39,12 @@ const speakers = [
     {
         name: 'Anima Nair',
         title: 'Director of NeuroGifted',
-        description: `Anima Nair is a Neurodiversity Advocate and CPD-certified Neurodiversity Practitioner, dedicated to promoting inclusion and accessibility for neurodivergent individuals. An alumnus of NIT Calicut, she is the former Director of NeuroGifted where she leveraged her expertise in fostering diverse and inclusive workplaces. She currently serves on the boards of multiple companies as an Independent Director. Anima co-founded Sense Kaleidoscopes, an NGO that empowers autistic youngsters through art-based vocational training.`,
+        description: `Anima Nair is a Neurodiversity Advocate and CPD-Certified Neurodiversity Practitioner, dedicated to promoting inclusion and accessibility for neurodivergent individuals. Her advocacy stems from a place of genuine sincerity and she firmly believes that embracing neuroinclusion benefits everyone. An alumnus of NIT Calicut, she is the former Director of NeuroGifted where she leveraged her expertise in fostering diverse and inclusive workplaces. She currently serves on the boards of multiple companies as an Independent Director. Anima co-founded Sense Kaleidoscopes, an NGO that empowers autistic youngsters through art-based vocational training.`,
         img: anima
-    }
+    },
+    // {
+    //     name: '',
+    // }
 ]
 
 
