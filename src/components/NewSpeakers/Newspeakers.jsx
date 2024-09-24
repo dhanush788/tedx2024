@@ -6,9 +6,12 @@ import hani from '../../assets/img/speakers/hani.png'
 import arvind from '../../assets/img/speakers/arvind.png'
 import anantharaman from '../../assets/img/speakers/anantharaman.png'
 import anima from '../../assets/img/speakers/anima.png'
+import poduval from '../../assets/img/speakers/poduval.png'
+import sidhi from '../../assets/img/speakers/sidhi.png'
 import arrow from '../../assets/img/Arrowlong.svg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
+import { title } from 'process';
 
 
 const speakers = [
@@ -42,9 +45,18 @@ const speakers = [
         description: `Anima Nair is a Neurodiversity Advocate and CPD-Certified Neurodiversity Practitioner, dedicated to promoting inclusion and accessibility for neurodivergent individuals. Her advocacy stems from a place of genuine sincerity and she firmly believes that embracing neuroinclusion benefits everyone. An alumnus of NIT Calicut, she is the former Director of NeuroGifted where she leveraged her expertise in fostering diverse and inclusive workplaces. She currently serves on the boards of multiple companies as an Independent Director. Anima co-founded Sense Kaleidoscopes, an NGO that empowers autistic youngsters through art-based vocational training.`,
         img: anima
     },
-    // {
-    //     name: '',
-    // }
+    {
+        name: 'Siddhi Mahajankatti',
+        title: 'Actress',
+        description: `Siddhi Mahajanketti is a rising Indian talent who excels in multiple fields. Her acting career began with the film "Aanandham," showcasing her versatility on screen. Beyond acting, she's a business analyst with a postgraduate diploma from IIM Ahmedabad, and a level one surfer.Siddhi has leveraged her diverse skills to become a successful content creator and social media influencer. Her engaging posts offer fans an authentic glimpse into an actor's life, combining behind-the-scenes content with personal insights.Her multifaceted success story encourages others to pursue their passions across various domains.`,
+        img: sidhi
+    },
+    {
+        name: 'P R Poduval',
+        title: 'Professor, Author',
+        description: `A paragon of erudition and versatility, Prof. Poduval's odyssey through academia and beyond exemplifies the transformative power of perpetual learning. Fortified by a Master's in Psychology and enriched by Harvard University's International Teacher's Program in Management, Prof. Poduval is a two-time Dean at CUSAT and the architectural mind behind several premier institutes, thus sculpting the landscape of higher education in Kerala.Prof. Poduval's upcoming talk promises a symphony of insights from psychology, management, and social sciences`,
+        img: poduval
+    }
 ]
 
 
