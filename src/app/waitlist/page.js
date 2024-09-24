@@ -74,7 +74,8 @@ const page = () => {
 			<div className='mt-[8vh]'></div>
 			<Sponsors />
 			<div className='get-tickets mt-[10vh]'>
-				<p className='md:text-6xl text-4xl text-left leading-none'>Get Your <br /><span className='text-tedRed'>TEDx</span>CUSAT'24 Ticket</p>
+				<p className='md:text-6xl text-4xl text-left leading-none'>Get Your <br /><span className='text-tedRed'>TED<sup>x</sup></span>CUSAT'24 Ticket</p>
+				<p className='text-left'>*Exclusively for Infopark Campus</p>
 				<div className='flex flex-col md:flex-wrap items-center gap-10 md:flex-row justify-start py-5'>
 					<TicketCard popupTitleSetter={setPopupTitle} popupMessageSetter={() => setPopupMessage(InfoparkMessage)} popupHandler={setShowPopup} redirect="/waitlist/book" price="700" type="TEDxCUSAT'24 TICKET" popupMessage={InfoparkMessage} />
 				</div>
