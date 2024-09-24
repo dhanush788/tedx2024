@@ -52,7 +52,7 @@ const Leaderboard = () => {
           {/* Individual Contributor Cells */}
           {allContributors.map((contributor, index) => (
             <React.Fragment key={index}>
-              <div className="cell">{contributor.Rank < 10 ? `0${contributor.Rank}` : contributor.Rank}</div>
+              <div className="cell">{index+1}</div>
               <div className="cell">{contributor.Name}</div>
               <div className="cell">{contributor.Score}</div>
             </React.Fragment>
