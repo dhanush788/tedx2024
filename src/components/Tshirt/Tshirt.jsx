@@ -373,7 +373,7 @@ const Tshirt = () => {
                 <p className='text-base md:text-lg mt-1 md:mt-2'>Color: <span className='font-bold'>Black</span></p>
                 <p className='text-base md:text-lg mt-1 md:mt-2'>Price: <span className='font-bold'>₹ 369</span></p>
                 {/* <p className='text-base md:text-lg md:text-lg mt-1 md:mt-2'>Material: <span className='font-bold'>Cotton</span></p> */}
-                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md' onClick={() => setPopUp(true)}>Buy Now</button>
+                <button className='bg-tedRed text-white px-6 py-3 mt-4 rounded-md bg-opacity-30 cursor-not-allowed'>Closed</button>
             </div>
             {popUp &&
                 <div className='fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-start pb-5 md:pb-0 pt-2 md:items-start justify-center z-[999] overflow-y-auto'>
