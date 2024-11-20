@@ -19,8 +19,8 @@ import diya from '../../assets/img/team/diya.jpg'
 import muflih from '../../assets/img/team/muflih.jpg'
 
 import rayif from '../../assets/img/team/web/Rayif.jpg'
-// import farha from '../../assets/img/team/web/Farha.jpg'
-import karthik from '../../assets/img/team/web/karthik.png'
+import karthik from '../../assets/img/team/web/karthik.jpg'
+// import farha from '../../assets/img/team/web/farha.jpg'
 import mariya from '../../assets/img/team/web/Mariya.jpg'
 import Namitha from '../../assets/img/team/web/Namitha.jpg'
 import Nazal from '../../assets/img/team/web/Nazal.jpg'
@@ -136,7 +136,7 @@ const teamData = {
             subHeading: "",
             img: karthik,
             github: "https://github.com/Karthike2003",
-            linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
+            linkedin: "https://www.linkedin.com/in/karthike2003/"
         },
         {
             heading: "Mariya Benny",
