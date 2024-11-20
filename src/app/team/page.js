@@ -19,7 +19,7 @@ import diya from '../../assets/img/team/diya.jpg'
 import muflih from '../../assets/img/team/muflih.jpg'
 
 import rayif from '../../assets/img/team/web/Rayif.jpg'
-import farha from '../../assets/img/team/web/Farha.jpg'
+// import farha from '../../assets/img/team/web/Farha.jpg'
 import karthik from '../../assets/img/team/web/karthik.png'
 import mariya from '../../assets/img/team/web/Mariya.jpg'
 import Namitha from '../../assets/img/team/web/Namitha.jpg'
@@ -124,13 +124,13 @@ const teamData = {
             github: "https://github.com/dhanush788",
             linkedin: "https://www.linkedin.com/in/dhanush-p-k"
         },
-        {
-            heading: "Farha T A",
-            subHeading: "",
-            img: farha,
-            github: "https://github.com/Farha00",
-            linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
-        },
+        // {
+        //     heading: "Farha T A",
+        //     subHeading: "",
+        //     img: farha,
+        //     github: "https://github.com/Farha00",
+        //     linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
+        // },
         {
             heading: "Karthik E",
             subHeading: "",
