@@ -124,13 +124,13 @@ const teamData = {
             github: "https://github.com/dhanush788",
             linkedin: "https://www.linkedin.com/in/dhanush-p-k"
         },
-        // {
-        //     heading: "Farha T A",
-        //     subHeading: "",
-        //     img: farha,
-        //     github: "https://github.com/Farha00",
-        //     linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
-        // },
+        {
+            heading: "Farha T A",
+            subHeading: "",
+            img: './farha.jpg',
+            github: "https://github.com/Farha00",
+            linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
+        },
         {
             heading: "Karthik E",
             subHeading: "",
