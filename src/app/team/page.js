@@ -36,133 +36,133 @@ const teamData = {
         {
             heading: "IVINE JOJU",
             subHeading: "Organiser",
-            img: ivine
+            img: '/team/ivine.jpg'
         },
         {
             heading: "Akshay S Vinod",
             subHeading: "Organiser",
-            img: akshay
+            img: '/team/akshay.jpeg'
         },
         {
             heading: "Sheena K M",
             subHeading: "Staff Coordinator",
-            img: sheena
+            img: '/team/sheena.jpg'
         },
         {
             heading: "Adil Mohammad",
             subHeading: "Curator",
-            img: adil
+            img: '/team/adil.jpg'
         },
         {
             heading: "Anna",
             subHeading: "Outreach",
-            img: anna
+            img: '/team/anna.jpg'
         },
         {
             heading: "Archa",
             subHeading: "Treasurer",
-            img: archa
+            img: '/team/archa.jpg'
         },
         {
             heading: "Basil",
             subHeading: "Outreach",
-            img: basil
+            img: '/team/basil.jpg'
         },
         {
             heading: "Deva nandan",
             subHeading: "Production",
-            img: devanand
+            img: '/team/devanand.jpg'
         },
         {
             heading: "Dhanush p k",
             subHeading: "Technical",
-            img: dhanush
+            img: '/team/dhanush.jpg'
         },
         {
             heading: "Diya",
             subHeading: "Sponsorship",
-            img: diya
+            img: '/team/diya.jpg'
         },
         {
             heading: "Evlyn",
             subHeading: "Content",
-            img: evlyn
+            img: '/team/evlyn.jpg'
         },
         {
             heading: "Farhan",
             subHeading: "Production",
-            img: farhan
+            img: '/team/farhan.jpg'
         },
         {
             heading: "Melbin sebastian",
             subHeading: "Event and Ambience",
-            img: melbin
+            img: '/team/melbin.jpg'
         },
         {
             heading: "Muflih",
             subHeading: "Event and Ambience",
-            img: muflih
+            img: '/team/muflih.jpg'
         },
         {
             heading: "Sreerag",
             subHeading: "Media",
-            img: sreerag
+            img: '/team/sreerag.jpg'
         }
     ],
     webTeam: [
         {
             heading: "ABDUL RAYIF V P",
             subHeading: "",
-            img: rayif,
+            img: '/team/web/Rayif.jpg',
             github: "https://github.com/Abdulrayifvp",
             linkedin: "https://www.linkedin.com/in/rayifvp"
         },
         {
             heading: "Dhanush P K",
             subHeading: "",
-            img: dhanush,
+            img: '/team/dhanush.jpg',
             github: "https://github.com/dhanush788",
             linkedin: "https://www.linkedin.com/in/dhanush-p-k"
         },
         {
             heading: "Farha T A",
             subHeading: "",
-            img: './farha.jpg',
+            img: '/team/web/farha.jpg',
             github: "https://github.com/Farha00",
             linkedin: "https://www.linkedin.com/in/farha-t-a-09529821b/"
         },
         {
             heading: "Karthik E",
             subHeading: "",
-            img: karthik,
+            img: '/team/web/karthik.jpg',
             github: "https://github.com/Karthike2003",
             linkedin: "https://www.linkedin.com/in/karthike2003/"
         },
         {
             heading: "Mariya Benny",
             subHeading: "",
-            img: mariya,
+            img: '/team/web/Mariya.jpg',
             github: "https://github.com/Mariyaben",
             linkedin: "https://www.linkedin.com/in/mariyabenny123/"
         },
         {
             heading: "Namitha M S",
             subHeading: "",
-            img: Namitha,
+            img: '/team/web/Namitha.jpg',
             github: "https://github.com/namitha2306",
             linkedin: "https://www.linkedin.com/in/namitha-m-s-835692227/"
         },
         {
             heading: "Nazal Nihad T T ",
             subHeading: "",
-            img: Nazal,
+            img: '/team/web/Nazal.jpg',
             github: "https://github.com/nazalnihad",
             linkedin: "https://www.linkedin.com/in/nazal-nihad/"
         },
         {
             heading: "Roopesh O R",
             subHeading: "",
-            img: Roopesh,
+            img: '/team/web/Roopesh.jpg',
             github: "https://github.com/Roopesh2",
             linkedin: "https://www.linkedin.com/in/roopesh-or/"
         }]
@@ -173,7 +173,7 @@ const Cards = ({ item, i }) => {
         <div key={i} className={`flex flex-col min-h-[200px] md:min-h-[350px] last:mr-2`}>
             <div className='border border-black rounded-[6px] md:rounded-15 flex flex-col relative min-w-[140px] md:min-w-[300px] '>
                 <div className='overflow-hidden w-full h-full rounded-[6px] md:rounded-15'>
-                    <Image src={item.img} alt="" id='image' className='h-[200px] md:h-[350px] w-full object-cover ease-in-out object-top hover:scale-105 transition-all duration-300 ease' />
+                    <Image src={item.img} alt="" id='image' className='h-[200px] md:h-[350px] w-full object-cover ease-in-out object-top hover:scale-105 transition-all duration-300 ease' width={100} height={100}/>
                 </div>
                 <div className={`px-2 md:px-4 absolute rounded-[6px] md:rounded-15 bottom-0 left-0 w-full flex flex-col transition-all duration-300 ease bg-white min-h-[55px] md:min-h-[100px]`}>
                     <p className={`font-Geist font-bold text-[15px] md:text-2xl pt-2 md:pt-4 uppercase`}>{item.heading}</p>
