@@ -87,9 +87,9 @@ const Highlights = () => {
   };
 
   return (
-    <div className="mt-5 md:mt-16 md:mb-3 md h-[431px] overflow-hidden overflow-x-scroll scrollbar-hidden">
+    <div className="mt-5 md:mt-16 md:mb-3 md h-[431px] overflow-hidden md:overflow-x-scroll scrollbar-hidden">
       <div
-        className="h-full relative cursor-grab active:cursor-grabbing"
+        className="h-full relative "
         onTouchStart={touchStart}
         onTouchMove={touchMove}
         onTouchEnd={touchEnd}
@@ -173,11 +173,11 @@ const Highlights = () => {
               A heartfelt thanks to <span className='text-tedRed font-Helvetica font-black'>12 Note 6</span> for their mesmerizing performance, which <span className="text-black font-Helvetica font-black">transported the audience to another dimension </span>and added magic to the 5th edition of TEDx CUSAT.
 
             </p>
-            <div className="flex-shrink-0 relative w-[380px] md:w-[450px] h-[330px] md:h-[292px]">
+            <div className="flex-shrink-0 relative w-[380px] md:w-[450px] h-[300px] md:h-[292px]">
               <img
                 src="5.svg"
                 alt="Event Photo"
-                className="absolute top-[48px] w-[450px] h-[260px] md:h-[242px] object-cover rounded-[15px] border border-gray-200"
+                className="absolute top-[48px] w-[380px] md:w-[450px] h-[240px] md:h-[242px] object-cover rounded-[15px] border border-gray-200"
                 draggable="false"
               />
             </div>
@@ -213,7 +213,7 @@ const Highlights = () => {
               praised the exhilarating pleasures of <span className="text-black font-Helvetica font-black">Motorbike passion </span> while Anantharaman emphasised the significance of vocal morality in society.
 
             </p>
-            <div className="flex-shrink-0 relative w-[400px] md:w-[440px] h-[300px]">
+            <div className="flex-shrink-0 relative w-[400px] md:w-[440px] h-[290px]">
               <img
                 src="8.svg"
                 alt="Event Photo"
