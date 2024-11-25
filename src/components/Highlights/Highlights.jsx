@@ -177,7 +177,7 @@ const Highlights = () => {
               <img
                 src="5.svg"
                 alt="Event Photo"
-                className="absolute top-[48px] w-[380px] md:w-[450px] h-[240px] md:h-[242px] object-cover rounded-[15px] border border-gray-200"
+                className="absolute top-[48px] w-[450px] h-[240px] md:h-[242px] object-cover rounded-[15px] border border-gray-200"
                 draggable="false"
               />
             </div>
@@ -253,7 +253,7 @@ const Highlights = () => {
               praised the exhilarating pleasures of <span className="text-black font-Helvetica font-black">Motorbike passion </span> while Anantharaman emphasised the significance of vocal morality in society.
 
             </p>
-            <div className="flex-shrink-0 relative w-[390px] md:w-[430px] h-[300px]">
+            <div className="flex-shrink-0 relative w-[390px] md:w-[430px] h-[290px]">
               <img
                 src="11.svg"
                 alt="Event Photo"
