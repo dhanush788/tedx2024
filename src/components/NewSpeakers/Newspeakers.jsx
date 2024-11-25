@@ -126,6 +126,7 @@ const Newspeakers = () => {
                     <Card index={index} />
                 </div>
             </div>
+            
         </>
     )
 }

@@ -18,6 +18,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { TextPlugin } from 'gsap/TextPlugin';
 import Alert from "@/components/Alert/Alert";
 import Newspeakers from "@/components/NewSpeakers/Newspeakers";
+import Highlights from "@/components/Highlights/Highlights";
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -177,6 +179,7 @@ export default function Home() {
       <Newspeakers />
       <Snapshots />
       <Speakers />
+      <Highlights />
       <OurJourney />
       <Footer />
       <Alert open={open} handleClose={handleOpen}/>

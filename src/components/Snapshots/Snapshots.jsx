@@ -69,6 +69,7 @@ const Snapshots = () => {
           SNAP<span className='text-black'>SHOTS</span>
         </p>
       </div> */}
+      
     </div>
   )
 }

@@ -74,7 +74,7 @@ const Cards = ({ item, i }) => {
 }
 
 
-const Speakers = () => {
+const   Speakers = () => {
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -108,7 +108,8 @@ const Speakers = () => {
     }
 
     return (
-        <div className='w-full flex flex-col inter md:px-[8%] py-5' id='speakers'>
+    <>
+        <div className='w-full  flex flex-col inter md:px-[8%] py-5' id='speakers'>
             <div className='flex flex-row justify-between px-[4%] md:px-0'>
                 <p className='font-thunder font-bold md:text-6xl text-4xl leading-snug max-w-md text-left'>OUR <span className='text-tedRed'>PREVIOUS</span> SPEAKERS</p>
                 <div className='md:flex flex-row hidden gap-3'>
@@ -122,7 +123,11 @@ const Speakers = () => {
                 ))
                 }
             </div>
+           
         </div>
+        <hr className='w-full top-1/2 bg-black -z-10 h-px border-0 md:mt-16' />
+    </>
+ 
     )
 }
 
