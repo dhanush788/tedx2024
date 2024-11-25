@@ -207,32 +207,32 @@ const Highlights = () => {
           </div>
           {/* Eighth Image */}
 
-          <div className="flex-shrink-0 h-full flex flex-col w-[440px] justify-center mx-2">
-            <p className="text-lg md:text-lg font-normal uppercase ">
+          <div className="flex-shrink-0 h-full flex flex-col w-[400px] md:w-[440px] justify-center mx-2">
+            <p className="text-lg md:text-xl font-normal uppercase ">
               <span className='text-tedRed font-Helvetica font-black'>Hani Mustafa </span>
               praised the exhilarating pleasures of <span className="text-black font-Helvetica font-black">Motorbike passion </span> while Anantharaman emphasised the significance of vocal morality in society.
 
             </p>
-            <div className="flex-shrink-0 relative w-[440px] h-[280px]">
+            <div className="flex-shrink-0 relative w-[400px] md:w-[440px] h-[300px]">
               <img
                 src="8.svg"
                 alt="Event Photo"
-                className="absolute top-[48px] w-[440px] h-[242px] object-cover rounded-[15px] border border-gray-200"
+                className="absolute top-[48px] w-[400px] md:w-[440px] h-[242px] object-cover rounded-[15px] border border-gray-200"
                 draggable="false"
               />
             </div>
           </div>
           {/* Nineth Image */}
-          <div className="flex-shrink-0 h-full flex flex-col  w-[440px] justify-center mx-2">
-            <div className="flex-shrink-0 relative w-[440px] h-[283px]">
+          <div className="flex-shrink-0 h-full flex flex-col  w-[380px] justify-center mx-2">
+            <div className="flex-shrink-0 relative w-[380px] h-[300px]">
               <img
                 src="9.svg"
                 alt="Event Photo"
-                className="absolute bottom-[42px] w-[440px] h-[253px] object-cover rounded-[15px] border border-gray-200"
+                className="absolute bottom-[42px] w-[380px] h-[253px] object-cover rounded-[15px] border border-gray-200"
                 draggable="false"
               />
             </div>
-            <p className="text-lg md:text-lg font-normal uppercase pr-8">
+            <p className="text-lg md:text-xl font-normal uppercase pr-8">
               The TEDx <span className='text-tedRed font-Helvetica font-black'>volunteering team</span> is the backbone of the event, showcasing their dedication and <span className='font-Helvetica font-black'>tireless effort</span> to ensure every detail runs smoothly.
             </p>
           </div>
@@ -247,17 +247,17 @@ const Highlights = () => {
           </div>
           {/* Eleventh Image */}
 
-          <div className="flex-shrink-0 h-full w-[450px] flex flex-col justify-center mx-2">
-            <p className="text-lg md:text-lg font-normal uppercase ">
+          <div className="flex-shrink-0 h-full w-[390px] md:w-[430px] flex flex-col justify-center mx-2">
+            <p className="text-lg md:text-xl font-normal uppercase ">
               <span className='text-tedRed font-Helvetica font-black'>Hani Mustafa </span>
               praised the exhilarating pleasures of <span className="text-black font-Helvetica font-black">Motorbike passion </span> while Anantharaman emphasised the significance of vocal morality in society.
 
             </p>
-            <div className="flex-shrink-0 relative w-[450px] h-[300px]">
+            <div className="flex-shrink-0 relative w-[390px] md:w-[430px] h-[300px]">
               <img
                 src="11.svg"
                 alt="Event Photo"
-                className="absolute top-[28px] w-[450px] h-[274px] object-cover rounded-[15px] border border-gray-200"
+                className="absolute top-[28px] w-[390px] md:w-[430px] h-[264px] object-cover rounded-[15px] border border-gray-200"
                 draggable="false"
               />
             </div>
